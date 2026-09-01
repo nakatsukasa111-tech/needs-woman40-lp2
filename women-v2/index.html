@@ -535,15 +535,21 @@ body{ background:var(--paper-3); }
 .cta-slim{ max-width:500px; margin:18px auto 0; }
 
 /* 特典ブロック */
-.perk{ margin-bottom:11px; }
-.perk-ttl{
-  display:block; text-align:center; font-size:10px; font-weight:500; letter-spacing:.09em;
-  color:#fff; background:var(--navy); border-radius:4px; padding:5px 8px; line-height:1.35; margin-bottom:9px;
+.perk{ margin-bottom:11px; text-align:center; }
+.perk-lead{ font-size:10.5px; letter-spacing:.05em; color:var(--navy); font-weight:500; line-height:1.45; }
+.perk-main{
+  margin-top:6px; font-family:var(--ff-mn); font-size:19px; font-weight:500;
+  color:var(--ink); letter-spacing:.03em; line-height:1.35;
 }
-.perk li{ display:flex; gap:8px; align-items:flex-start; font-size:11.5px; line-height:1.6; color:var(--ink); padding:2.5px 0; }
-.perk .ck{ width:13px; height:13px; margin-top:3px; color:var(--cta-dark); }
-.perk b{ font-weight:700; color:var(--cta-dark); }
-@media (min-width:768px){ .perk li{ font-size:12.5px; } .perk-ttl{ font-size:11px; } }
+.perk-hl{ color:var(--cta-dark); }
+.perk-add{
+  margin-top:9px; border:1px dashed var(--cta); border-radius:7px; padding:7px 8px;
+  font-size:11.5px; line-height:1.5; color:var(--cta-dark); font-weight:500;
+}
+.perk-add b{ font-weight:700; }
+@media (min-width:768px){
+  .perk-lead{ font-size:11.5px; } .perk-main{ font-size:22px; } .perk-add{ font-size:12.5px; }
+}
 
 /* ================= hero ================= */
 .hero2{ background:var(--paper); padding-top:var(--header-h); }
@@ -642,9 +648,10 @@ body{ background:var(--paper-3); }
 .trow img{ width:100%; height:100%; object-fit:cover; display:block; background:#e3ded6; }
 .trow .in{ padding:11px 12px; }
 .trow .no{
-  font-family:var(--ff-en); font-size:10px; letter-spacing:.16em; font-weight:600;
-  color:#fff; background:var(--navy); border-radius:4px; padding:4px 6px; line-height:1; display:inline-block;
+  font-family:var(--ff-jp); font-size:10px; letter-spacing:.06em; font-weight:500;
+  color:#fff; background:var(--navy); border-radius:4px; padding:4px 7px; line-height:1; display:inline-block;
 }
+.trow .no em{ font-style:normal; font-family:var(--ff-en); font-size:11px; letter-spacing:.1em; font-weight:600; margin-left:3px; }
 .trow h3{ margin-top:7px; font-family:var(--ff-mn); font-size:13.5px; font-weight:500; color:var(--ink); line-height:1.5; }
 .trow p{ margin-top:6px; font-size:11px; line-height:1.7; color:var(--text); }
 @media (min-width:768px){
@@ -668,6 +675,15 @@ body{ background:var(--paper-3); }
 .fstrip .free{ color:var(--cta-dark); }
 @media (min-width:768px){ .fstrip li{ font-size:11px; padding:14px 8px; letter-spacing:0; } .fstrip b{ font-size:15px; } }
 
+/* ---- あなた専用プランに書かれること（1行） ---- */
+.pw-line{ margin-top:12px; background:var(--paper-2); border-radius:9px; padding:11px 12px; display:grid; gap:5px; }
+.pw-line span{ font-size:11px; line-height:1.5; color:var(--text); }
+.pw-line b{ font-family:var(--ff-mn); font-size:12px; color:var(--navy); font-weight:500; margin-right:7px; letter-spacing:.02em; }
+@media (min-width:768px){
+  .pw-line{ display:flex; justify-content:center; gap:28px; padding:13px 16px; }
+  .pw-line span{ font-size:12.5px; } .pw-line b{ font-size:13.5px; }
+}
+
 /* ================= あなた専用プラン ================= */
 .plan3{ display:grid; gap:9px; margin-top:18px; }
 .plan3 li{ background:var(--paper-2); border-radius:11px; padding:14px 14px; }
@@ -679,11 +695,11 @@ body{ background:var(--paper-3); }
 .plan3 p{ margin-top:7px; font-size:11.5px; line-height:1.75; color:var(--text); }
 @media (min-width:768px){ .plan3{ grid-template-columns:repeat(3,1fr); gap:14px; } .plan3 h3{ font-size:15.5px; } .plan3 p{ font-size:12.5px; } }
 .plan-free{
-  margin-top:14px; background:var(--navy-ink); border-radius:11px; padding:15px 15px; text-align:center;
-  font-family:var(--ff-mn); font-size:13px; line-height:1.8; color:#fff; letter-spacing:.02em;
+  margin-top:12px; background:var(--navy-ink); border-radius:11px; padding:12px 14px; text-align:center;
+  font-family:var(--ff-mn); font-size:13px; line-height:1.7; color:#fff; letter-spacing:.02em;
 }
 .plan-free .free{ color:var(--gold-soft); font-size:1.25em; }
-@media (min-width:768px){ .plan-free{ font-size:15.5px; padding:20px; } }
+@media (min-width:768px){ .plan-free{ font-size:15.5px; padding:16px 20px; } }
 
 /* ================= 料金・環境 ================= */
 .sgrid{ display:grid; gap:11px; margin-top:18px; }
@@ -818,8 +834,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul>
         <li><a href="#record">実績と未来</a></li>
         <li><a href="#beginner">初めての方へ</a></li>
-        <li><a href="#trial">無料体験</a></li>
-        <li><a href="#plan">専用プラン</a></li>
+        <li><a href="#trial">無料体験・特典</a></li>
         <li><a href="#price">料金</a></li>
         <li><a href="#access">店舗</a></li>
       </ul>
@@ -856,12 +871,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="cta-block hero2-cta">
         <div class="cta-card">
           <div class="perk">
-            <span class="perk-ttl">このページからのご予約限定</span>
-            <ul>
-              <li><svg class="ck"><use href="#i-check"></use></svg><span>初回体験 <b>無料</b></span></li>
-              <li><svg class="ck"><use href="#i-check"></use></svg><span><span class="nw"><b>姿勢・動作チェックの結果シート</b>と</span><span class="nw"><b>あなた専用プラン</b>を進呈</span></span></li>
-              <li><svg class="ck"><use href="#i-check"></use></svg><span>体験当日のご入会で<b>入会金無料</b></span></li>
-            </ul>
+            <p class="perk-lead">＼ このページからのご予約限定 ／</p>
+            <p class="perk-main"><span class="nw">無料体験・</span><span class="perk-hl"><span class="nw">3大特典</span></span></p>
+            <p class="perk-add"><span class="nw">＋ 当日入会で</span><b><span class="nw">「入会金無料」</span></b></p>
           </div>
           <a class="btn btn-line" href="https://lin.ee/WEFp411" target="_blank" rel="noopener" data-event="cta_click" data-cta="hero"><span class="line-badge">LINE</span>無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
           <p class="cta-note"><strong>30秒でご予約いただけます。</strong>運動の経験は問いません。</p>
@@ -963,28 +975,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ============ 4 無料体験でわかること ============ -->
+<!-- ============ 4 無料体験の3大特典＋あなた専用プラン ============ -->
 <section class="band" id="trial">
   <div class="wrap">
     <div class="panel rv">
       <div class="hd">
         <p class="hd-eyebrow hd-deco">Free Trial</p>
-        <h2 class="hd-title"><span class="mk"><span class="nw">無料体験</span></span><span class="nw">で、</span><span class="big">3</span><span class="nw">つのことがわかります。</span></h2>
+        <h2 class="hd-title">
+          <span class="nw">あなただけの</span><span class="accent"><span class="mk"><span class="nw">身体づくり計画</span></span></span><span class="nw">を</span><br>
+          <span class="accent"><span class="nw">プレゼント！</span></span>
+        </h2>
+        <p class="hd-sub">
+          <span class="nw">「何を・どれくらい・どう続けるか」が分かる、</span><span class="nw">あなた専用プランをお渡しします。</span>
+        </p>
       </div>
 
       <div class="trow">
         <article>
           <img src="images/p01.jpg" alt="トレーナーが姿勢と動きをチェックしている様子" width="800" height="1000" loading="lazy" decoding="async">
           <div class="in">
-            <span class="no">01</span>
+            <span class="no">特典<em>01</em></span>
             <h3><span class="nw">身体の状態を</span><span class="nw">チェック</span></h3>
-            <p>姿勢・動き・身体の使い方を、専門的にチェックします。</p>
+            <p>姿勢・動き・身体の使い方を、専門家が丁寧にチェックします。</p>
           </div>
         </article>
         <article>
           <img src="images/p02.jpg" alt="トレーナーの補助を受けながらトレーニングを体験している様子" width="800" height="1000" loading="lazy" decoding="async">
           <div class="in">
-            <span class="no">02</span>
+            <span class="no">特典<em>02</em></span>
             <h3><span class="nw">あなたに合った</span><span class="nw">トレーニングを体験</span></h3>
             <p>その状態に合わせたトレーニングを、実際に体験できます。</p>
           </div>
@@ -992,12 +1010,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <article>
           <img src="images/p03.jpg" alt="これからの身体づくりについてトレーナーと相談している様子" width="800" height="1000" loading="lazy" decoding="async">
           <div class="in">
-            <span class="no">03</span>
-            <h3><span class="nw">これからの</span><span class="nw">身体づくりを相談</span></h3>
-            <p>これからの進め方・頻度・目標を、一緒に考えます。</p>
+            <span class="no">特典<em>03</em></span>
+            <h3><span class="nw">あなた専用プランを</span><span class="nw">お渡し</span></h3>
+            <p>なりたい身体をうかがい、これからの進め方を紙にしてお渡しします。</p>
           </div>
         </article>
       </div>
+
+      <p class="pw-line">
+        <span><b>何を</b>あなたに合う種目とメニュー</span>
+        <span><b>どれくらい</b>通う頻度と期間の目安</span>
+        <span><b>どう続けるか</b>無理のない進め方</span>
+      </p>
+
+      <p class="plan-free">
+        <span class="nw">ここまですべて、</span><span class="nw">初回の無料体験に含まれます。</span><span class="free"><span class="nw">0円</span></span>
+      </p>
 
       <ul class="fstrip">
         <li><b class="free">0円</b>料金（初回のみ）</li>
@@ -1006,49 +1034,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><b>LINEで30秒</b>ご予約</li>
       </ul>
 
-      <div class="hd" style="margin-top:14px;">
-        <p class="hd-sub"><span class="nw">無理な勧誘はいたしません。</span><span class="nw">ご相談だけでも構いません。</span></p>
-      </div>
-
       <div class="cta-block cta-slim">
         <a class="btn btn-line" href="https://lin.ee/WEFp411" target="_blank" rel="noopener" data-event="cta_click" data-cta="trial"><span class="line-badge">LINE</span>無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 5 あなた専用プラン ============ -->
-<section class="band" id="plan">
-  <div class="wrap">
-    <div class="panel rv">
-      <div class="hd">
-        <p class="hd-eyebrow hd-deco">Your Plan</p>
-        <h2 class="hd-title"><span class="nw">体験の最後に、</span><span class="accent"><span class="nw">あなた専用のプランを</span><span class="nw">お渡しします。</span></span></h2>
-        <p class="hd-sub"><span class="nw">「なんとなく通う」ではなく、</span><span class="nw">行き先が見えた状態で始められます。</span></p>
-      </div>
-
-      <ul class="plan3">
-        <li>
-          <span class="no">01</span>
-          <h3><span class="nw">なりたい身体を</span><span class="nw">うかがいます</span></h3>
-          <p>「肩の痛みを気にせず旅行に行きたい」など、これからやりたいことをお聞きします。</p>
-        </li>
-        <li>
-          <span class="no">02</span>
-          <h3><span class="nw">必要な頻度の目安を</span><span class="nw">ご提案</span></h3>
-          <p>今の身体の状態と目標から、どのくらいのペースで通うのが現実的かをご提案します。</p>
-        </li>
-        <li>
-          <span class="no">03</span>
-          <h3><span class="nw">あなた専用の</span><span class="nw">メニュー表をお渡し</span></h3>
-          <p>姿勢・動作チェックの結果シートと合わせて、紙でお持ち帰りいただけます。</p>
-        </li>
-      </ul>
-
-      <p class="plan-free">
-        <span class="nw">ここまですべて、</span><span class="nw">初回の無料体験に含まれます。</span><span class="free"><span class="nw">0円</span></span><br>
-        <span class="nw">お持ち帰りいただいて、</span><span class="nw">ご自宅でゆっくりご検討ください。</span>
-      </p>
     </div>
   </div>
 </section>
@@ -1197,12 +1185,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="cta-block" style="margin-top:14px;">
             <div class="cta-card" style="margin-left:0;">
               <div class="perk">
-                <span class="perk-ttl">このページからのご予約限定</span>
-                <ul>
-                  <li><svg class="ck"><use href="#i-check"></use></svg><span>初回体験 <b>無料</b></span></li>
-                  <li><svg class="ck"><use href="#i-check"></use></svg><span><b>結果シート</b>と<b>専用プラン</b>を進呈</span></li>
-                  <li><svg class="ck"><use href="#i-check"></use></svg><span>当日のご入会で<b>入会金無料</b></span></li>
-                </ul>
+                <p class="perk-lead">＼ このページからのご予約限定 ／</p>
+                <p class="perk-main"><span class="nw">無料体験・</span><span class="perk-hl"><span class="nw">3大特典</span></span></p>
+                <p class="perk-add"><span class="nw">＋ 当日入会で</span><b><span class="nw">「入会金無料」</span></b></p>
               </div>
               <a class="btn btn-line" href="https://lin.ee/WEFp411" target="_blank" rel="noopener" data-event="cta_click" data-cta="last"><span class="line-badge">LINE</span>無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
               <p class="cta-note"><strong>LINEから30秒でご予約いただけます。</strong></p>
