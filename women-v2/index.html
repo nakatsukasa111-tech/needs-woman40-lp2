@@ -504,17 +504,24 @@ body{ background:var(--paper-3); }
 .hd-deco::before,.hd-deco::after{ content:""; height:1px; background:var(--line); flex:0 1 46px; }
 .dark .hd-deco::before,.dark .hd-deco::after{ background:rgba(255,255,255,.24); }
 .hd-title{
-  margin-top:10px; font-family:var(--ff-mn); font-weight:500; font-size:18px;
-  line-height:1.58; letter-spacing:.02em; color:var(--ink);
+  margin-top:10px; font-family:var(--ff-mn); font-weight:500; font-size:20.5px;
+  line-height:1.55; letter-spacing:.02em; color:var(--ink);
 }
 .hd-title .accent{ color:var(--navy); }
 .dark .hd-title{ color:#fff; }
 .dark .hd-title .accent{ color:var(--gold-soft); }
-@media (min-width:768px){ .hd-eyebrow{ font-size:11.5px; } .hd-title{ font-size:25px; margin-top:12px; } }
-.hd-sub{ margin-top:10px; font-size:12px; line-height:1.85; color:var(--text); }
-@media (min-width:768px){ .hd-sub{ font-size:13.5px; margin-top:12px; } }
+@media (min-width:768px){ .hd-eyebrow{ font-size:11.5px; } .hd-title{ font-size:29px; margin-top:12px; } }
+.hd-sub{ margin-top:10px; font-size:13.5px; line-height:1.8; color:var(--text); }
+@media (min-width:768px){ .hd-sub{ font-size:15px; margin-top:12px; } }
 .hd-note{ margin-top:14px; font-size:10.5px; line-height:1.8; color:var(--text-mute); text-align:center; }
 .hd-mid{ margin-top:18px; }
+
+/* 「大丈夫です」の一言 */
+.ok-line{
+  margin-top:20px; text-align:center; font-family:var(--ff-mn); font-weight:500;
+  font-size:23px; letter-spacing:.08em; color:var(--navy); line-height:1.4;
+}
+@media (min-width:768px){ .ok-line{ font-size:30px; margin-top:26px; } }
 
 /* ---- 強調 ---- */
 .mk{ background:linear-gradient(transparent 68%, var(--beige) 68%); padding:0 2px; }
@@ -533,8 +540,8 @@ body{ background:var(--paper-3); }
 .btn-line .arw{ font-size:17px; }
 .btn-line:hover{ animation:none; }
 @keyframes ctaFloat{
-  0%,100%{ transform:translateY(0); }
-  50%    { transform:translateY(-5px); }
+  0%,100%{ transform:scale(1); }
+  50%    { transform:scale(1.035); }
 }
 @media (min-width:768px){ .btn-line{ font-size:17.5px; padding:22px 38px; } }
 .sticky-cta .btn-line{ font-size:14.5px; padding:16px 14px; }
@@ -555,21 +562,22 @@ body{ background:var(--paper-3); }
 }
 .perk-hl{ color:var(--cta-dark); }
 /* 3大特典の中身（点線の囲みは使わない） */
-.perk3{ margin-top:10px; display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
+.perk3{ margin-top:10px; display:grid; gap:5px; }
 .perk3 li{
-  background:var(--paper); border-radius:8px; padding:9px 5px;
-  display:flex; flex-direction:column; align-items:center; gap:5px;
-  font-size:10.5px; line-height:1.4; color:var(--ink); letter-spacing:-.01em; text-align:center;
+  background:var(--paper); border-radius:8px; padding:8px 12px;
+  display:flex; align-items:center; gap:9px; text-align:left;
+  font-family:var(--ff-mn); font-size:16px; font-weight:500; line-height:1.4;
+  color:var(--ink); letter-spacing:.02em;
 }
 .perk3 .n{
-  font-family:var(--ff-en); font-size:11px; font-weight:600; letter-spacing:.06em;
-  color:#fff; background:var(--cta); border-radius:999px; width:21px; height:21px;
-  display:flex; align-items:center; justify-content:center; line-height:1;
+  font-family:var(--ff-en); font-size:10px; font-weight:600; letter-spacing:.02em;
+  color:#fff; background:var(--cta); border-radius:999px; width:17px; height:17px;
+  display:flex; align-items:center; justify-content:center; line-height:1; flex:0 0 auto;
 }
 @media (min-width:768px){
   .perk-lead{ font-size:12px; } .perk-main{ font-size:23px; }
-  .perk3{ gap:9px; } .perk3 li{ font-size:12.5px; padding:12px 8px; letter-spacing:0; }
-  .perk3 .n{ width:24px; height:24px; font-size:12px; }
+  .perk3 li{ font-size:18px; padding:11px 15px; }
+  .perk3 .n{ width:19px; height:19px; font-size:11px; }
 }
 
 /* ================= hero ================= */
@@ -577,12 +585,12 @@ body{ background:var(--paper-3); }
 .hero2-media{ position:relative; background:#e3ded6; }
 .hero2-photo{ width:100%; display:block; aspect-ratio:16/9; object-fit:cover; object-position:60% 30%; }
 .hero2-badge{
-  position:absolute; right:9px; bottom:9px; width:114px; height:114px; border-radius:50%;
+  position:absolute; right:8px; bottom:8px; width:92px; height:92px; border-radius:50%;
   background:var(--gold); color:#fff; display:flex; align-items:center; justify-content:center;
-  text-align:center; padding:9px; font-size:10px; font-weight:500; line-height:1.6; letter-spacing:-.02em;
+  text-align:center; padding:7px; font-size:8px; font-weight:500; line-height:1.55; letter-spacing:-.03em;
   box-shadow:0 5px 16px rgba(10,44,66,.22);
 }
-.hero2-body{ padding:16px 16px 22px; }
+.hero2-body{ padding:12px 16px 18px; }
 .hero2-eyebrow{ font-size:12px; letter-spacing:.05em; color:var(--navy); font-weight:500; line-height:1.6; }
 @media (min-width:768px){ .hero2-eyebrow{ font-size:13.5px; } }
 .hero2-title{
@@ -591,7 +599,7 @@ body{ background:var(--paper-3); }
 }
 .hero2-title em{ font-style:normal; color:var(--navy); }
 .why3{
-  margin-top:14px; display:grid; grid-template-columns:repeat(3,1fr);
+  margin-top:12px; display:grid; grid-template-columns:repeat(3,1fr);
   border-top:1px solid var(--line-soft); border-left:1px solid var(--line-soft);
 }
 .why3 li{
@@ -601,7 +609,7 @@ body{ background:var(--paper-3); }
 }
 .why3 .ico{ width:22px; height:22px; color:var(--navy); }
 .why3 b{ display:block; font-family:var(--ff-mn); font-size:13.5px; font-weight:500; letter-spacing:.01em; }
-.hero2-cta{ margin-top:15px; }
+.hero2-cta{ margin-top:12px; }
 @media (min-width:768px){
   .why3 li{ font-size:12px; padding:13px 8px; }
   .why3 b{ font-size:15px; }
@@ -612,7 +620,7 @@ body{ background:var(--paper-3); }
   .hero2-body{ order:1; display:flex; flex-direction:column; justify-content:center; padding:34px 34px 34px 22px; }
   .hero2-photo{ height:100%; aspect-ratio:auto; min-height:460px; }
   .hero2-title{ font-size:38px; }
-  .hero2-badge{ width:158px; height:158px; font-size:12.5px; padding:14px; right:18px; bottom:18px; line-height:1.75; }
+  .hero2-badge{ width:120px; height:120px; font-size:9.5px; padding:11px; right:16px; bottom:16px; line-height:1.65; }
 }
 @media (min-width:1200px){ .hero2-title{ font-size:43px; } }
 
@@ -623,11 +631,17 @@ body{ background:var(--paper-3); }
 .proof span{ margin-top:4px; font-size:10px; line-height:1.5; }
 @media (min-width:768px){ .proof li{ padding:24px 12px; } .proof b{ font-size:34px; } .proof span{ font-size:12px; } }
 
-.fut4{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px 10px; margin-top:16px; }
-.fut4 img{ width:100%; aspect-ratio:3/2; object-fit:cover; border-radius:9px; background:#e3ded6; display:block; }
-.fut4 .t{ margin-top:7px; display:flex; gap:5px; align-items:flex-start; font-size:11px; line-height:1.65; color:var(--ink); }
-.fut4 .ck{ width:13px; height:13px; margin-top:3px; }
-@media (min-width:768px){ .fut4{ grid-template-columns:repeat(4,1fr); gap:18px; } .fut4 .t{ font-size:12.5px; } }
+.fut4{ display:grid; grid-template-columns:1fr; gap:12px; margin-top:14px; }
+.fut4 img{ width:100%; aspect-ratio:2/1; object-fit:cover; border-radius:10px; background:#e3ded6; display:block; }
+.fut4 .t{ margin-top:8px; display:flex; gap:7px; align-items:flex-start; font-size:14px; line-height:1.55; color:var(--ink); }
+.fut4 .ck{ width:16px; height:16px; margin-top:4px; }
+@media (min-width:768px){
+  .fut4{ max-width:780px; margin-left:auto; margin-right:auto; gap:14px; }
+  .fut4 figure{ display:grid; grid-template-columns:280px 1fr; gap:24px; align-items:center; }
+  .fut4 img{ aspect-ratio:4/3; }
+  .fut4 .t{ margin-top:0; font-size:16.5px; line-height:1.7; }
+  .fut4 .ck{ width:18px; height:18px; margin-top:5px; }
+}
 
 /* ================= 不安の払拭 ================= */
 .worry3{ display:grid; gap:8px; margin-top:16px; }
@@ -655,13 +669,27 @@ body{ background:var(--paper-3); }
   margin-top:13px; background:var(--paper-2); border:1px solid var(--line); border-radius:11px;
   padding:13px 13px; display:grid; gap:10px; align-items:center;
 }
-.qbox .figs{ display:flex; gap:9px; justify-content:center; }
-.qbox .figs img{ width:48px; height:48px; border-radius:50%; object-fit:cover; background:#e3ded6; }
+.qbox .figs{ position:relative; display:flex; gap:12px; justify-content:center; padding-top:30px; }
+.qbox .figs img{ width:88px; height:88px; border-radius:50%; object-fit:cover; background:#e3ded6; }
+.bubble{
+  position:absolute; top:0; left:50%; transform:translateX(-50%);
+  background:var(--navy); color:#fff; font-family:var(--ff-mn); font-weight:500;
+  font-size:13px; letter-spacing:.04em; line-height:1.3;
+  padding:7px 15px; border-radius:999px; white-space:nowrap;
+  box-shadow:0 3px 10px rgba(10,44,66,.18);
+}
+.bubble::after{
+  content:""; position:absolute; left:50%; bottom:-5px; transform:translateX(-50%);
+  border-left:6px solid transparent; border-right:6px solid transparent; border-top:6px solid var(--navy);
+}
+@media (min-width:768px){
+  .qbox .figs img{ width:104px; height:104px; }
+  .bubble{ font-size:15px; padding:8px 18px; }
+}
 .qbox .txt{ font-family:var(--ff-mn); font-size:12px; line-height:1.8; color:var(--ink); letter-spacing:.01em; text-align:center; }
 @media (min-width:768px){
-  .qbox{ grid-template-columns:auto 1fr; gap:24px; padding:22px 26px; }
-  .qbox .figs img{ width:68px; height:68px; }
-  .qbox .txt{ font-size:15.5px; text-align:left; }
+  .qbox{ grid-template-columns:auto 1fr; gap:26px; padding:24px 28px; }
+  .qbox .txt{ font-size:16px; text-align:left; }
 }
 
 /* ================= 無料体験 ================= */
@@ -738,24 +766,26 @@ body{ background:var(--paper-3); }
 .price-band .lbl{ font-size:12.5px; }
 .price-band .free{ font-size:22px; color:var(--gold-soft); }
 .price-perk{
-  margin-top:8px; border:1px dashed var(--cta); border-radius:8px; padding:9px 10px;
-  font-size:11.5px; line-height:1.6; color:var(--cta-dark); font-weight:500;
+  margin-top:11px; font-size:13.5px; line-height:1.6; color:var(--cta-dark);
+  font-weight:700; letter-spacing:.02em;
 }
+@media (min-width:768px){ .price-perk{ font-size:15px; } }
 .price-note{ margin-top:11px; font-size:10.5px; line-height:1.8; color:var(--text-mute); }
 .scard{ background:var(--paper-2); border-radius:12px; padding:18px 16px; }
 .scard-ttl{
-  font-family:var(--ff-mn); font-size:14px; font-weight:500; color:var(--ink); letter-spacing:.03em;
-  line-height:1.55; text-align:center; padding-bottom:11px; border-bottom:1px solid var(--line);
+  font-family:var(--ff-mn); font-size:19px; font-weight:500; color:var(--ink); letter-spacing:.03em;
+  line-height:1.5; text-align:center; padding-bottom:12px; border-bottom:1px solid var(--line);
 }
+@media (min-width:768px){ .scard-ttl{ font-size:24px; } }
 .scols{ display:grid; gap:0 24px; margin-top:12px; }
 @media (min-width:560px){ .scols{ grid-template-columns:1fr 1fr; } }
 .env-list li{
   display:flex; gap:10px; align-items:flex-start; padding:9px 2px;
-  border-bottom:1px solid var(--line-soft); font-size:12px; line-height:1.6; color:var(--ink);
+  border-bottom:1px solid var(--line-soft); font-size:14px; line-height:1.6; color:var(--ink);
 }
-.env-list .ico{ width:18px; height:18px; margin-top:2px; color:var(--navy); }
-.env-list small{ display:block; font-size:10px; color:var(--text-mute); line-height:1.6; margin-top:2px; }
-@media (min-width:768px){ .env-list li{ font-size:13px; padding:11px 2px; } }
+.env-list .ico{ width:21px; height:21px; margin-top:2px; color:var(--navy); }
+.env-list small{ display:block; font-size:11.5px; color:var(--text-mute); line-height:1.6; margin-top:3px; }
+@media (min-width:768px){ .env-list li{ font-size:15px; padding:12px 2px; } .env-list small{ font-size:12.5px; } }
 .studio-ph{ display:none; }
 @media (min-width:900px){
   .studio-ph{ display:block; width:100%; aspect-ratio:16/7; object-fit:cover; border-radius:10px; margin-top:12px; background:#e3ded6; }
@@ -853,7 +883,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
     <nav class="gnav" aria-label="メインメニュー">
       <ul>
-        <li><a href="#record">実績と未来</a></li>
+        <li><a href="#record">実績</a></li>
+        <li><a href="#future">目指す未来</a></li>
         <li><a href="#beginner">初めての方へ</a></li>
         <li><a href="#trial">無料体験・特典</a></li>
         <li><a href="#price">料金</a></li>
@@ -896,7 +927,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="perk-main"><span class="nw">無料体験・</span><span class="perk-hl"><span class="nw">3大特典</span></span></p>
             <ul class="perk3">
               <li><span class="n">1</span><span><span class="nw">体験が無料</span></span></li>
-              <li><span class="n">2</span><span><span class="nw">体の状態を</span><span class="nw">チェック</span></span></li>
+              <li><span class="n">2</span><span><span class="nw">体の状態をチェック</span></span></li>
               <li><span class="n">3</span><span><span class="nw">入会金無料</span></span></li>
             </ul>
           </div>
@@ -925,8 +956,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ul>
       <p class="hd-note"><span class="nw">※数値は当社実績です</span><br><span class="nw">※トレーニングによる効果は</span><span class="nw">個人差があります</span></p>
 
-      <div class="hd hd-mid">
-        <h3 class="hd-title"><span class="nw">こんな未来、</span><span class="accent"><span class="nw">目指してみたくないですか？</span></span></h3>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 こんな未来 ============ -->
+<section class="band" id="future">
+  <div class="wrap">
+    <div class="panel rv">
+      <div class="hd">
+        <p class="hd-eyebrow hd-deco">Future</p>
+        <h2 class="hd-title"><span class="nw">こんな未来、</span><span class="accent"><span class="nw">目指してみたくないですか？</span></span></h2>
       </div>
 
       <div class="fut4">
@@ -964,8 +1004,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><svg class="ico"><use href="#i-clock"></use></svg><p class="q"><span class="nw">「仕事・家事・家族のこと。</span><br><span class="nw">自分のことはいつも</span><span class="nw">後回しになってしまう」</span></p></li>
       </ul>
 
-      <div class="hd hd-mid">
-        <h3 class="hd-title"><span class="nw">だから、</span><span class="accent"><span class="mk"><span class="nw">プロと一緒に</span></span><span class="nw">やってみませんか。</span></span></h3>
+      <p class="ok-line">大丈夫です。</p>
+
+      <div class="hd" style="margin-top:14px;">
+        <h3 class="hd-title"><span class="accent"><span class="nw">プロのトレーナーが</span><span class="mk"><span class="nw">伴走します。</span></span></span></h3>
         <p class="hd-sub">
           <span class="nw">NeeDSには</span><b><span class="nw">理学療法士・</span><span class="nw">アスレティックトレーナー</span></b><span class="nw">が</span><br><span class="nw">在籍し、</span><span class="nw">ドクターやアスリートの方も</span><span class="nw">通われています。</span>
         </p>
@@ -988,8 +1030,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="qbox">
         <div class="figs">
-          <img src="images/t02.jpg" alt="プライベートジムNeeDSの女性トレーナー" width="600" height="600" loading="lazy" decoding="async">
-          <img src="images/t03.jpg" alt="プライベートジムNeeDSのトレーナー" width="600" height="600" loading="lazy" decoding="async">
+          <span class="bubble">安心してください</span>
+          <img src="images/t02.jpg" alt="お客様と話すプライベートジムNeeDSの女性トレーナー" width="600" height="600" loading="lazy" decoding="async">
+          <img src="images/t03.jpg" alt="お客様と話すプライベートジムNeeDSのトレーナー" width="600" height="600" loading="lazy" decoding="async">
         </div>
         <blockquote class="txt">
           <span class="nw">通われている方の大半は、</span><span class="nw">運動の習慣がないまま</span><span class="nw">40代・50代・60代を</span><span class="nw">迎えられた一般の方です。</span><br>
@@ -1011,7 +1054,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="accent"><span class="nw">プレゼント！</span></span>
         </h2>
         <p class="hd-sub">
-          <span class="nw">「何を・どれくらい・どう続けるか」が分かる、</span><span class="nw">あなた専用プランをお伝えします。</span>
+          <span class="nw">「何を・どれくらい・</span><span class="nw">どう続けるか」が分かる、</span><span class="nw">あなた専用プランを</span><span class="nw">お伝えします。</span>
         </p>
       </div>
 
@@ -1080,7 +1123,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="price-lbl">Price</p>
           <p class="price-main">30分 <span class="amount">3,850</span><span class="u">円（税込）〜</span></p>
           <p class="price-band"><span class="lbl">初回体験</span><span class="free">無料</span></p>
-          <p class="price-perk"><span class="nw">このページからのご予約なら、</span><span class="nw">体験当日のご入会で入会金も無料。</span></p>
+          <p class="price-perk"><span class="nw">このページからのご予約の方は</span><span class="nw">入会金が無料</span></p>
           <p class="price-note">※ コース・料金は体験時にご案内します。</p>
         </div>
 
@@ -1088,7 +1131,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3 class="scard-ttl"><span class="nw">通いやすい環境が</span><span class="nw">整っています。</span></h3>
           <div class="scols">
             <ul class="env-list">
-              <li><svg class="ico"><use href="#i-car"></use></svg><span>お客様専用駐車場5台完備</span></li>
+              <li><svg class="ico"><use href="#i-car"></use></svg><span>お客様専用駐車場あり</span></li>
               <li><svg class="ico"><use href="#i-shirt"></use></svg><span>ウェアレンタルOK</span></li>
               <li><svg class="ico"><use href="#i-ticket"></use></svg><span>タオル無料・お水飲み放題</span></li>
               <li><svg class="ico"><use href="#i-room"></use></svg><span>完全個室・完全予約制</span></li>
@@ -1214,7 +1257,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p class="perk-main"><span class="nw">無料体験・</span><span class="perk-hl"><span class="nw">3大特典</span></span></p>
                 <ul class="perk3">
                   <li><span class="n">1</span><span><span class="nw">体験が無料</span></span></li>
-                  <li><span class="n">2</span><span><span class="nw">体の状態を</span><span class="nw">チェック</span></span></li>
+                  <li><span class="n">2</span><span><span class="nw">体の状態をチェック</span></span></li>
                   <li><span class="n">3</span><span><span class="nw">入会金無料</span></span></li>
                 </ul>
               </div>
