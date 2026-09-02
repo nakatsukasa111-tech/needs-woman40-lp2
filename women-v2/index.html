@@ -650,18 +650,26 @@ body{ background:var(--paper-3); }
 .worry3 .q{ font-size:11.5px; line-height:1.7; color:var(--ink); }
 @media (min-width:768px){ .worry3{ grid-template-columns:repeat(3,1fr); gap:12px; } .worry3 .q{ font-size:12.5px; } }
 
-.pro5{ display:grid; grid-template-columns:repeat(2,1fr); gap:9px; margin-top:12px; }
-.pro5 img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:9px; background:#e3ded6; display:block; }
+/* プロも通っています：スマホ・PCとも横一列5枠 */
+.pro5{ display:grid; grid-template-columns:repeat(5,1fr); gap:3px; margin-top:12px; }
+.pro5 img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:8px; background:#e3ded6; display:block; }
 .pro5 figcaption{
-  margin-top:7px; text-align:center; font-family:var(--ff-mn); font-size:13px; font-weight:500;
-  line-height:1.4; color:var(--ink); letter-spacing:.02em;
+  margin-top:5px; text-align:center; font-family:var(--ff-mn); font-size:9px; font-weight:500;
+  line-height:1.45; color:var(--ink); letter-spacing:0;
 }
 .pro5 figcaption small{
-  display:block; margin-top:3px; font-family:var(--ff-jp); font-size:10.5px;
-  font-weight:400; color:var(--text-mute); letter-spacing:0; line-height:1.4;
+  display:block; margin-top:2px; font-family:var(--ff-jp); font-size:7.5px;
+  font-weight:400; color:var(--text-mute); letter-spacing:0; line-height:1.35;
 }
-@media (min-width:640px){ .pro5{ grid-template-columns:repeat(4,1fr); gap:12px; } }
-@media (min-width:768px){ .pro5 figcaption{ font-size:15px; } .pro5 figcaption small{ font-size:12px; } }
+@media (min-width:520px){ .pro5{ gap:9px; } .pro5 figcaption{ font-size:12.5px; margin-top:7px; } .pro5 figcaption small{ font-size:10.5px; } }
+@media (min-width:768px){ .pro5{ gap:12px; } .pro5 figcaption{ font-size:15px; } .pro5 figcaption small{ font-size:12px; } }
+
+/* 「だから信頼できる。」 */
+.trust-line{
+  margin-top:14px; text-align:center; font-family:var(--ff-mn); font-weight:500;
+  font-size:19px; letter-spacing:.06em; color:var(--ink); line-height:1.5;
+}
+@media (min-width:768px){ .trust-line{ font-size:25px; margin-top:18px; } }
 
 .rrow{ display:grid; grid-template-columns:repeat(4,1fr); gap:5px; margin-top:14px; }
 .rrow li{
@@ -805,7 +813,7 @@ body{ background:var(--paper-3); }
 .staff article > .photo{ border-radius:0; }
 .staff-body{ padding:8px 8px 11px; }
 .staff-name{ margin-top:0; font-size:13px; letter-spacing:.01em; }
-.staff-role{ margin-top:5px; font-size:10px; line-height:1.5; }
+.staff-role{ margin-top:5px; font-size:10px; line-height:1.5; letter-spacing:.01em; }
 .staff-cmt{ margin-top:7px; font-size:10.5px; line-height:1.7; }
 .tag-tmp{ font-size:8px; padding:2px 5px; margin-left:4px; }
 @media (min-width:768px){
@@ -1012,33 +1020,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><svg class="ico"><use href="#i-clock"></use></svg><p class="q"><span class="nw">「仕事・家事・家族のこと。</span><br><span class="nw">自分のことはいつも</span><span class="nw">後回しになってしまう」</span></p></li>
       </ul>
 
-      <p class="ok-line">大丈夫です。</p>
-
-      <div class="hd" style="margin-top:14px;">
-        <h3 class="hd-title"><span class="accent"><span class="nw">プロのトレーナーが</span><span class="mk"><span class="nw">伴走します。</span></span></span></h3>
-        <p class="hd-sub">
-          <span class="nw">NeeDSには</span><b><span class="nw">理学療法士・</span><span class="nw">アスレティックトレーナー</span></b><span class="nw">が</span><br><span class="nw">在籍し、</span><span class="nw">ドクターやアスリートの方も</span><span class="nw">通われています。</span>
-        </p>
-      </div>
-
-      <div class="pro5">
-        <figure><img src="images/ドクター.jpg" alt="NeeDSに通うドクター" width="560" height="560" loading="lazy" decoding="async">
-          <figcaption>ドクター</figcaption></figure>
-        <figure><img src="images/女子プロゴルファー.jpg" alt="NeeDSに通う女子プロゴルファー" width="560" height="560" loading="lazy" decoding="async">
-          <figcaption>アスリート<small><span class="nw">女子プロゴルファー</span></small></figcaption></figure>
-        <figure><img src="images/モデル.jpg" alt="NeeDSに通うモデル・タレント" width="560" height="560" loading="lazy" decoding="async">
-          <figcaption><span class="nw">モデル・タレント</span></figcaption></figure>
-        <figure><img src="images/経営者.jpg" alt="NeeDSに通うエステクリニック経営者" width="560" height="560" loading="lazy" decoding="async">
-          <figcaption>経営者<small><span class="nw">エステクリニック経営</span></small></figcaption></figure>
-      </div>
-
-      <ul class="rrow">
-        <li><svg class="ico"><use href="#i-user-check"></use></svg><span><span class="nw">身体のプロが</span><span class="nw">1対1で対応</span></span></li>
-        <li><svg class="ico"><use href="#i-search"></use></svg><span><span class="nw">身体の状態を</span><span class="nw">正しく評価</span></span></li>
-        <li><svg class="ico"><use href="#i-clipboard"></use></svg><span><span class="nw">あなただけの</span><span class="nw">専用メニュー</span></span></li>
-        <li><svg class="ico"><use href="#i-heart"></use></svg><span><span class="nw">無理なく</span><span class="nw">続けられる</span><span class="nw">サポート体制</span></span></li>
-      </ul>
-
       <div class="qbox">
         <div class="figs">
           <span class="bubble">安心してください</span>
@@ -1050,6 +1031,76 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="nw">息が上がるような運動から</span><span class="nw">始めることはありません。</span><span class="mk"><span class="nw">初心者の方こそ大歓迎です。</span></span>
         </blockquote>
       </div>
+
+      <p class="ok-line">大丈夫です。</p>
+
+      <div class="hd" style="margin-top:12px;">
+        <h3 class="hd-title"><span class="accent"><span class="nw">プロのトレーナーが</span><span class="mk"><span class="nw">伴走します。</span></span></span></h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3.5 トレーナー ============ -->
+<section class="band" id="trainer">
+  <div class="wrap">
+    <div class="panel rv">
+      <div class="hd">
+        <p class="hd-eyebrow hd-deco">Trainer</p>
+        <h2 class="hd-title"><span class="nw">はじめての方こそ、</span><span class="accent"><span class="nw">安心して。</span></span></h2>
+        <p class="hd-sub"><b><span class="nw">女性トレーナーも</span><span class="nw">在籍しています。</span></b><br><span class="nw">担当のご希望は、</span><span class="nw">ご予約の際に</span><span class="nw">お知らせください。</span></p>
+        <p class="hd-sub" style="margin-top:10px;">
+          <span class="nw">当施設には</span><b><span class="nw">理学療法士、</span><span class="nw">アスレティックトレーナー</span></b><span class="nw">が在籍し、</span><span class="nw">プロも通っています。</span><br><span class="nw">ドクター、アスリート、</span><span class="nw">モデル、経営者の方も</span><span class="nw">通われています。</span>
+        </p>
+      </div>
+
+      <p class="trust-line"><span class="mk"><span class="nw">だから信頼できる。</span></span></p>
+
+      <p class="ok-line" style="margin-top:16px;"><span class="nw">NeeDSに通う方の</span><span class="nw">ほとんどが、</span><br><span class="nw">運動初心者の方です。</span></p>
+
+      <div class="staff">
+        <article>
+          <img class="photo r-square" src="images/塩崎トレーナー.jpg" alt="プライベートジムNeeDSのトレーナー 塩崎優子" width="600" height="600" loading="lazy" decoding="async">
+          <div class="staff-body">
+            <h3 class="staff-name"><span class="nw">塩崎 優子</span></h3>
+            <p class="staff-role"><span class="nw">健康運動指導士</span></p>
+          </div>
+        </article>
+        <article>
+          <img class="photo r-square" src="images/成清トレーナー.jpg" alt="プライベートジムNeeDSのトレーナー 成清愛" width="600" height="600" loading="lazy" decoding="async">
+          <div class="staff-body">
+            <h3 class="staff-name"><span class="nw">成清 愛</span></h3>
+            <p class="staff-role"><span class="nw">アスレティック</span><span class="nw">トレーナー</span></p>
+          </div>
+        </article>
+        <article>
+          <img class="photo r-square" src="images/松浦トレーナー.jpg" alt="プライベートジムNeeDSのトレーナー 松浦恭平" width="600" height="600" loading="lazy" decoding="async">
+          <div class="staff-body">
+            <h3 class="staff-name"><span class="nw">松浦 恭平</span></h3>
+            <p class="staff-role"><span class="nw">理学療法士</span></p>
+          </div>
+        </article>
+      </div>
+
+      <div class="pro5">
+        <figure><img src="images/ドクター.jpg" alt="NeeDSに通うドクター" width="560" height="560" loading="lazy" decoding="async">
+          <figcaption>ドクター</figcaption></figure>
+        <figure><img src="images/女子プロゴルファー.jpg" alt="NeeDSに通う女子プロゴルファー" width="560" height="560" loading="lazy" decoding="async">
+          <figcaption>アスリート<small><span class="nw">女子プロ</span><span class="nw">ゴルファー</span></small></figcaption></figure>
+        <figure><img src="images/モデル.jpg" alt="NeeDSに通うモデル・タレント" width="560" height="560" loading="lazy" decoding="async">
+          <figcaption><span class="nw">モデル・</span><span class="nw">タレント</span></figcaption></figure>
+        <figure><img src="images/ベストボディ日本一.jpg" alt="ベストボディ・ジャパンで日本一になった女性" width="560" height="560" loading="lazy" decoding="async">
+          <figcaption><span class="nw">ベストボディ</span><small><span class="nw">ジャパン日本一</span></small></figcaption></figure>
+        <figure><img src="images/経営者.jpg" alt="NeeDSに通うエステクリニック経営者" width="560" height="560" loading="lazy" decoding="async">
+          <figcaption>経営者<small><span class="nw">エステ</span><span class="nw">クリニック経営</span></small></figcaption></figure>
+      </div>
+
+      <ul class="rrow">
+        <li><svg class="ico"><use href="#i-user-check"></use></svg><span><span class="nw">身体のプロが</span><span class="nw">1対1で対応</span></span></li>
+        <li><svg class="ico"><use href="#i-search"></use></svg><span><span class="nw">身体の状態を</span><span class="nw">正しく評価</span></span></li>
+        <li><svg class="ico"><use href="#i-clipboard"></use></svg><span><span class="nw">あなただけの</span><span class="nw">専用メニュー</span></span></li>
+        <li><svg class="ico"><use href="#i-heart"></use></svg><span><span class="nw">無理なく</span><span class="nw">続けられる</span><span class="nw">サポート体制</span></span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -1164,38 +1215,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ============ 7 トレーナーとFAQ ============ -->
-<section class="band" id="trainer">
+<!-- ============ 7 FAQ ============ -->
+<section class="band" id="faq">
   <div class="wrap">
     <div class="panel rv">
       <div class="hd">
-        <p class="hd-eyebrow hd-deco">Trainer &amp; FAQ</p>
-        <h2 class="hd-title"><span class="nw">はじめての方こそ、</span><span class="accent"><span class="nw">安心して。</span></span></h2>
-        <p class="hd-sub"><b><span class="nw">女性トレーナーも</span><span class="nw">在籍しています。</span></b><br><span class="nw">担当のご希望は、</span><br><span class="nw">ご予約の際に</span><span class="nw">お知らせください。</span></p>
-      </div>
-
-      <div class="staff">
-        <article>
-          <img class="photo r-square" src="images/ジムオーナー.jpg" alt="プライベートジムNeeDS ジムオーナー 中務正幸" width="560" height="560" loading="lazy" decoding="async">
-          <div class="staff-body">
-            <h3 class="staff-name"><span class="nw">中務 正幸</span></h3>
-            <p class="staff-role">ジムオーナー</p>
-          </div>
-        </article>
-        <article>
-          <img class="photo r-square" src="images/成清トレーナー.jpg" alt="プライベートジムNeeDSの女性トレーナー 成清愛" width="600" height="600" loading="lazy" decoding="async">
-          <div class="staff-body">
-            <h3 class="staff-name"><span class="nw">成清 愛</span></h3>
-            <p class="staff-role">女性トレーナー</p>
-          </div>
-        </article>
-        <article>
-          <img class="photo r-square" src="images/塩崎トレーナー.jpg" alt="プライベートジムNeeDSの女性トレーナー 塩崎優子" width="600" height="600" loading="lazy" decoding="async">
-          <div class="staff-body">
-            <h3 class="staff-name"><span class="nw">塩崎 優子</span></h3>
-            <p class="staff-role">女性トレーナー</p>
-          </div>
-        </article>
+        <p class="hd-eyebrow hd-deco">FAQ</p>
+        <h2 class="hd-title"><span class="nw">よくある</span><span class="accent"><span class="nw">ご質問。</span></span></h2>
       </div>
 
       <div class="faq" style="max-width:720px;margin-left:auto;margin-right:auto;">
