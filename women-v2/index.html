@@ -631,12 +631,13 @@ body{ background:var(--paper-3); }
 .proof span{ margin-top:4px; font-size:10px; line-height:1.5; }
 @media (min-width:768px){ .proof li{ padding:24px 12px; } .proof b{ font-size:34px; } .proof span{ font-size:12px; } }
 
-.fut4{ display:grid; grid-template-columns:1fr; gap:12px; margin-top:14px; }
+/* スマホは2列2行。4枚とも1画面に収める */
+.fut4{ display:grid; grid-template-columns:repeat(2,1fr); gap:11px 9px; margin-top:12px; }
 .fut4 img{ width:100%; aspect-ratio:3/2; object-fit:cover; border-radius:10px; background:#e3ded6; display:block; }
-.fut4 .t{ margin-top:8px; display:flex; gap:7px; align-items:flex-start; font-size:14px; line-height:1.55; color:var(--ink); }
-.fut4 .ck{ width:16px; height:16px; margin-top:4px; }
+.fut4 .t{ margin-top:7px; display:flex; gap:5px; align-items:flex-start; font-size:13px; line-height:1.5; color:var(--ink); }
+.fut4 .ck{ width:14px; height:14px; margin-top:3px; }
 @media (min-width:768px){
-  .fut4{ max-width:780px; margin-left:auto; margin-right:auto; gap:14px; }
+  .fut4{ grid-template-columns:1fr; max-width:780px; margin-left:auto; margin-right:auto; gap:14px; }
   .fut4 figure{ display:grid; grid-template-columns:300px 1fr; gap:26px; align-items:center; }
   .fut4 .t{ margin-top:0; font-size:16.5px; line-height:1.7; }
   .fut4 .ck{ width:18px; height:18px; margin-top:5px; }
