@@ -524,9 +524,21 @@ body{ background:var(--paper-3); }
 /* ---- CTA ---- */
 .line-badge{
   display:inline-flex; align-items:center; justify-content:center; background:#fff; color:var(--cta-dark);
-  font-family:var(--ff-en); font-weight:700; font-size:10px; letter-spacing:.06em;
-  border-radius:5px; padding:3px 6px; line-height:1; margin-right:2px;
+  font-family:var(--ff-en); font-weight:700; font-size:11px; letter-spacing:.06em;
+  border-radius:5px; padding:4px 7px; line-height:1; margin-right:3px;
 }
+
+/* CTAボタン：文字を大きく、ふわふわと浮かせる */
+.btn-line{ font-size:15px; padding:18px 12px; letter-spacing:.03em; animation:ctaFloat 2.8s ease-in-out infinite; }
+.btn-line .arw{ font-size:17px; }
+.btn-line:hover{ animation:none; }
+@keyframes ctaFloat{
+  0%,100%{ transform:translateY(0); }
+  50%    { transform:translateY(-5px); }
+}
+@media (min-width:768px){ .btn-line{ font-size:17.5px; padding:22px 38px; } }
+.sticky-cta .btn-line{ font-size:14.5px; padding:16px 14px; }
+@media (prefers-reduced-motion:reduce){ .btn-line{ animation:none; } }
 .cta-card{
   border:1px solid var(--line); background:var(--paper-2); border-radius:12px;
   padding:13px 13px 14px; max-width:500px; margin-left:auto; margin-right:auto;
@@ -542,27 +554,37 @@ body{ background:var(--paper-3); }
   color:var(--ink); letter-spacing:.03em; line-height:1.35;
 }
 .perk-hl{ color:var(--cta-dark); }
-.perk-add{
-  margin-top:9px; border:1px dashed var(--cta); border-radius:7px; padding:7px 8px;
-  font-size:11.5px; line-height:1.5; color:var(--cta-dark); font-weight:500;
+/* 3大特典の中身（点線の囲みは使わない） */
+.perk3{ margin-top:10px; display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
+.perk3 li{
+  background:var(--paper); border-radius:8px; padding:9px 5px;
+  display:flex; flex-direction:column; align-items:center; gap:5px;
+  font-size:10.5px; line-height:1.4; color:var(--ink); letter-spacing:-.01em; text-align:center;
 }
-.perk-add b{ font-weight:700; }
+.perk3 .n{
+  font-family:var(--ff-en); font-size:11px; font-weight:600; letter-spacing:.06em;
+  color:#fff; background:var(--cta); border-radius:999px; width:21px; height:21px;
+  display:flex; align-items:center; justify-content:center; line-height:1;
+}
 @media (min-width:768px){
-  .perk-lead{ font-size:11.5px; } .perk-main{ font-size:22px; } .perk-add{ font-size:12.5px; }
+  .perk-lead{ font-size:12px; } .perk-main{ font-size:23px; }
+  .perk3{ gap:9px; } .perk3 li{ font-size:12.5px; padding:12px 8px; letter-spacing:0; }
+  .perk3 .n{ width:24px; height:24px; font-size:12px; }
 }
 
 /* ================= hero ================= */
 .hero2{ background:var(--paper); padding-top:var(--header-h); }
 .hero2-media{ position:relative; background:#e3ded6; }
-.hero2-photo{ width:100%; display:block; aspect-ratio:3/2; object-fit:cover; object-position:60% 32%; }
+.hero2-photo{ width:100%; display:block; aspect-ratio:16/9; object-fit:cover; object-position:60% 30%; }
 .hero2-badge{
-  position:absolute; right:9px; bottom:9px; width:96px; height:96px; border-radius:50%;
+  position:absolute; right:9px; bottom:9px; width:114px; height:114px; border-radius:50%;
   background:var(--gold); color:#fff; display:flex; align-items:center; justify-content:center;
-  text-align:center; padding:7px; font-size:8px; font-weight:500; line-height:1.55; letter-spacing:-.03em;
+  text-align:center; padding:9px; font-size:10px; font-weight:500; line-height:1.6; letter-spacing:-.02em;
   box-shadow:0 5px 16px rgba(10,44,66,.22);
 }
 .hero2-body{ padding:16px 16px 22px; }
-.hero2-eyebrow{ font-size:10px; letter-spacing:.09em; color:var(--navy); font-weight:500; line-height:1.6; }
+.hero2-eyebrow{ font-size:12px; letter-spacing:.05em; color:var(--navy); font-weight:500; line-height:1.6; }
+@media (min-width:768px){ .hero2-eyebrow{ font-size:13.5px; } }
 .hero2-title{
   margin-top:9px; font-family:var(--ff-mn); font-weight:500;
   font-size:26px; line-height:1.42; letter-spacing:.01em; color:var(--ink);
@@ -575,14 +597,14 @@ body{ background:var(--paper-3); }
 .why3 li{
   display:flex; flex-direction:column; align-items:center; gap:5px; text-align:center; padding:9px 5px;
   border-right:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);
-  font-size:9.5px; line-height:1.5; color:var(--ink); letter-spacing:-.02em;
+  font-size:11px; line-height:1.5; color:var(--ink); letter-spacing:0;
 }
-.why3 .ico{ width:19px; height:19px; color:var(--navy); }
-.why3 b{ display:block; font-family:var(--ff-mn); font-size:11px; font-weight:500; letter-spacing:-.01em; }
+.why3 .ico{ width:22px; height:22px; color:var(--navy); }
+.why3 b{ display:block; font-family:var(--ff-mn); font-size:13.5px; font-weight:500; letter-spacing:.01em; }
 .hero2-cta{ margin-top:15px; }
 @media (min-width:768px){
-  .why3 li{ font-size:11px; padding:12px 8px; letter-spacing:0; }
-  .why3 b{ font-size:12.5px; }
+  .why3 li{ font-size:12px; padding:13px 8px; }
+  .why3 b{ font-size:15px; }
 }
 @media (min-width:900px){
   .hero2-in{ display:grid; grid-template-columns:1fr 1fr; align-items:stretch; max-width:var(--wrap); margin:0 auto; }
@@ -590,7 +612,7 @@ body{ background:var(--paper-3); }
   .hero2-body{ order:1; display:flex; flex-direction:column; justify-content:center; padding:34px 34px 34px 22px; }
   .hero2-photo{ height:100%; aspect-ratio:auto; min-height:460px; }
   .hero2-title{ font-size:38px; }
-  .hero2-badge{ width:132px; height:132px; font-size:10px; padding:12px; right:18px; bottom:18px; line-height:1.7; }
+  .hero2-badge{ width:158px; height:158px; font-size:12.5px; padding:14px; right:18px; bottom:18px; line-height:1.75; }
 }
 @media (min-width:1200px){ .hero2-title{ font-size:43px; } }
 
@@ -648,10 +670,9 @@ body{ background:var(--paper-3); }
 .trow img{ width:100%; height:100%; object-fit:cover; display:block; background:#e3ded6; }
 .trow .in{ padding:11px 12px; }
 .trow .no{
-  font-family:var(--ff-jp); font-size:10px; letter-spacing:.06em; font-weight:500;
-  color:#fff; background:var(--navy); border-radius:4px; padding:4px 7px; line-height:1; display:inline-block;
+  font-family:var(--ff-en); font-size:11.5px; letter-spacing:.14em; font-weight:600;
+  color:#fff; background:var(--navy); border-radius:4px; padding:5px 8px; line-height:1; display:inline-block;
 }
-.trow .no em{ font-style:normal; font-family:var(--ff-en); font-size:11px; letter-spacing:.1em; font-weight:600; margin-left:3px; }
 .trow h3{ margin-top:7px; font-family:var(--ff-mn); font-size:13.5px; font-weight:500; color:var(--ink); line-height:1.5; }
 .trow p{ margin-top:6px; font-size:11px; line-height:1.7; color:var(--text); }
 @media (min-width:768px){
@@ -745,9 +766,9 @@ body{ background:var(--paper-3); }
 .staff article{ background:var(--paper-2); border-radius:10px; overflow:hidden; }
 .staff article > .photo{ border-radius:0; }
 .staff-body{ padding:8px 8px 11px; }
-.staff-name{ margin-top:0; font-size:12px; letter-spacing:.01em; }
-.staff-role{ margin-top:4px; font-size:9px; line-height:1.5; }
-.staff-cmt{ margin-top:6px; font-size:9.5px; line-height:1.65; }
+.staff-name{ margin-top:0; font-size:13px; letter-spacing:.01em; }
+.staff-role{ margin-top:5px; font-size:10px; line-height:1.5; }
+.staff-cmt{ margin-top:7px; font-size:10.5px; line-height:1.7; }
 .tag-tmp{ font-size:8px; padding:2px 5px; margin-left:4px; }
 @media (min-width:768px){
   .staff{ gap:16px; }
@@ -856,16 +877,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="hero2-body rv">
-      <p class="hero2-eyebrow">神戸・六甲道 ｜ 40代・50代・60代の女性のためのパーソナルジム</p>
+      <p class="hero2-eyebrow"><span class="nw">神戸・六甲道｜</span><span class="nw">40代からの</span><span class="nw">女性専用パーソナルジム</span></p>
       <h1 class="hero2-title">
         <span class="nw">好きなことを、</span><br>
         <em><span class="nw">これからも</span><span class="nw">楽しめる身体へ。</span></em>
       </h1>
 
       <ul class="why3">
-        <li><svg class="ico"><use href="#i-stethoscope"></use></svg><span><b>理学療法士</b><span class="nw">アスレティック</span><span class="nw">トレーナー在籍</span></span></li>
+        <li><svg class="ico"><use href="#i-stethoscope"></use></svg><span><b>理学療法士</b>在籍</span></li>
         <li><svg class="ico"><use href="#i-room"></use></svg><span><b>完全個室</b>マンツーマン</span></li>
-        <li><svg class="ico"><use href="#i-user-check"></use></svg><span><b>大半が未経験</b>運動習慣なしから</span></li>
+        <li><svg class="ico"><use href="#i-user-check"></use></svg><span><b>初心者</b>大歓迎</span></li>
       </ul>
 
       <div class="cta-block hero2-cta">
@@ -873,7 +894,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="perk">
             <p class="perk-lead">＼ このページからのご予約限定 ／</p>
             <p class="perk-main"><span class="nw">無料体験・</span><span class="perk-hl"><span class="nw">3大特典</span></span></p>
-            <p class="perk-add"><span class="nw">＋ 当日入会で</span><b><span class="nw">「入会金無料」</span></b></p>
+            <ul class="perk3">
+              <li><span class="n">1</span><span><span class="nw">体験が無料</span></span></li>
+              <li><span class="n">2</span><span><span class="nw">体の状態を</span><span class="nw">チェック</span></span></li>
+              <li><span class="n">3</span><span><span class="nw">入会金無料</span></span></li>
+            </ul>
           </div>
           <a class="btn btn-line" href="https://lin.ee/WEFp411" target="_blank" rel="noopener" data-event="cta_click" data-cta="hero"><span class="line-badge">LINE</span>無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
           <p class="cta-note"><strong>30秒でご予約いただけます。</strong>運動の経験は問いません。</p>
@@ -898,7 +923,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><b>3<span class="u">年以上</span></b><span>平均継続年数</span></li>
         <li><b>1<span class="u">対1</span></b><span>やさしいトレーナーが担当</span></li>
       </ul>
-      <p class="hd-note">※ 数値は当社実績です。トレーニングの感じ方・変化には個人差があります。</p>
+      <p class="hd-note"><span class="nw">※数値は当社実績です</span><br><span class="nw">※トレーニングによる効果は</span><span class="nw">個人差があります</span></p>
 
       <div class="hd hd-mid">
         <h3 class="hd-title"><span class="nw">こんな未来、</span><span class="accent"><span class="nw">目指してみたくないですか？</span></span></h3>
@@ -906,13 +931,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="fut4">
         <figure><img src="images/ph/ph-f1.svg" alt="肩や腰の不調を相談している女性の写真（差し替え待ち）" width="400" height="400" loading="lazy" decoding="async">
-          <figcaption class="t"><svg class="ck"><use href="#i-check"></use></svg><span><span class="nw">長年悩んでいた</span><span class="nw">肩や腰の不調を、</span><span class="nw">相談できる相手がほしい</span></span></figcaption></figure>
+          <figcaption class="t"><svg class="ck"><use href="#i-check"></use></svg><span><span class="nw">長年悩んでいた</span><span class="nw">肩や腰の不調を、</span><span class="nw">相談できる</span><span class="nw">相手がほしい</span></span></figcaption></figure>
         <figure><img src="images/ph/ph-f2.svg" alt="旅行や趣味を楽しむ女性の写真（差し替え待ち）" width="400" height="400" loading="lazy" decoding="async">
           <figcaption class="t"><svg class="ck"><use href="#i-check"></use></svg><span><span class="nw">旅行や趣味を、</span><span class="nw">これからも</span><span class="nw">身軽に楽しみたい</span></span></figcaption></figure>
         <figure><img src="images/ph/ph-f3.svg" alt="身体の使い方を見直している女性の写真（差し替え待ち）" width="400" height="400" loading="lazy" decoding="async">
-          <figcaption class="t"><svg class="ck"><use href="#i-check"></use></svg><span><span class="nw">身体の使い方を見直して、</span><span class="nw">疲れにくい身体になりたい</span></span></figcaption></figure>
+          <figcaption class="t"><svg class="ck"><use href="#i-check"></use></svg><span><span class="nw">身体の使い方を</span><span class="nw">見直して、</span><span class="nw">疲れにくい身体に</span><span class="nw">なりたい</span></span></figcaption></figure>
         <figure><img src="images/ph/ph-f4.svg" alt="二の腕やお腹まわりを引き締めるトレーニングの写真（差し替え待ち）" width="400" height="400" loading="lazy" decoding="async">
-          <figcaption class="t"><svg class="ck"><use href="#i-check"></use></svg><span><span class="nw">二の腕やお腹まわりを、</span><span class="nw">無理なく引き締めたい</span></span></figcaption></figure>
+          <figcaption class="t"><svg class="ck"><use href="#i-check"></use></svg><span><span class="nw">二の腕や</span><span class="nw">お腹まわりを、</span><span class="nw">無理なく</span><span class="nw">引き締めたい</span></span></figcaption></figure>
       </div>
 
       <div class="hd" style="margin-top:18px;">
@@ -934,15 +959,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <ul class="worry3">
-        <li><svg class="ico"><use href="#i-question"></use></svg><p class="q">「何をすればいいか分からない。自分に合っているのかも分からない」</p></li>
-        <li><svg class="ico"><use href="#i-ache"></use></svg><p class="q">「痛みや不調があると、動いた方がいいのは分かっていても動けない」</p></li>
-        <li><svg class="ico"><use href="#i-clock"></use></svg><p class="q">「仕事、家事、家族のこと。自分のことは、いつも後回しになる」</p></li>
+        <li><svg class="ico"><use href="#i-question"></use></svg><p class="q"><span class="nw">「何をすればいいか</span><span class="nw">わからない。</span><br><span class="nw">自分に合っているのかも</span><span class="nw">わからない」</span></p></li>
+        <li><svg class="ico"><use href="#i-ache"></use></svg><p class="q"><span class="nw">「痛みや不調がある。</span><br><span class="nw">動いた方がいいのは</span><span class="nw">わかっていても</span><span class="nw">動けない」</span></p></li>
+        <li><svg class="ico"><use href="#i-clock"></use></svg><p class="q"><span class="nw">「仕事・家事・家族のこと。</span><br><span class="nw">自分のことはいつも</span><span class="nw">後回しになってしまう」</span></p></li>
       </ul>
 
       <div class="hd hd-mid">
         <h3 class="hd-title"><span class="nw">だから、</span><span class="accent"><span class="mk"><span class="nw">プロと一緒に</span></span><span class="nw">やってみませんか。</span></span></h3>
         <p class="hd-sub">
-          NeeDSには<b>理学療法士・アスレティックトレーナー</b>が在籍し、ドクターやアスリートの方も通われています。
+          <span class="nw">NeeDSには</span><b><span class="nw">理学療法士・</span><span class="nw">アスレティックトレーナー</span></b><span class="nw">が</span><br><span class="nw">在籍し、</span><span class="nw">ドクターやアスリートの方も</span><span class="nw">通われています。</span>
         </p>
       </div>
 
@@ -955,10 +980,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <ul class="rrow">
-        <li><svg class="ico"><use href="#i-user-check"></use></svg><span><span class="nw">身体のプロが</span><span class="nw">マンツーマンで対応</span></span></li>
+        <li><svg class="ico"><use href="#i-user-check"></use></svg><span><span class="nw">身体のプロが</span><span class="nw">1対1で対応</span></span></li>
         <li><svg class="ico"><use href="#i-search"></use></svg><span><span class="nw">身体の状態を</span><span class="nw">正しく評価</span></span></li>
-        <li><svg class="ico"><use href="#i-clipboard"></use></svg><span><span class="nw">あなただけの</span><span class="nw">オーダーメイドメニュー</span></span></li>
-        <li><svg class="ico"><use href="#i-heart"></use></svg><span><span class="nw">無理なく続けられる</span><span class="nw">サポート体制</span></span></li>
+        <li><svg class="ico"><use href="#i-clipboard"></use></svg><span><span class="nw">あなただけの</span><span class="nw">専用メニュー</span></span></li>
+        <li><svg class="ico"><use href="#i-heart"></use></svg><span><span class="nw">無理なく</span><span class="nw">続けられる</span><span class="nw">サポート体制</span></span></li>
       </ul>
 
       <div class="qbox">
@@ -986,7 +1011,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="accent"><span class="nw">プレゼント！</span></span>
         </h2>
         <p class="hd-sub">
-          <span class="nw">「何を・どれくらい・どう続けるか」が分かる、</span><span class="nw">あなた専用プランをお渡しします。</span>
+          <span class="nw">「何を・どれくらい・どう続けるか」が分かる、</span><span class="nw">あなた専用プランをお伝えします。</span>
         </p>
       </div>
 
@@ -994,15 +1019,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <article>
           <img src="images/p01.jpg" alt="トレーナーが姿勢と動きをチェックしている様子" width="800" height="1000" loading="lazy" decoding="async">
           <div class="in">
-            <span class="no">特典<em>01</em></span>
+            <span class="no">01</span>
             <h3><span class="nw">身体の状態を</span><span class="nw">チェック</span></h3>
-            <p>姿勢・動き・身体の使い方を、専門家が丁寧にチェックします。</p>
+            <p>姿勢・動き・身体の使い方を、専門家がチェックします。</p>
           </div>
         </article>
         <article>
           <img src="images/p02.jpg" alt="トレーナーの補助を受けながらトレーニングを体験している様子" width="800" height="1000" loading="lazy" decoding="async">
           <div class="in">
-            <span class="no">特典<em>02</em></span>
+            <span class="no">02</span>
             <h3><span class="nw">あなたに合った</span><span class="nw">トレーニングを体験</span></h3>
             <p>その状態に合わせたトレーニングを、実際に体験できます。</p>
           </div>
@@ -1010,9 +1035,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <article>
           <img src="images/p03.jpg" alt="これからの身体づくりについてトレーナーと相談している様子" width="800" height="1000" loading="lazy" decoding="async">
           <div class="in">
-            <span class="no">特典<em>03</em></span>
-            <h3><span class="nw">あなた専用プランを</span><span class="nw">お渡し</span></h3>
-            <p>なりたい身体をうかがい、これからの進め方を紙にしてお渡しします。</p>
+            <span class="no">03</span>
+            <h3><span class="nw">あなた専用プランを</span><span class="nw">ご提案</span></h3>
+            <p>なりたい身体をうかがい、これからの進め方をその場でお伝えします。</p>
           </div>
         </article>
       </div>
@@ -1028,7 +1053,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
 
       <ul class="fstrip">
-        <li><b class="free">0円</b>料金（初回のみ）</li>
+        <li><b class="free">0円</b>料金</li>
         <li><b>約60分</b>所要時間</li>
         <li><b>手ぶらでOK</b>持ち物</li>
         <li><b>LINEで30秒</b>ご予約</li>
@@ -1092,7 +1117,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hd">
         <p class="hd-eyebrow hd-deco">Trainer &amp; FAQ</p>
         <h2 class="hd-title"><span class="nw">はじめての方こそ、</span><span class="accent"><span class="nw">安心して。</span></span></h2>
-        <p class="hd-sub"><b>女性トレーナーも在籍しています。</b>担当のご希望は、ご予約の際にお知らせください。</p>
+        <p class="hd-sub"><b><span class="nw">女性トレーナーも</span><span class="nw">在籍しています。</span></b><br><span class="nw">担当のご希望は、</span><br><span class="nw">ご予約の際に</span><span class="nw">お知らせください。</span></p>
       </div>
 
       <div class="staff">
@@ -1100,8 +1125,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img class="photo r-square" src="images/t01.jpg" alt="プライベートジムNeeDS 代表 中務正幸" width="600" height="600" loading="lazy" decoding="async">
           <div class="staff-body">
             <h3 class="staff-name">中務 正幸</h3>
-            <p class="staff-role">代表 ／ メソッド考案者</p>
-            <p class="staff-cmt">「フォームを直す前に、まず身体の状態を見ます。」</p>
+            <p class="staff-role">代表</p>
+            <p class="staff-cmt"><span class="nw">「まず身体の</span><span class="nw">状態を見る」</span></p>
           </div>
         </article>
         <article>
@@ -1109,7 +1134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="staff-body">
             <h3 class="staff-name">お名前<span class="tag-tmp">仮</span></h3>
             <p class="staff-role">女性トレーナー</p>
-            <p class="staff-cmt">「きついことはお願いしませんので、ご安心ください。」</p>
+            <p class="staff-cmt"><span class="nw">「きつくは</span><span class="nw">ありません」</span></p>
           </div>
         </article>
         <article>
@@ -1117,7 +1142,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="staff-body">
             <h3 class="staff-name">お名前<span class="tag-tmp">仮</span></h3>
             <p class="staff-role">トレーナー</p>
-            <p class="staff-cmt">「できることから、一つずつ増やしていきましょう。」</p>
+            <p class="staff-cmt"><span class="nw">「一つずつ</span><span class="nw">進めます」</span></p>
           </div>
         </article>
       </div>
@@ -1160,7 +1185,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="ic" aria-hidden="true"></span>
           </button>
           <div class="faq-a" id="faq4" hidden>
-            いたしません。当日は今のお身体の状態と、そこから何を変えていけるかをご説明し、結果シートとプランをお渡しするところまでです。ご自宅でゆっくりご検討ください。ご相談だけのご利用も歓迎しています。
+            いたしません。当日は今のお身体の状態と、そこから何を変えていけるかをご説明し、これからの進め方をお伝えするところまでです。ご自宅でゆっくりご検討ください。ご相談だけのご利用も歓迎しています。
           </div>
         </div>
       </div>
@@ -1176,18 +1201,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <img class="fc-ph" src="images/ph/ph-last.svg" alt="笑顔でトレーニングする女性の写真（差し替え待ち）" width="400" height="500" loading="lazy" decoding="async">
         <div>
           <p class="fc-ttl">
-            <span class="nw">まずは一度、</span><em><span class="nw">プロと一緒に</span><span class="nw">やってみませんか。</span></em>
+            <span class="nw">まずは一度、</span><em><span class="nw">プロに相談してみよう</span></em>
           </p>
           <p class="fc-txt">
-            「運動しなきゃ」と思いながら何もしない時間を過ごすより。<br>
-            初回の体験は無料です。結果シートとプランを持って帰るだけでも構いません。
+            <span class="nw">初回の体験は無料です</span><br>
+            <span class="nw">相談だけでも構いません</span>
           </p>
           <div class="cta-block" style="margin-top:14px;">
             <div class="cta-card" style="margin-left:0;">
               <div class="perk">
                 <p class="perk-lead">＼ このページからのご予約限定 ／</p>
                 <p class="perk-main"><span class="nw">無料体験・</span><span class="perk-hl"><span class="nw">3大特典</span></span></p>
-                <p class="perk-add"><span class="nw">＋ 当日入会で</span><b><span class="nw">「入会金無料」</span></b></p>
+                <ul class="perk3">
+                  <li><span class="n">1</span><span><span class="nw">体験が無料</span></span></li>
+                  <li><span class="n">2</span><span><span class="nw">体の状態を</span><span class="nw">チェック</span></span></li>
+                  <li><span class="n">3</span><span><span class="nw">入会金無料</span></span></li>
+                </ul>
               </div>
               <a class="btn btn-line" href="https://lin.ee/WEFp411" target="_blank" rel="noopener" data-event="cta_click" data-cta="last"><span class="line-badge">LINE</span>無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
               <p class="cta-note"><strong>LINEから30秒でご予約いただけます。</strong></p>
@@ -1202,8 +1231,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="shop-body">
             <h3 class="shop-name"><small>Rokkomichi</small><span class="nw">NeeDS 六甲道店</span></h3>
             <dl class="shop-dl">
-              <div><dt>住所</dt><dd>〒657-0037 兵庫県神戸市灘区備後町3丁目1-23 ノモズヴィレッジ101</dd></div>
-              <div><dt>アクセス</dt><dd>JR六甲道駅から徒歩5分</dd></div>
+              <div><dt>住所</dt><dd><span class="nw">〒657-0037</span> <span class="nw">兵庫県神戸市灘区</span><span class="nw">備後町3丁目1-23</span> <span class="nw">ノモズヴィレッジ101</span></dd></div>
+              <div><dt>アクセス</dt><dd><span class="nw">JR六甲道駅から</span><span class="nw">徒歩5分</span></dd></div>
               <div><dt>電話</dt><dd><a href="tel:0788554163">078-855-4163</a></dd></div>
             </dl>
           </div>
@@ -1213,8 +1242,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="shop-body">
             <h3 class="shop-name"><small>Rokko Kazenosato</small><span class="nw">NeeDS 六甲風の郷店</span></h3>
             <dl class="shop-dl">
-              <div><dt>住所</dt><dd>〒657-0053 兵庫県神戸市灘区六甲町4丁目1-15 2F</dd></div>
-              <div><dt>アクセス</dt><dd>阪急六甲駅から徒歩5〜7分</dd></div>
+              <div><dt>住所</dt><dd><span class="nw">〒657-0053</span> <span class="nw">兵庫県神戸市灘区</span><span class="nw">六甲町4丁目1-15 2F</span></dd></div>
+              <div><dt>アクセス</dt><dd><span class="nw">阪急六甲駅から</span><span class="nw">徒歩5〜7分</span></dd></div>
               <div><dt>電話</dt><dd><a href="tel:0787779052">078-777-9052</a></dd></div>
             </dl>
           </div>
@@ -1255,7 +1284,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ============ STICKY CTA (mobile) ============ -->
 <div class="sticky-cta" id="stickyCta">
-  <p class="mini-note">初回体験無料・結果シート進呈／JR六甲道駅 徒歩5分</p>
+  <p class="mini-note">初回体験無料・3大特典／JR六甲道駅 徒歩5分</p>
   <a class="btn btn-line" href="https://lin.ee/WEFp411" target="_blank" rel="noopener" data-event="cta_click" data-cta="sticky"><span class="line-badge">LINE</span>無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
 </div>
 
