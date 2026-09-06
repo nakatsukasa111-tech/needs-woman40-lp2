@@ -538,14 +538,14 @@ body{ background:var(--paper-3); }
 }
 
 /* CTAボタン：文字を大きく、ふわふわと浮かせる */
-.btn-line{ font-size:15px; padding:18px 12px; letter-spacing:.03em; animation:ctaFloat 2.8s ease-in-out infinite; }
+.btn-line{ font-size:17px; padding:19px 12px; letter-spacing:.03em; animation:ctaFloat 2.8s ease-in-out infinite; }
 .btn-line .arw{ font-size:17px; }
 .btn-line:hover{ animation:none; }
 @keyframes ctaFloat{
   0%,100%{ transform:scale(1); }
   50%    { transform:scale(1.035); }
 }
-@media (min-width:768px){ .btn-line{ font-size:17.5px; padding:22px 38px; } }
+@media (min-width:768px){ .btn-line{ font-size:20px; padding:23px 40px; } }
 .sticky-cta .btn-line{ font-size:14.5px; padding:16px 14px; }
 @media (prefers-reduced-motion:reduce){ .btn-line{ animation:none; } }
 .cta-card{
@@ -688,7 +688,19 @@ body{ background:var(--paper-3); }
   font-size:24px; letter-spacing:.06em; color:var(--ink); line-height:1.5;
 }
 @media (min-width:768px){ .trust-hero{ font-size:34px; margin-top:26px; } }
+/* ハイライトは黄色で統一（既存の .mk をv2側で上書き） */
+.mk{ background:linear-gradient(transparent 58%, #ffd24a 58%); padding:0 3px; }
 .mk-hot{ background:linear-gradient(transparent 58%, #ffd24a 58%); padding:0 4px; }
+
+/* ハイライトを含む一文はやや大きめに */
+.mk-line{ font-family:var(--ff-mn); font-size:16px; line-height:1.75; color:var(--ink); }
+@media (min-width:768px){ .mk-line{ font-size:20px; } }
+
+/* ヘッダーの店名 */
+.brand{ display:flex; align-items:center; gap:9px; text-decoration:none; }
+.brand-name{ font-family:var(--ff-mn); font-size:13px; font-weight:500; letter-spacing:.02em; color:var(--navy); line-height:1.35; }
+@media (min-width:768px){ .brand{ gap:11px; } .brand-name{ font-size:16px; } }
+.gnav{ margin-left:auto; }
 
 .rrow{ display:grid; grid-template-columns:repeat(4,1fr); gap:4px; margin-top:14px; }
 .rrow li{
@@ -722,22 +734,23 @@ body{ background:var(--paper-3); }
   .qbox .figs img{ width:104px; height:104px; }
   .bubble{ font-size:15px; padding:8px 18px; }
 }
-.qbox .txt{ font-family:var(--ff-mn); font-size:12px; line-height:1.8; color:var(--ink); letter-spacing:.01em; text-align:center; }
+.qbox .txt{ font-family:var(--ff-mn); font-size:14px; line-height:1.85; color:var(--ink); letter-spacing:.01em; text-align:center; }
 @media (min-width:768px){
   .qbox{ grid-template-columns:auto 1fr; gap:26px; padding:24px 28px; }
-  .qbox .txt{ font-size:16px; text-align:left; }
+  .qbox .txt{ font-size:18px; text-align:left; }
 }
 
 /* ================= 無料体験 ================= */
 .trow{ display:grid; gap:9px; margin-top:18px; }
-.trow article{ background:var(--paper-2); border-radius:11px; overflow:hidden; display:grid; grid-template-columns:100px 1fr; }
-.trow img{ width:100%; height:100%; object-fit:cover; display:block; background:#e3ded6; }
+.trow article{ background:var(--paper-2); border-radius:11px; overflow:hidden; display:grid; grid-template-columns:150px 1fr; align-items:center; }
+@media (max-width:379px){ .trow article{ grid-template-columns:116px 1fr; } }
+.trow img{ width:100%; aspect-ratio:16/10; height:auto; object-fit:cover; display:block; background:#e3ded6; }
 .trow .in{ padding:11px 12px; }
 .trow .no{
   font-family:var(--ff-en); font-size:11.5px; letter-spacing:.14em; font-weight:600;
   color:#fff; background:var(--navy); border-radius:4px; padding:5px 8px; line-height:1; display:inline-block;
 }
-.trow h3{ margin-top:7px; font-family:var(--ff-mn); font-size:16px; font-weight:500; color:var(--ink); line-height:1.45; }
+.trow h3{ margin-top:7px; font-family:var(--ff-mn); font-size:15.5px; font-weight:500; color:var(--ink); line-height:1.45; letter-spacing:0; }
 .trow p{ margin-top:6px; font-size:11px; line-height:1.7; color:var(--text); }
 @media (min-width:768px){
   .trow{ grid-template-columns:repeat(3,1fr); gap:14px; }
@@ -756,9 +769,15 @@ body{ background:var(--paper-3); }
   padding:10px 4px; text-align:center; border-right:1px solid var(--line); border-bottom:1px solid var(--line);
   font-size:9px; line-height:1.45; color:var(--text-mute); letter-spacing:-.02em;
 }
-.fstrip b{ display:block; font-family:var(--ff-mn); font-size:12.5px; color:var(--ink); font-weight:500; letter-spacing:-.01em; margin-bottom:2px; }
+.fstrip .lb{ display:block; font-size:9.5px; color:var(--text-mute); letter-spacing:-.02em; margin-bottom:3px; }
+.fstrip b{ display:block; font-family:var(--ff-mn); font-size:12.5px; color:var(--ink); font-weight:500; letter-spacing:-.02em; }
 .fstrip .free{ color:var(--cta-dark); }
-@media (min-width:768px){ .fstrip li{ font-size:11px; padding:14px 8px; letter-spacing:0; } .fstrip b{ font-size:15px; } }
+.fstrip .big{ font-size:19px; letter-spacing:.02em; }
+@media (min-width:768px){
+  .fstrip li{ padding:14px 8px; letter-spacing:0; }
+  .fstrip .lb{ font-size:11.5px; letter-spacing:0; margin-bottom:5px; }
+  .fstrip b{ font-size:16px; } .fstrip .big{ font-size:25px; }
+}
 
 /* ---- あなた専用プランに書かれること（1行） ---- */
 .pw-line{ margin-top:12px; background:var(--paper-2); border-radius:9px; padding:11px 12px; display:grid; gap:5px; }
@@ -914,8 +933,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="siteHeader">
   <div class="header-in">
-    <a href="#hero" aria-label="プライベートジムNeeDS">
+    <a class="brand" href="#hero" aria-label="プライベートジムNeeDS">
       <img class="logo-img" src="images/logo.png" alt="プライベートジムNeeDS" width="420" height="313">
+      <span class="brand-name"><span class="nw">プライベートジム</span><span class="nw">ニーズ</span></span>
     </a>
     <nav class="gnav" aria-label="メインメニュー">
       <ul>
@@ -927,7 +947,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="#access">店舗</a></li>
       </ul>
     </nav>
-    <a class="btn btn-mini header-cta" href="https://lin.ee/WEFp411" target="_blank" rel="noopener" data-event="cta_click" data-cta="header">無料体験を受ける</a>
   </div>
 </header>
 
@@ -944,7 +963,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="hero2-body rv">
-      <p class="hero2-eyebrow"><span class="nw">神戸・六甲道｜</span><span class="nw">40代からの</span><span class="nw">女性専用パーソナルジム</span></p>
+      <p class="hero2-eyebrow"><span class="nw">神戸・六甲道｜</span><span class="nw">40代からの</span><span class="nw">パーソナルトレーニングジム</span></p>
       <h1 class="hero2-title">
         <span class="nw">好きなことを、</span><br>
         <em><span class="nw">これからも</span><span class="nw">楽しめる身体へ。</span></em>
@@ -1017,7 +1036,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="hd" style="margin-top:18px;">
-        <p class="hd-sub" style="font-family:var(--ff-mn);font-size:14px;color:var(--ink);">
+        <p class="hd-sub mk-line">
           <span class="nw">ひとつでも当てはまるなら、</span><span class="mk"><span class="nw">いまが始めどきです。</span></span>
         </p>
       </div>
@@ -1153,27 +1172,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="trow">
         <article>
-          <img src="images/身体のチェック.jpg" alt="トレーナーが肩まわりの動きをチェックしている様子" width="800" height="500" style="object-position:45% 50%;" loading="lazy" decoding="async">
+          <img src="images/身体のチェック.jpg" alt="トレーナーが肩まわりの動きをチェックしている様子" width="800" height="500" style="object-position:40% 50%;" loading="lazy" decoding="async">
           <div class="in">
             <span class="no">01</span>
             <h3><span class="nw">身体の状態を</span><span class="nw">チェック</span></h3>
-            <p>姿勢・動き・身体の使い方を、専門家がチェックします。</p>
+            <p><span class="nw">姿勢・動き・</span><span class="nw">身体の使い方を、</span><span class="nw">専門家が</span><span class="nw">チェックします。</span></p>
           </div>
         </article>
         <article>
-          <img src="images/あなたに合ったトレーニング.jpg" alt="トレーナーの補助を受けながらトレーニングを体験している様子" width="800" height="500" style="object-position:48% 50%;" loading="lazy" decoding="async">
+          <img src="images/あなたに合ったトレーニング.jpg" alt="トレーナーの補助を受けながらトレーニングを体験している様子" width="800" height="500" style="object-position:50% 50%;" loading="lazy" decoding="async">
           <div class="in">
             <span class="no">02</span>
             <h3><span class="nw">あなたに合った</span><span class="nw">トレーニングを体験</span></h3>
-            <p>その状態に合わせたトレーニングを、実際に体験できます。</p>
+            <p><span class="nw">その状態に合わせた</span><span class="nw">トレーニングを、</span><span class="nw">実際に</span><span class="nw">体験できます。</span></p>
           </div>
         </article>
         <article>
-          <img src="images/あなた専用プラン.jpg" alt="これからの身体づくりについてトレーナーと相談している様子" width="800" height="500" style="object-position:100% 50%;" loading="lazy" decoding="async">
+          <img src="images/あなた専用プラン.jpg" alt="これからの身体づくりについてトレーナーと相談している様子" width="800" height="500" style="object-position:25% 50%;" loading="lazy" decoding="async">
           <div class="in">
             <span class="no">03</span>
             <h3><span class="nw">あなた専用プランを</span><span class="nw">ご提案</span></h3>
-            <p>なりたい身体をうかがい、これからの進め方をその場でお伝えします。</p>
+            <p><span class="nw">なりたい身体を</span><span class="nw">うかがい、</span><span class="nw">これからの進め方を</span><span class="nw">その場で</span><span class="nw">お伝えします。</span></p>
           </div>
         </article>
       </div>
@@ -1185,14 +1204,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
 
       <p class="plan-free">
-        <span class="nw">ここまですべて、</span><span class="nw">初回の無料体験に含まれます。</span><span class="free"><span class="nw">0円</span></span>
+        <span class="nw">ここまですべて、</span><span class="nw">初回の無料体験に含まれます。</span>
       </p>
 
       <ul class="fstrip">
-        <li><b class="free">0円</b>料金</li>
-        <li><b>約60分</b>所要時間</li>
-        <li><b>手ぶらでOK</b>持ち物</li>
-        <li><b>LINEで30秒</b>ご予約</li>
+        <li><span class="lb">料金</span><b class="free big"><span class="mk">0円</span></b></li>
+        <li><span class="lb">所要時間</span><b>約60分</b></li>
+        <li><span class="lb">持ち物</span><b>手ぶらでOK</b></li>
+        <li><span class="lb">ご予約</span><b>LINEで30秒</b></li>
       </ul>
 
       <div class="cta-block cta-slim">
