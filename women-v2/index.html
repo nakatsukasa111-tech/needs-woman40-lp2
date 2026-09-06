@@ -587,8 +587,9 @@ body{ background:var(--paper-3); }
 .hero2-media{ position:relative; background:#e3ded6; }
 .hero2-photo{ width:100%; display:block; aspect-ratio:16/9; object-fit:cover; object-position:20% 50%; }
 .hero2-badge{
-  position:absolute; right:8px; bottom:8px; width:92px; height:92px; border-radius:50%;
-  background:var(--gold); color:#fff; display:flex; align-items:center; justify-content:center;
+  position:absolute; left:8px; top:8px; width:96px; height:96px; border-radius:50%;
+  background:linear-gradient(140deg, #57c4ef 0%, #1a80c4 100%);
+  color:#fff; display:flex; align-items:center; justify-content:center;
   text-align:center; padding:7px; font-size:8px; font-weight:500; line-height:1.55; letter-spacing:-.03em;
   box-shadow:0 5px 16px rgba(10,44,66,.22);
 }
@@ -622,7 +623,7 @@ body{ background:var(--paper-3); }
   .hero2-body{ order:1; display:flex; flex-direction:column; justify-content:center; padding:34px 34px 34px 22px; }
   .hero2-photo{ height:100%; aspect-ratio:auto; min-height:460px; }
   .hero2-title{ font-size:38px; }
-  .hero2-badge{ width:120px; height:120px; font-size:9.5px; padding:11px; right:16px; bottom:16px; line-height:1.65; }
+  .hero2-badge{ width:126px; height:126px; font-size:9.5px; padding:11px; left:16px; top:16px; line-height:1.65; }
 }
 @media (min-width:1200px){ .hero2-title{ font-size:43px; } }
 
@@ -697,10 +698,20 @@ body{ background:var(--paper-3); }
 @media (min-width:768px){ .mk-line{ font-size:20px; } }
 
 /* ヘッダーの店名 */
-.brand{ display:flex; align-items:center; gap:9px; text-decoration:none; }
-.brand-name{ font-family:var(--ff-mn); font-size:13px; font-weight:500; letter-spacing:.02em; color:var(--navy); line-height:1.35; }
-@media (min-width:768px){ .brand{ gap:11px; } .brand-name{ font-size:16px; } }
+.brand{ display:flex; align-items:center; gap:10px; text-decoration:none; flex:1 1 auto; min-width:0; }
+.brand-name{ font-family:var(--ff-mn); font-size:17px; font-weight:700; letter-spacing:.01em; color:var(--navy); line-height:1.3; }
+@media (max-width:379px){ .brand{ gap:8px; } .brand-name{ font-size:15px; } }
+@media (min-width:768px){ .brand{ gap:13px; flex:0 0 auto; } .brand-name{ font-size:21px; } }
 .gnav{ margin-left:auto; }
+
+/* 住所のGoogleマップリンク */
+.maplink{ color:inherit; text-decoration:none; border-bottom:1px solid var(--line); }
+.maplink:hover{ color:var(--navy); border-bottom-color:var(--navy); }
+.mapico{
+  margin-left:7px; display:inline-block; vertical-align:1px; white-space:nowrap;
+  font-size:9.5px; letter-spacing:.04em; color:var(--navy);
+  border:1px solid var(--navy); border-radius:4px; padding:1px 5px; line-height:1.5;
+}
 
 .rrow{ display:grid; grid-template-columns:repeat(4,1fr); gap:4px; margin-top:14px; }
 .rrow li{
@@ -885,9 +896,9 @@ body{ background:var(--paper-3); }
   .shop-dl dt{ flex:0 0 62px; font-size:11px; } .shop-dl dd{ margin-top:0; }
 }
 .fc-grid{ display:grid; gap:13px; align-items:center; }
-@media (min-width:900px){ .fc-grid{ grid-template-columns:230px 1fr; gap:36px; } }
+@media (min-width:900px){ .fc-grid{ grid-template-columns:320px 1fr; gap:34px; } }
 .fc-ph{ width:100%; aspect-ratio:5/2; object-fit:cover; border-radius:11px; background:#e3ded6; display:block; }
-@media (min-width:900px){ .fc-ph{ aspect-ratio:1/1; } }
+@media (min-width:900px){ .fc-ph{ aspect-ratio:16/10; } }
 .fc-ttl{ font-family:var(--ff-mn); font-size:18px; font-weight:500; line-height:1.6; color:var(--ink); letter-spacing:.02em; }
 .fc-ttl em{ font-style:normal; color:var(--navy); }
 @media (min-width:768px){ .fc-ttl{ font-size:24px; } }
@@ -935,7 +946,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="header-in">
     <a class="brand" href="#hero" aria-label="プライベートジムNeeDS">
       <img class="logo-img" src="images/logo.png" alt="プライベートジムNeeDS" width="420" height="313">
-      <span class="brand-name"><span class="nw">プライベートジム</span><span class="nw">ニーズ</span></span>
+      <span class="brand-name"><span class="nw">プライベートジム</span><span class="nw">NeeDS</span></span>
     </a>
     <nav class="gnav" aria-label="メインメニュー">
       <ul>
@@ -959,7 +970,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img class="hero2-photo" src="images/hero.jpg"
            alt="トレーナーの補助を受けながらマットの上でトレーニングをする女性"
            width="1600" height="800" fetchpriority="high" decoding="async">
-      <p class="hero2-badge"><span><span class="nw">プロに教えるプロが</span><br><span class="nw">あなたの身体を</span><br><span class="nw">マンツーマンで</span><br><span class="nw">サポート</span></span></p>
+      <p class="hero2-badge"><span><span class="nw">プロのトレーナーが</span><br><span class="nw">あなたの身体を</span><br><span class="nw">マンツーマンで</span><br><span class="nw">サポート</span></span></p>
     </div>
 
     <div class="hero2-body rv">
@@ -1126,7 +1137,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="band" id="pros">
   <div class="wrap">
     <div class="panel rv">
-      <p class="trust-line"><span class="nw">プロにも</span><span class="nw">選ばれています。</span></p>
+      <p class="trust-line"><span class="nw">一流にも</span><span class="nw">選ばれています。</span></p>
 
       <p class="hd-sub" style="margin-top:12px;text-align:center;"><span class="nw">またNeeDSには、</span><br><span class="nw">ドクター・アスリート・</span><span class="nw">モデル・経営者の方も</span><span class="nw">通われています。</span></p>
 
@@ -1325,7 +1336,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="panel sand rv">
       <div class="fc-grid">
-        <img class="fc-ph" src="images/プロに相談.jpg" alt="トレーナーに身体のことを相談しているお客様" width="640" height="640" style="object-position:50% 12%;" loading="lazy" decoding="async">
+        <img class="fc-ph" src="images/プロに相談.jpg" alt="トレーナーに身体のことを相談しているお客様" width="800" height="500" style="object-position:50% 45%;" loading="lazy" decoding="async">
         <div>
           <p class="fc-ttl">
             <span class="nw">まずは一度、</span><em><span class="nw">プロに相談してみよう</span></em>
@@ -1358,7 +1369,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="shop-body">
             <h3 class="shop-name"><small>Rokkomichi</small><span class="nw">NeeDS 六甲道店</span></h3>
             <dl class="shop-dl">
-              <div><dt>住所</dt><dd><span class="nw">〒657-0037</span> <span class="nw">兵庫県神戸市灘区</span><span class="nw">備後町3丁目1-23</span> <span class="nw">ノモズヴィレッジ101</span></dd></div>
+              <div><dt>住所</dt><dd><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%80%92657-0037%20%E5%85%B5%E5%BA%AB%E7%9C%8C%E7%A5%9E%E6%88%B8%E5%B8%82%E7%81%98%E5%8C%BA%E5%82%99%E5%BE%8C%E7%94%BA3%E4%B8%81%E7%9B%AE1-23%20%E3%83%8E%E3%83%A2%E3%82%BA%E3%83%B4%E3%82%A3%E3%83%AC%E3%83%83%E3%82%B8101" target="_blank" rel="noopener"><span class="nw">〒657-0037</span> <span class="nw">兵庫県神戸市灘区</span><span class="nw">備後町3丁目1-23</span> <span class="nw">ノモズヴィレッジ101</span><span class="mapico" aria-hidden="true">地図</span></a></dd></div>
               <div><dt>アクセス</dt><dd><span class="nw">JR六甲道駅から</span><span class="nw">徒歩5分</span></dd></div>
               <div><dt>電話</dt><dd><a href="tel:0788554163">078-855-4163</a></dd></div>
             </dl>
@@ -1369,7 +1380,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="shop-body">
             <h3 class="shop-name"><small>Rokko Kazenosato</small><span class="nw">NeeDS 六甲風の郷店</span></h3>
             <dl class="shop-dl">
-              <div><dt>住所</dt><dd><span class="nw">〒657-0053</span> <span class="nw">兵庫県神戸市灘区</span><span class="nw">六甲町4丁目1-15 2F</span></dd></div>
+              <div><dt>住所</dt><dd><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%80%92657-0053%20%E5%85%B5%E5%BA%AB%E7%9C%8C%E7%A5%9E%E6%88%B8%E5%B8%82%E7%81%98%E5%8C%BA%E5%85%AD%E7%94%B2%E7%94%BA4%E4%B8%81%E7%9B%AE1-15%202F" target="_blank" rel="noopener"><span class="nw">〒657-0053</span> <span class="nw">兵庫県神戸市灘区</span><span class="nw">六甲町4丁目1-15 2F</span><span class="mapico" aria-hidden="true">地図</span></a></dd></div>
               <div><dt>アクセス</dt><dd><span class="nw">阪急六甲駅から</span><span class="nw">徒歩5〜7分</span></dd></div>
               <div><dt>電話</dt><dd><a href="tel:0787779052">078-777-9052</a></dd></div>
             </dl>
