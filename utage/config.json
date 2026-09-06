@@ -1,0 +1,48 @@
+{
+  "api_base": "https://api.utage-system.com/v1",
+  "funnel_id": "jG8LfEc59kzu",
+  "funnel_name": "【Meta広告】40〜60代女性向けLP",
+
+  "source": "women-v2/index.html",
+  "images_dir": "women-v2/images",
+  "dist_dir": "utage/dist",
+
+  "_comment_origin_cta": "原本 index.html に書かれている CTA の URL。ビルド時に各バージョンの遷移先へ差し替えます。原本側の CTA を変えたときは、ここも合わせて変更してください。",
+  "origin_cta": "https://lin.ee/WEFp411",
+
+  "variants": [
+    {
+      "key": "a",
+      "label": "A：LINE登録版",
+      "title": "A：LINE登録版",
+      "step_id": "AKSSGDZ7B3qq",
+      "page_id": "q3CLcePmTIdU",
+      "step_url": "https://utage-system.com/p/AKSSGDZ7B3qq",
+      "is_no_index": 1,
+      "cta": "https://utage-system.com/line/link/q3CLcePmTIdU/ME6lCY8Hv4bQ",
+      "apply_passthrough": false,
+      "replacements": []
+    },
+    {
+      "key": "b",
+      "label": "B：自社申込フォーム版",
+      "title": "B：自社申込フォーム版",
+      "step_id": "VMmOUcGnkP8m",
+      "page_id": "Egm9phAJeO1m",
+      "step_url": "https://utage-system.com/p/VMmOUcGnkP8m",
+      "is_no_index": 1,
+      "cta": "https://nds-training.jp/trial-application/?utm_source=meta&utm_medium=paid&utm_campaign=women40&utm_content=lp_b",
+      "apply_passthrough": true,
+      "replacements": [
+        ["<span class=\"line-badge\">LINE</span>", ""],
+        ["<strong>LINEから30秒でご予約いただけます。</strong>", "<strong>1分ほどで入力できます。</strong>"],
+        ["<strong>30秒でご予約いただけます。</strong>", "<strong>1分ほどで入力できます。</strong>"],
+        ["<li><b>LINEで30秒</b>ご予約</li>", "<li><b>入力1分</b>お申し込み</li>"],
+        ["無料体験を予約する", "無料体験を申し込む"],
+        ["ご予約の際に", "お申し込みの際に"],
+        ["このページからのご予約の方は", "このページからのお申し込みの方は"],
+        ["data-cta=\"", "data-cta=\"b-"]
+      ]
+    }
+  ]
+}
