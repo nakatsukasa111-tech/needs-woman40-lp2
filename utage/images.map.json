@@ -1,10 +1,10 @@
 {
   "_comment": "原本の images/ → UTAGEメディアの公開URL。utage/sync-images.mjs が自動で更新します。手で書き換える必要はありません。",
   "images/hero.jpg": {
-    "hash": "41a0663790",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/PLW7HdSes5FO.jpg",
-    "media_id": "PLW7HdSes5FO",
-    "remote_name": "PLW7HdSes5FO.jpg"
+    "hash": "9467a3d8d5",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/SjDPbwmrpRjB.jpg",
+    "media_id": "SjDPbwmrpRjB",
+    "remote_name": "w40-9467a3d8d5.jpg"
   },
   "images/logo.png": {
     "hash": "b7b4d221ed",
@@ -31,16 +31,16 @@
     "remote_name": "7XAqwtdEkqdm.jpg"
   },
   "images/あなたに合ったトレーニング.jpg": {
-    "hash": "9d9de02a8d",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/swIVr44rGQO8.jpg",
-    "media_id": "swIVr44rGQO8",
-    "remote_name": "swIVr44rGQO8.jpg"
+    "hash": "6d9f2340b7",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/84usZ0APsqHI.jpg",
+    "media_id": "84usZ0APsqHI",
+    "remote_name": "w40-6d9f2340b7.jpg"
   },
   "images/あなた専用プラン.jpg": {
-    "hash": "1f290a588b",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/3d420iwaAk4M.jpg",
-    "media_id": "3d420iwaAk4M",
-    "remote_name": "3d420iwaAk4M.jpg"
+    "hash": "d7231d5935",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/P0xKvQu96Eru.jpg",
+    "media_id": "P0xKvQu96Eru",
+    "remote_name": "w40-d7231d5935.jpg"
   },
   "images/ドクター.jpg": {
     "hash": "a7517e499f",
@@ -49,10 +49,10 @@
     "remote_name": "QCJpVks4S4Fr.jpg"
   },
   "images/プロに相談.jpg": {
-    "hash": "bda2aef5b5",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/Gr5pbf9lm9pf.jpg",
-    "media_id": "Gr5pbf9lm9pf",
-    "remote_name": "Gr5pbf9lm9pf.jpg"
+    "hash": "a61b41b303",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/c5XgmTzM9sPX.jpg",
+    "media_id": "c5XgmTzM9sPX",
+    "remote_name": "w40-a61b41b303.jpg"
   },
   "images/ベストボディ日本一.jpg": {
     "hash": "591122368d",
@@ -133,9 +133,15 @@
     "remote_name": "RJdwKMirsQ9b.jpg"
   },
   "images/身体のチェック.jpg": {
-    "hash": "67f018928f",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/I4Sed6zjxJ86.jpg",
-    "media_id": "I4Sed6zjxJ86",
-    "remote_name": "I4Sed6zjxJ86.jpg"
+    "hash": "1f82a6b780",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/KmEWWbbUKpXl.jpg",
+    "media_id": "KmEWWbbUKpXl",
+    "remote_name": "w40-1f82a6b780.jpg"
+  },
+  "images/通いやすい環境.jpg": {
+    "hash": "53b53e80bd",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/iVrpHgEGY33J.jpg",
+    "media_id": "iVrpHgEGY33J",
+    "remote_name": "w40-53b53e80bd.jpg"
   }
 }
