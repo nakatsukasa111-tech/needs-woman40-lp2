@@ -1,0 +1,62 @@
+name: UTAGEへ反映
+
+# women-v2/ か utage/ を変更して push すると、
+# 画像をUTAGEへ同期し、A版・B版を生成してUTAGEのページを更新する。
+#
+# 反映するのは「デフォルトブランチ」への変更だけ。
+# ブランチ名が変わっても動くように、名前を直接書かずに判定している。
+on:
+  push:
+    paths:
+      - 'women-v2/**'
+      - 'utage/**'
+      - '.github/workflows/deploy-utage.yml'
+  workflow_dispatch:        # 手動実行もできる
+
+concurrency:
+  group: deploy-utage
+  cancel-in-progress: false
+
+permissions:
+  contents: write           # 画像の控え（images.map.json）を書き戻すため
+
+jobs:
+  deploy:
+    # 手動実行、またはデフォルトブランチへのpushのときだけ動く
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 画像をUTAGEへ同期
+        env:
+          UTAGE_API_KEY: ${{ secrets.UTAGE_API_KEY }}
+        run: node utage/sync-images.mjs
+
+      - name: A版・B版を生成
+        run: node utage/build.mjs
+
+      - name: UTAGEへ反映
+        env:
+          UTAGE_API_KEY: ${{ secrets.UTAGE_API_KEY }}
+        run: node utage/deploy.mjs
+
+      # 新しく上げた画像の控えをリポジトリに戻す。
+      # [skip ci] を付けているのでワークフローは再実行されない。
+      - name: 画像の控えを更新
+        run: |
+          if [[ -n "$(git status --porcelain utage/images.map.json)" ]]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add utage/images.map.json
+            git commit -m "chore: 画像の控えを更新 [skip ci]"
+            git push
+          else
+            echo "画像の変更はありません"
+          fi
