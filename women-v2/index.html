@@ -587,10 +587,10 @@ body{ background:var(--paper-3); }
 .hero2-media{ position:relative; background:#e3ded6; }
 .hero2-photo{ width:100%; display:block; aspect-ratio:16/9; object-fit:cover; object-position:20% 50%; }
 .hero2-badge{
-  position:absolute; left:8px; top:8px; width:96px; height:96px; border-radius:50%;
+  position:absolute; left:8px; top:8px; width:92px; height:92px; border-radius:50%;
   background:linear-gradient(140deg, #57c4ef 0%, #1a80c4 100%);
   color:#fff; display:flex; align-items:center; justify-content:center;
-  text-align:center; padding:7px; font-size:8px; font-weight:500; line-height:1.55; letter-spacing:-.03em;
+  text-align:center; padding:6px; font-size:11px; font-weight:500; line-height:1.5; letter-spacing:-.02em;
   box-shadow:0 5px 16px rgba(10,44,66,.22);
 }
 .hero2-body{ padding:12px 16px 18px; }
@@ -623,7 +623,7 @@ body{ background:var(--paper-3); }
   .hero2-body{ order:1; display:flex; flex-direction:column; justify-content:center; padding:34px 34px 34px 22px; }
   .hero2-photo{ height:100%; aspect-ratio:auto; min-height:460px; }
   .hero2-title{ font-size:38px; }
-  .hero2-badge{ width:126px; height:126px; font-size:9.5px; padding:11px; left:16px; top:16px; line-height:1.65; }
+  .hero2-badge{ width:112px; height:112px; font-size:13px; padding:9px; left:16px; top:16px; line-height:1.6; }
 }
 @media (min-width:1200px){ .hero2-title{ font-size:43px; } }
 
@@ -773,21 +773,22 @@ body{ background:var(--paper-3); }
 }
 
 .fstrip{
-  display:grid; grid-template-columns:repeat(4,1fr); margin-top:16px;
+  display:grid; grid-template-columns:repeat(2,1fr); margin-top:16px;
   border-top:1px solid var(--line); border-left:1px solid var(--line);
 }
 .fstrip li{
-  padding:10px 4px; text-align:center; border-right:1px solid var(--line); border-bottom:1px solid var(--line);
+  padding:12px 6px; text-align:center; border-right:1px solid var(--line); border-bottom:1px solid var(--line);
   font-size:9px; line-height:1.45; color:var(--text-mute); letter-spacing:-.02em;
 }
-.fstrip .lb{ display:block; font-size:9.5px; color:var(--text-mute); letter-spacing:-.02em; margin-bottom:3px; }
-.fstrip b{ display:block; font-family:var(--ff-mn); font-size:12.5px; color:var(--ink); font-weight:500; letter-spacing:-.02em; }
+.fstrip .lb{ display:block; font-size:11px; color:var(--text-mute); letter-spacing:0; margin-bottom:4px; }
+.fstrip b{ display:block; font-family:var(--ff-mn); font-size:16px; color:var(--ink); font-weight:500; letter-spacing:-.02em; }
 .fstrip .free{ color:var(--cta-dark); }
-.fstrip .big{ font-size:19px; letter-spacing:.02em; }
+.fstrip .big{ font-size:23px; letter-spacing:.02em; }
+@media (min-width:560px){ .fstrip{ grid-template-columns:repeat(4,1fr); } }
 @media (min-width:768px){
   .fstrip li{ padding:14px 8px; letter-spacing:0; }
   .fstrip .lb{ font-size:11.5px; letter-spacing:0; margin-bottom:5px; }
-  .fstrip b{ font-size:16px; } .fstrip .big{ font-size:25px; }
+  .fstrip b{ font-size:19px; } .fstrip .big{ font-size:27px; }
 }
 
 /* ---- あなた専用プランに書かれること（1行） ---- */
@@ -970,11 +971,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img class="hero2-photo" src="images/hero.jpg"
            alt="トレーナーの補助を受けながらマットの上でトレーニングをする女性"
            width="1600" height="800" fetchpriority="high" decoding="async">
-      <p class="hero2-badge"><span><span class="nw">プロのトレーナーが</span><br><span class="nw">あなたの身体を</span><br><span class="nw">マンツーマンで</span><br><span class="nw">サポート</span></span></p>
+      <p class="hero2-badge"><span><span class="nw">プロが</span><br><span class="nw">あなたの身体を</span><br><span class="nw">サポート</span></span></p>
     </div>
 
     <div class="hero2-body rv">
-      <p class="hero2-eyebrow"><span class="nw">神戸・六甲道｜</span><span class="nw">40代からの</span><span class="nw">パーソナルトレーニングジム</span></p>
+      <p class="hero2-eyebrow"><span class="nw">神戸ジム｜</span><span class="nw">40代からの</span><span class="nw">パーソナルトレーニングジム</span></p>
       <h1 class="hero2-title">
         <span class="nw">好きなことを、</span><br>
         <em><span class="nw">これからも</span><span class="nw">楽しめる身体へ。</span></em>
@@ -1081,7 +1082,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <blockquote class="txt">
           <span class="nw">通われている方の大半は、</span><span class="nw">運動の習慣がないまま</span><span class="nw">40代・50代・60代を</span><span class="nw">迎えられた一般の方です。</span><br>
-          <span class="nw">息が上がるような運動から</span><span class="nw">始めることはありません。</span><span class="mk"><span class="nw">初心者の方こそ大歓迎です。</span></span>
+          <span class="mk"><span class="nw">初心者の方こそ大歓迎です。</span></span>
         </blockquote>
       </div>
 
@@ -1098,6 +1099,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2 class="hd-title"><span class="nw">はじめての方こそ、</span><span class="accent"><span class="nw">安心して。</span></span></h2>
         <p class="hd-sub"><span class="nw">当施設には、</span></p>
         <ul class="qual2">
+          <li><b><span class="nw">健康運動指導士</span></b></li>
           <li><b><span class="nw">理学療法士</span></b></li>
           <li><b><span class="nw">アスレティックトレーナー</span></b></li>
         </ul>
@@ -1139,7 +1141,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="panel rv">
       <p class="trust-line"><span class="nw">一流にも</span><span class="nw">選ばれています。</span></p>
 
-      <p class="hd-sub" style="margin-top:12px;text-align:center;"><span class="nw">またNeeDSには、</span><br><span class="nw">ドクター・アスリート・</span><span class="nw">モデル・経営者の方も</span><span class="nw">通われています。</span></p>
+      <p class="hd-sub" style="margin-top:12px;text-align:center;"><span class="nw">またNeeDSには、</span><br><span class="nw">ドクター・アスリート・</span><span class="nw">モデル・経営者の方も</span><span class="mk"><span class="nw">通われています。</span></span></p>
 
       <div class="pro5">
         <figure><img src="images/ドクター.jpg" alt="NeeDSに通うドクター" width="560" height="560" loading="lazy" decoding="async">
@@ -1173,8 +1175,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hd">
         <p class="hd-eyebrow hd-deco">Free Trial</p>
         <h2 class="hd-title">
-          <span class="nw">あなただけの</span><span class="accent"><span class="mk"><span class="nw">身体づくり計画</span></span></span><span class="nw">を</span><br>
-          <span class="accent"><span class="nw">プレゼント！</span></span>
+          <span class="nw">あなただけの</span><br>
+          <span class="accent"><span class="mk"><span class="nw">身体づくり計画</span></span></span><span class="nw">を</span><span class="accent"><span class="nw">プレゼント！</span></span>
         </h2>
         <p class="hd-sub">
           <span class="nw">「何を・どれくらい・</span><span class="nw">どう続けるか」が分かる、</span><span class="nw">あなた専用プランを</span><span class="nw">お伝えします。</span>
