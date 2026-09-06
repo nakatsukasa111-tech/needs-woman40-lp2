@@ -673,15 +673,33 @@ body{ background:var(--paper-3); }
 }
 @media (min-width:768px){ .trust-line{ font-size:25px; margin-top:18px; } }
 
-.rrow{ display:grid; grid-template-columns:repeat(4,1fr); gap:5px; margin-top:14px; }
-.rrow li{
-  background:var(--paper-2); border-radius:9px; padding:10px 4px; text-align:center;
-  display:flex; flex-direction:column; align-items:center; gap:6px;
-  font-family:var(--ff-mn); font-size:9.5px; font-weight:500; line-height:1.45;
-  color:var(--ink); letter-spacing:-.03em;
+/* 資格の箇条書き */
+.qual2{ margin-top:8px; display:flex; flex-wrap:wrap; justify-content:center; gap:6px 8px; }
+.qual2 li{
+  background:var(--paper-2); border:1px solid var(--line); border-radius:999px;
+  padding:5px 14px; font-family:var(--ff-mn); font-size:13.5px; font-weight:500;
+  line-height:1.5; color:var(--ink); letter-spacing:.01em;
 }
-.rrow .ico{ width:21px; height:21px; color:var(--navy); }
-@media (min-width:768px){ .rrow{ grid-template-columns:repeat(4,1fr); gap:12px; } .rrow li{ font-size:13.5px; padding:20px 12px; } }
+@media (min-width:768px){ .qual2{ gap:8px 12px; } .qual2 li{ font-size:16px; padding:7px 20px; } }
+
+/* 「だから信頼できる。」— 目立つハイライト */
+.trust-hero{
+  margin-top:20px; text-align:center; font-family:var(--ff-mn); font-weight:500;
+  font-size:24px; letter-spacing:.06em; color:var(--ink); line-height:1.5;
+}
+@media (min-width:768px){ .trust-hero{ font-size:34px; margin-top:26px; } }
+.mk-hot{ background:linear-gradient(transparent 58%, #ffd24a 58%); padding:0 4px; }
+
+.rrow{ display:grid; grid-template-columns:repeat(4,1fr); gap:4px; margin-top:14px; }
+.rrow li{
+  background:var(--paper-2); border-radius:9px; padding:11px 2px; text-align:center;
+  display:flex; flex-direction:column; align-items:center; gap:6px;
+  font-family:var(--ff-mn); font-size:11.5px; font-weight:500; line-height:1.45;
+  color:var(--ink); letter-spacing:-.02em;
+}
+.rrow .ico{ width:23px; height:23px; color:var(--navy); }
+@media (max-width:379px){ .rrow li{ font-size:10.5px; letter-spacing:-.03em; } .rrow .ico{ width:21px; height:21px; } }
+@media (min-width:768px){ .rrow{ grid-template-columns:repeat(4,1fr); gap:12px; } .rrow li{ font-size:15.5px; padding:20px 12px; } }
 
 .qbox{
   margin-top:13px; background:var(--paper-2); border:1px solid var(--line); border-radius:11px;
@@ -719,14 +737,14 @@ body{ background:var(--paper-3); }
   font-family:var(--ff-en); font-size:11.5px; letter-spacing:.14em; font-weight:600;
   color:#fff; background:var(--navy); border-radius:4px; padding:5px 8px; line-height:1; display:inline-block;
 }
-.trow h3{ margin-top:7px; font-family:var(--ff-mn); font-size:13.5px; font-weight:500; color:var(--ink); line-height:1.5; }
+.trow h3{ margin-top:7px; font-family:var(--ff-mn); font-size:16px; font-weight:500; color:var(--ink); line-height:1.45; }
 .trow p{ margin-top:6px; font-size:11px; line-height:1.7; color:var(--text); }
 @media (min-width:768px){
   .trow{ grid-template-columns:repeat(3,1fr); gap:14px; }
   .trow article{ grid-template-columns:1fr; }
   .trow img{ aspect-ratio:16/10; height:auto; }
   .trow .in{ padding:14px 15px 17px; }
-  .trow h3{ font-size:15px; min-height:2.9em; }
+  .trow h3{ font-size:19px; min-height:2.9em; }
   .trow p{ margin-top:9px; font-size:12.5px; line-height:1.85; }
 }
 
@@ -1048,7 +1066,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hd">
         <p class="hd-eyebrow hd-deco">Trainer</p>
         <h2 class="hd-title"><span class="nw">はじめての方こそ、</span><span class="accent"><span class="nw">安心して。</span></span></h2>
-        <p class="hd-sub"><span class="nw">当施設には</span><b><span class="nw">理学療法士・</span><span class="nw">アスレティックトレーナー</span></b><span class="nw">が在籍し、</span><span class="nw">指導にあたっています。</span></p>
+        <p class="hd-sub"><span class="nw">当施設には、</span></p>
+        <ul class="qual2">
+          <li><b><span class="nw">理学療法士</span></b></li>
+          <li><b><span class="nw">アスレティックトレーナー</span></b></li>
+        </ul>
+        <p class="hd-sub" style="margin-top:8px;"><span class="nw">が在籍し、</span><span class="nw">指導にあたっています。</span></p>
         <p class="hd-sub" style="margin-top:9px;"><b><span class="nw">女性トレーナーも</span><span class="nw">在籍しています。</span></b><br><span class="nw">担当のご希望は、</span><span class="nw">ご予約の際に</span><span class="nw">お知らせください。</span></p>
       </div>
 
@@ -1084,7 +1107,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="band" id="pros">
   <div class="wrap">
     <div class="panel rv">
-      <p class="trust-line"><span class="mk"><span class="nw">だから信頼できる。</span></span></p>
+      <p class="trust-line"><span class="nw">プロにも</span><span class="nw">選ばれています。</span></p>
 
       <p class="hd-sub" style="margin-top:12px;text-align:center;"><span class="nw">またNeeDSには、</span><br><span class="nw">ドクター・アスリート・</span><span class="nw">モデル・経営者の方も</span><span class="nw">通われています。</span></p>
 
@@ -1107,6 +1130,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><svg class="ico"><use href="#i-clipboard"></use></svg><span><span class="nw">あなただけの</span><span class="nw">専用メニュー</span></span></li>
         <li><svg class="ico"><use href="#i-heart"></use></svg><span><span class="nw">無理なく</span><span class="nw">続けられる</span><span class="nw">サポート体制</span></span></li>
       </ul>
+
+      <p class="trust-hero"><span class="mk-hot"><span class="nw">だから信頼できる。</span></span></p>
     </div>
   </div>
 </section>
