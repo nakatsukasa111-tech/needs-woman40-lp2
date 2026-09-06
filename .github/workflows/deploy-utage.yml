@@ -1,10 +1,12 @@
 name: UTAGEへ反映
 
-# women-v2/ か utage/ を変更して main に push すると、
+# women-v2/ か utage/ を変更して push すると、
 # 画像をUTAGEへ同期し、A版・B版を生成してUTAGEのページを更新する。
+#
+# 反映するのは「デフォルトブランチ」への変更だけ。
+# ブランチ名が変わっても動くように、名前を直接書かずに判定している。
 on:
   push:
-    branches: [main]
     paths:
       - 'women-v2/**'
       - 'utage/**'
@@ -20,6 +22,10 @@ permissions:
 
 jobs:
   deploy:
+    # 手動実行、またはデフォルトブランチへのpushのときだけ動く
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.ref_name == github.event.repository.default_branch
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
