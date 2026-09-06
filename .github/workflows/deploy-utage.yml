@@ -7,6 +7,9 @@ name: UTAGEへ反映
 # ブランチ名が変わっても動くように、名前を直接書かずに判定している。
 on:
   push:
+    # 作業用ブランチは実行記録も作らない（Actionsの一覧を汚さないため）
+    branches-ignore:
+      - 'claude/**'
     paths:
       - 'women-v2/**'
       - 'utage/**'
