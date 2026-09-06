@@ -588,9 +588,9 @@ body{ background:var(--paper-3); }
 .hero2-photo{ width:100%; display:block; aspect-ratio:16/9; object-fit:cover; object-position:20% 50%; }
 .hero2-badge{
   position:absolute; left:8px; top:8px; width:92px; height:92px; border-radius:50%;
-  background:linear-gradient(140deg, #57c4ef 0%, #1a80c4 100%);
+  background:linear-gradient(140deg, #f79447 0%, var(--cta-dark) 100%);
   color:#fff; display:flex; align-items:center; justify-content:center;
-  text-align:center; padding:6px; font-size:11px; font-weight:500; line-height:1.5; letter-spacing:-.02em;
+  text-align:center; padding:4px; font-size:12px; font-weight:600; line-height:1.45; letter-spacing:-.03em;
   box-shadow:0 5px 16px rgba(10,44,66,.22);
 }
 .hero2-body{ padding:12px 16px 18px; }
@@ -608,10 +608,11 @@ body{ background:var(--paper-3); }
 .why3 li{
   display:flex; flex-direction:column; align-items:center; gap:5px; text-align:center; padding:9px 5px;
   border-right:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);
-  font-size:11px; line-height:1.5; color:var(--ink); letter-spacing:0;
+  font-size:12.5px; font-weight:600; line-height:1.5; color:var(--ink); letter-spacing:-.01em;
 }
-.why3 .ico{ width:22px; height:22px; color:var(--navy); }
-.why3 b{ display:block; font-family:var(--ff-mn); font-size:13.5px; font-weight:500; letter-spacing:.01em; }
+.why3 .ico{ width:25px; height:25px; color:var(--navy); }
+.why3 b{ display:block; font-family:var(--ff-mn); font-size:16px; font-weight:700; letter-spacing:0; }
+@media (min-width:768px){ .why3 li{ font-size:14px; padding:12px 6px; } .why3 .ico{ width:28px; height:28px; } .why3 b{ font-size:19px; } }
 .hero2-cta{ margin-top:12px; }
 @media (min-width:768px){
   .why3 li{ font-size:12px; padding:13px 8px; }
@@ -623,7 +624,7 @@ body{ background:var(--paper-3); }
   .hero2-body{ order:1; display:flex; flex-direction:column; justify-content:center; padding:34px 34px 34px 22px; }
   .hero2-photo{ height:100%; aspect-ratio:auto; min-height:460px; }
   .hero2-title{ font-size:38px; }
-  .hero2-badge{ width:112px; height:112px; font-size:13px; padding:9px; left:16px; top:16px; line-height:1.6; }
+  .hero2-badge{ width:118px; height:118px; font-size:15px; padding:6px; left:16px; top:16px; line-height:1.55; }
 }
 @media (min-width:1200px){ .hero2-title{ font-size:43px; } }
 
@@ -692,6 +693,7 @@ body{ background:var(--paper-3); }
 /* ハイライトは黄色で統一（既存の .mk をv2側で上書き） */
 .mk{ background:linear-gradient(transparent 58%, #ffd24a 58%); padding:0 3px; }
 .mk-hot{ background:linear-gradient(transparent 58%, #ffd24a 58%); padding:0 4px; }
+.mk-orange{ background:linear-gradient(transparent 58%, #ffd6ae 58%); padding:0 3px; }
 
 /* ハイライトを含む一文はやや大きめに */
 .mk-line{ font-family:var(--ff-mn); font-size:16px; line-height:1.75; color:var(--ink); }
@@ -699,9 +701,11 @@ body{ background:var(--paper-3); }
 
 /* ヘッダーの店名 */
 .brand{ display:flex; align-items:center; gap:10px; text-decoration:none; flex:1 1 auto; min-width:0; }
-.brand-name{ font-family:var(--ff-mn); font-size:17px; font-weight:700; letter-spacing:.01em; color:var(--navy); line-height:1.3; }
-@media (max-width:379px){ .brand{ gap:8px; } .brand-name{ font-size:15px; } }
-@media (min-width:768px){ .brand{ gap:13px; flex:0 0 auto; } .brand-name{ font-size:21px; } }
+.brand-txt{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+.brand-access{ font-size:11.5px; font-weight:700; letter-spacing:0; color:var(--ink); line-height:1.4; }
+.brand-name{ font-family:var(--ff-mn); font-size:14px; font-weight:700; letter-spacing:.01em; color:var(--navy); line-height:1.3; }
+@media (max-width:379px){ .brand{ gap:8px; } .brand-access{ font-size:10.5px; } .brand-name{ font-size:12.5px; } }
+@media (min-width:768px){ .brand{ gap:13px; flex:0 0 auto; } .brand-access{ font-size:13.5px; } .brand-name{ font-size:17px; } }
 .gnav{ margin-left:auto; }
 
 /* 住所のGoogleマップリンク */
@@ -781,14 +785,14 @@ body{ background:var(--paper-3); }
   font-size:9px; line-height:1.45; color:var(--text-mute); letter-spacing:-.02em;
 }
 .fstrip .lb{ display:block; font-size:11px; color:var(--text-mute); letter-spacing:0; margin-bottom:4px; }
-.fstrip b{ display:block; font-family:var(--ff-mn); font-size:16px; color:var(--ink); font-weight:500; letter-spacing:-.02em; }
+.fstrip b{ display:block; font-family:var(--ff-mn); font-size:18px; color:var(--ink); font-weight:700; letter-spacing:-.03em; }
 .fstrip .free{ color:var(--cta-dark); }
-.fstrip .big{ font-size:23px; letter-spacing:.02em; }
+.fstrip .big{ font-size:26px; letter-spacing:.02em; }
 @media (min-width:560px){ .fstrip{ grid-template-columns:repeat(4,1fr); } }
 @media (min-width:768px){
   .fstrip li{ padding:14px 8px; letter-spacing:0; }
   .fstrip .lb{ font-size:11.5px; letter-spacing:0; margin-bottom:5px; }
-  .fstrip b{ font-size:19px; } .fstrip .big{ font-size:27px; }
+  .fstrip b{ font-size:22px; } .fstrip .big{ font-size:31px; }
 }
 
 /* ---- あなた専用プランに書かれること（1行） ---- */
@@ -847,12 +851,17 @@ body{ background:var(--paper-3); }
 .scols{ display:grid; gap:0 24px; margin-top:12px; }
 @media (min-width:560px){ .scols{ grid-template-columns:1fr 1fr; } }
 .env-list li{
-  display:flex; gap:10px; align-items:flex-start; padding:9px 2px;
-  border-bottom:1px solid var(--line-soft); font-size:14px; line-height:1.6; color:var(--ink);
+  display:flex; gap:11px; align-items:flex-start; padding:11px 2px;
+  border-bottom:1px solid var(--line-soft); font-size:16px; line-height:1.6; color:var(--ink);
+  font-weight:500; letter-spacing:-.01em;
 }
-.env-list .ico{ width:21px; height:21px; margin-top:2px; color:var(--navy); }
-.env-list small{ display:block; font-size:11.5px; color:var(--text-mute); line-height:1.6; margin-top:3px; }
-@media (min-width:768px){ .env-list li{ font-size:15px; padding:12px 2px; } .env-list small{ font-size:12.5px; } }
+.env-list .ico{ width:26px; height:26px; margin-top:1px; flex:0 0 auto; color:var(--navy); }
+.env-list small{ display:block; font-size:13px; color:var(--text-mute); line-height:1.6; margin-top:4px; font-weight:400; letter-spacing:0; }
+@media (min-width:768px){
+  .env-list li{ font-size:18px; padding:14px 2px; }
+  .env-list .ico{ width:29px; height:29px; }
+  .env-list small{ font-size:14px; }
+}
 .studio-ph{ display:none; }
 @media (min-width:900px){
   .studio-ph{ display:block; width:100%; aspect-ratio:16/7; object-fit:cover; border-radius:10px; margin-top:12px; background:#e3ded6; }
@@ -925,6 +934,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
 <defs>
   <symbol id="i-ticket" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M9 6v12"/><path d="M13 10h4M13 14h4"/></symbol>
+  <symbol id="i-shop" viewBox="0 0 24 24"><path d="M3.5 9.5 5 4h14l1.5 5.5"/><path d="M3.5 9.5a2.2 2.2 0 0 0 4.25 0 2.2 2.2 0 0 0 4.25 0 2.2 2.2 0 0 0 4.25 0 2.2 2.2 0 0 0 4.25 0"/><path d="M5 11.4V20h14v-8.6"/><path d="M9.5 20v-5h5v5"/></symbol>
   <symbol id="i-room" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M6 21V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v17"/><circle cx="14" cy="12.5" r=".9"/></symbol>
   <symbol id="i-car" viewBox="0 0 24 24"><path d="M4 17v-4l2-5h12l2 5v4"/><path d="M3 17h18"/><circle cx="7.5" cy="17.5" r="1.6"/><circle cx="16.5" cy="17.5" r="1.6"/></symbol>
   <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M9 3 4 6l2 4 2-1v11h8V9l2 1 2-4-5-3"/><path d="M9 3a3 3 0 0 0 6 0"/></symbol>
@@ -947,7 +957,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="header-in">
     <a class="brand" href="#hero" aria-label="プライベートジムNeeDS">
       <img class="logo-img" src="images/logo.png" alt="プライベートジムNeeDS" width="420" height="313">
-      <span class="brand-name"><span class="nw">プライベートジム</span><span class="nw">NeeDS</span></span>
+      <span class="brand-txt">
+        <span class="brand-access"><span class="mk-orange"><span class="nw">JR六甲道駅・</span><span class="nw">阪急六甲</span> <span class="nw">徒歩5分</span></span></span>
+        <span class="brand-name"><span class="nw">プライベートジム</span><span class="nw">NeeDS</span></span>
+      </span>
     </a>
     <nav class="gnav" aria-label="メインメニュー">
       <ul>
@@ -975,7 +988,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="hero2-body rv">
-      <p class="hero2-eyebrow"><span class="nw">神戸ジム｜</span><span class="nw">40代からの</span><span class="nw">パーソナルトレーニングジム</span></p>
+      <p class="hero2-eyebrow"><span class="mk-orange"><span class="nw">40代から</span></span><span class="nw">の</span><span class="nw">パーソナルトレーニング</span></p>
       <h1 class="hero2-title">
         <span class="nw">好きなことを、</span><br>
         <em><span class="nw">これからも</span><span class="nw">楽しめる身体へ。</span></em>
@@ -1071,7 +1084,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><svg class="ico"><use href="#i-clock"></use></svg><p class="q"><span class="nw">「仕事・家事・家族のこと。</span><br><span class="nw">自分のことはいつも</span><span class="nw">後回しになってしまう」</span></p></li>
       </ul>
 
-      <p class="ok-line">大丈夫です。</p>
+      <p class="ok-line"><span class="mk">大丈夫です。</span></p>
       <p class="ok-line ok-line2"><span class="nw">NeeDSに通う方の</span><span class="nw">ほとんどが、</span><br><span class="nw">運動初心者の方です。</span></p>
 
       <div class="qbox">
@@ -1096,7 +1109,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="panel rv">
       <div class="hd">
         <p class="hd-eyebrow hd-deco">Trainer</p>
-        <h2 class="hd-title"><span class="nw">はじめての方こそ、</span><span class="accent"><span class="nw">安心して。</span></span></h2>
+        <h2 class="hd-title"><span class="nw">はじめての方こそ、</span><span class="accent"><b><span class="nw">安心して。</span></b></span></h2>
         <p class="hd-sub"><span class="nw">当施設には、</span></p>
         <ul class="qual2">
           <li><b><span class="nw">健康運動指導士</span></b></li>
@@ -1139,9 +1152,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="band" id="pros">
   <div class="wrap">
     <div class="panel rv">
-      <p class="trust-line"><span class="nw">一流にも</span><span class="nw">選ばれています。</span></p>
+      <p class="trust-line"><span class="nw">一流にも</span><span class="mk"><span class="nw">選ばれています。</span></span></p>
 
-      <p class="hd-sub" style="margin-top:12px;text-align:center;"><span class="nw">またNeeDSには、</span><br><span class="nw">ドクター・アスリート・</span><span class="nw">モデル・経営者の方も</span><span class="mk"><span class="nw">通われています。</span></span></p>
+      <p class="hd-sub" style="margin-top:12px;text-align:center;"><span class="nw">またNeeDSには、</span><br><span class="nw">ドクター・アスリート・</span><span class="nw">モデル・経営者の方も</span><span class="nw">通われています。</span></p>
 
       <div class="pro5">
         <figure><img src="images/ドクター.jpg" alt="NeeDSに通うドクター" width="560" height="560" loading="lazy" decoding="async">
@@ -1262,8 +1275,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li><svg class="ico"><use href="#i-room"></use></svg><span>完全個室・完全予約制</span></li>
             </ul>
             <ul class="env-list">
-              <li><svg class="ico"><use href="#i-train"></use></svg><span>六甲道店<small>JR六甲道駅から徒歩5分</small></span></li>
-              <li><svg class="ico"><use href="#i-pin"></use></svg><span>六甲風の郷店<small>阪急六甲駅から徒歩5〜7分</small></span></li>
+              <li><svg class="ico"><use href="#i-shop"></use></svg><span>六甲道店<small>JR六甲道駅から徒歩5分</small></span></li>
+              <li><svg class="ico"><use href="#i-shop"></use></svg><span>六甲風の郷店<small>阪急六甲駅から徒歩5〜7分</small></span></li>
               <li><svg class="ico"><use href="#i-clock"></use></svg><span>9:00〜21:00<small>定休日なし</small></span></li>
             </ul>
           </div>
