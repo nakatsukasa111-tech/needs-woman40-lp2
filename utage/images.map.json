@@ -1,10 +1,10 @@
 {
   "_comment": "原本の images/ → UTAGEメディアの公開URL。utage/sync-images.mjs が自動で更新します。手で書き換える必要はありません。",
   "images/hero.jpg": {
-    "hash": "9467a3d8d5",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/SjDPbwmrpRjB.jpg",
-    "media_id": "SjDPbwmrpRjB",
-    "remote_name": "w40-9467a3d8d5.jpg"
+    "hash": "3998234ead",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/F7yvZ0kXdDcp.jpg",
+    "media_id": "F7yvZ0kXdDcp",
+    "remote_name": "w40-3998234ead.jpg"
   },
   "images/logo.png": {
     "hash": "b7b4d221ed",
