@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "sync-images": "node utage/sync-images.mjs",
-    "build": "node utage/build.mjs",
+    "build": "node utage/build.mjs && node utage/build-single.mjs",
+    "build:single": "node utage/build-single.mjs",
     "deploy": "node utage/sync-images.mjs && node utage/build.mjs && node utage/deploy.mjs",
     "deploy:dry": "node utage/build.mjs && node utage/deploy.mjs --dry-run"
   }

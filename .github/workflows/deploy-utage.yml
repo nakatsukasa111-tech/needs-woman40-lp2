@@ -45,21 +45,24 @@ jobs:
       - name: A版・B版を生成
         run: node utage/build.mjs
 
+      - name: UTAGE貼り付け用の単一HTMLを生成
+        run: node utage/build-single.mjs
+
       - name: UTAGEへ反映
         env:
           UTAGE_API_KEY: ${{ secrets.UTAGE_API_KEY }}
         run: node utage/deploy.mjs
 
-      # 新しく上げた画像の控えをリポジトリに戻す。
+      # 画像の控えと、UTAGE貼り付け用HTMLをリポジトリに戻す。
       # [skip ci] を付けているのでワークフローは再実行されない。
-      - name: 画像の控えを更新
+      - name: 生成物をリポジトリに反映
         run: |
-          if [[ -n "$(git status --porcelain utage/images.map.json)" ]]; then
+          if [[ -n "$(git status --porcelain utage/images.map.json dist/utage.html)" ]]; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add utage/images.map.json
-            git commit -m "chore: 画像の控えを更新 [skip ci]"
+            git add utage/images.map.json dist/utage.html
+            git commit -m "chore: 画像の控えとUTAGE用HTMLを更新 [skip ci]"
             git push
           else
-            echo "画像の変更はありません"
+            echo "変更はありません"
           fi

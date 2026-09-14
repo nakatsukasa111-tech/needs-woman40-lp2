@@ -75,3 +75,18 @@ UTAGE_API_KEY=xxxx npm run deploy   # 手元から反映
 - UTAGEのページはHTMLを丸ごと入れ替える方式です。UTAGEの管理画面で直接編集しても、
   次のpushで上書きされます。**編集は必ずリポジトリ側で**行ってください。
 - 1ページ4MBが上限です。超えるとビルドが止まります。
+
+## UTAGE貼り付け用の単一HTML
+
+```
+node utage/build-single.mjs     # または npm run build:single
+```
+
+`dist/utage.html` に、UTAGEのページへそのまま貼り付けられる1ファイルを出力します。
+
+- CSS・JSは原本の時点でインライン（外部ファイルの読み込みなし）
+- 画像は `images.map.json` のUTAGE絶対URLに差し替え。相対パスは0件であることを検証
+- `<html>` `<head>` `<body>` を保持
+- 4MBを超えたらエラーで停止（現在 約92KB）
+
+mainへpushすると、GitHub Actionsが同じものを生成して `dist/utage.html` に反映します。
