@@ -1060,6 +1060,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img class="hero2-photo" src="images/hero.jpg"
            alt="トレーナーの補助を受けながらマットの上でトレーニングをする女性"
            width="1600" height="900" fetchpriority="high" decoding="async">
+      <script>
+      /* ===== テスト用：?fv=1 / 2 / 3 でファーストビュー写真を切り替える =====
+         このブロックは fv-test ブランチ限定。main には入れないこと。
+         指定なし・想定外の値のときは、現在の写真のまま何もしない。 */
+      (function () {
+        var pat = {
+          '1': ['images/fv/fv1.jpg', '72% 50%'],
+          '2': ['images/fv/fv2.jpg', '75% 50%'],
+          '3': ['images/fv/fv3.jpg', '78% 50%']
+        };
+        var m = location.search.match(/[?&]fv=([123])(?:&|$)/);
+        if (!m) return;
+        var img = document.querySelector('.hero2-photo');
+        if (!img) return;
+        img.src = pat[m[1]][0];
+        img.style.objectPosition = pat[m[1]][1];
+      })();
+      </script>
       <p class="hero2-badge"><span><span class="nw">プロが</span><br><span class="nw">あなたの身体を</span><br><span class="nw">サポート</span></span></p>
     </div>
 
