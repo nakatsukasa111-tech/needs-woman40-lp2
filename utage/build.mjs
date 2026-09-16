@@ -29,6 +29,10 @@ if (!fs.existsSync(srcPath)) {
 let base = fs.readFileSync(srcPath, 'utf8');
 
 // ---------- 2. 画像をUTAGEのURLに差し替える ----------
+// 原本のキャッシュ対策クエリ（?v=...）は、UTAGE側では不要なので落とす
+base = base.replace(/(images\/[^\s"'()?]+)\?[^"'\s)]*/g, '$1');
+
+
 const pairs = Object.entries(imageMap)
   .filter(([k]) => !k.startsWith('_'))
   .map(([k, v]) => [k, typeof v === 'string' ? v : v.url])

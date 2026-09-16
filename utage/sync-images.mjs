@@ -46,7 +46,7 @@ const api = async (method, endpoint, body) => {
 
 // ---------- 原本で実際に使われている画像を洗い出す ----------
 const html = fs.readFileSync(path.join(ROOT, cfg.source), 'utf8');
-const referenced = [...new Set(html.match(/images\/[^\s"'()]+/g) || [])].sort();
+const referenced = [...new Set((html.match(/images\/[^\s"'()]+/g) || []).map(s => s.split('?')[0]))].sort();
 if (!referenced.length) {
   console.log('原本に images/ の参照がありません。何もしません。');
   process.exit(0);

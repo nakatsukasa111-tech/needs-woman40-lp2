@@ -19,6 +19,9 @@ const imageMap = JSON.parse(fs.readFileSync(path.join(ROOT, 'utage/images.map.js
 
 let html = fs.readFileSync(path.join(ROOT, cfg.source), 'utf8');
 
+// ---- 原本のキャッシュ対策クエリ（?v=...）は、UTAGE側では不要なので落とす ----
+html = html.replace(/(images\/[^\s"'()?]+)\?[^"'\s)]*/g, '$1');
+
 // ---- 画像を絶対URLへ ----
 const pairs = Object.entries(imageMap)
   .filter(([k]) => !k.startsWith('_'))
