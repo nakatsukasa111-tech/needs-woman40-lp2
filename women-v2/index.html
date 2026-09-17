@@ -1229,6 +1229,38 @@ body{ background:var(--paper-3); }
   .flow-info .fi-shop{ flex:0 1 auto; }
 }
 
+
+/* ---------- お客様の声 ---------- */
+.voice{ margin-top:18px; display:grid; gap:16px; max-width:680px; margin-left:auto; margin-right:auto; }
+.voice li{
+  background:var(--paper-2); border:1px solid var(--line); border-radius:13px;
+  padding:12px 12px 16px; position:relative;
+}
+.voice img{ width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:9px; background:#e3ded6; display:block; }
+.vc-who{ margin-top:11px; display:flex; align-items:center; gap:9px; }
+.vc-who b{
+  font-family:var(--ff-mn); font-size:19px; font-weight:700; color:var(--ink); letter-spacing:.02em;
+}
+.vc-age{
+  padding:3px 10px; border-radius:999px; background:var(--navy); color:#fff;
+  font-size:12.5px; font-weight:700; line-height:1.5; letter-spacing:.01em;
+}
+.vc-tx{
+  margin-top:9px; padding-left:16px; position:relative;
+  font-size:16px; line-height:1.85; color:var(--text); letter-spacing:-.01em;
+}
+.vc-tx::before{
+  content:""; position:absolute; left:0; top:4px; bottom:4px; width:3px;
+  border-radius:2px; background:var(--cta); opacity:.55;
+}
+#voice .hd-note{ text-align:center; }
+@media (min-width:768px){
+  .voice{ gap:20px; }
+  .voice li{ padding:16px 16px 20px; }
+  .vc-who b{ font-size:22px; }
+  .vc-age{ font-size:13.5px; padding:4px 12px; }
+  .vc-tx{ font-size:17px; padding-left:19px; }
+}
 </style>
 </head>
 
@@ -1598,6 +1630,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ul>
       <p class="hd-note"><span class="nw">※数値は当社実績です</span><br><span class="nw">※トレーニングによる効果は</span><span class="nw">個人差があります</span></p>
 
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4.5 お客様の声 ============ -->
+<section class="band" id="voice">
+  <div class="wrap">
+    <div class="panel rv">
+      <div class="hd">
+        <p class="hd-eyebrow hd-deco">Voice</p>
+        <h2 class="hd-title"><span class="accent"><span class="nw">お客様の声</span></span></h2>
+      </div>
+
+      <ul class="voice">
+        <li>
+          <img src="images/voice-fy.jpg" alt="ジムでトレーニングをするF.Y様" width="1100" height="688" loading="lazy" decoding="async">
+          <p class="vc-who"><b>F.Y様</b><span class="vc-age">40代女性</span></p>
+          <p class="vc-tx">筋肉量が少なすぎて腰痛になり、医師に怒られたのがきっかけでした。お試しで来てみたら、トレーナーさんの説明がわかりやすくて、その場で決めました。筋肉を意識できるようになると、腰痛や肩こりがなぜ起こるのかがわかり、自分で対処できるようになって不調が減りました。半年〜1年ほどで、最初はできなかった動きが簡単にできる自分に気付きました。変わっていく自分を見るのが楽しいです。</p>
+        </li>
+        <li>
+          <img src="images/voice-ya.jpg" alt="マットの上で腹筋のトレーニングをするY.A様" width="998" height="624" loading="lazy" decoding="async">
+          <p class="vc-who"><b>Y.A様</b><span class="vc-age">50代女性</span></p>
+          <p class="vc-tx">筋肉と体力が落ちてきたと感じていた頃、ガラス越しにトレーニングしている方を見て、来てみようと思いました。トレーニング中は自分のことだけに集中できるので、身体と心のリフレッシュになります。体力がつくと自分に自信がつき、仕事や家庭生活もスムーズにいくようになりました。週1回のトレーニングを半年ほど続けた頃に変化を感じました。偶々通りかかったNeeDSですが、今では無くてはならない場所です。一歩踏み出してみてください！</p>
+        </li>
+        <li>
+          <img src="images/voice-yf.jpg" alt="マットの上で体幹のトレーニングをするY.F様" width="1100" height="687" loading="lazy" decoding="async">
+          <p class="vc-who"><b>Y.F様</b><span class="vc-age">40代女性</span></p>
+          <p class="vc-tx">健康づくりのためにジムを探していたとき、知人の紹介でNeeDSを知りました。プライベートレッスンを受けられることと、体験のときの雰囲気がとても良かったことが決め手です。身体が軽くなり、体調も良くなりました。食生活も意識するようになり、気がつけば変わっていました。焦らなくても大丈夫です！</p>
+        </li>
+      </ul>
+
+      <p class="hd-note"><span class="nw">※トレーニングによる効果は</span><span class="nw">個人差があります</span></p>
     </div>
   </div>
 </section>
