@@ -1153,22 +1153,26 @@ body{ background:var(--paper-3); }
 @media (min-width:768px){ .pro-bridge{ font-size:19px; margin-top:20px; } }
 
 /* ---------- 実績（3枠） ---------- */
-.proof3{ grid-template-columns:repeat(2,1fr); }
-.proof3 .proof-lead{ grid-column:1 / -1; }
+.proof3{ grid-template-columns:1fr; }
+.proof3 li:not(.proof-lead){
+  display:flex; align-items:baseline; justify-content:center; gap:11px;
+  padding:14px 10px;
+}
+.proof3 li:not(.proof-lead) > span{ margin-top:0; white-space:nowrap; }
+.proof3 li:not(.proof-lead) span .nw{ display:inline; }
 .proof3 .proof-lead b{ font-size:52px; line-height:1.05; }
 .proof3 .proof-lead b .u{ font-size:23px; }
 .proof3 .proof-lead span{ font-size:16px; font-weight:700; }
-.proof3 li b{ font-size:29px; }
+.proof3 li b{ font-size:28px; }
 .proof3 li b .u{ font-size:15px; }
-.proof3 li span{ font-size:13.5px; line-height:1.6; }
+.proof3 li span{ font-size:15px; line-height:1.6; white-space:nowrap; }
 @media (min-width:768px){
-  .proof3{ grid-template-columns:repeat(3,1fr); }
-  .proof3 .proof-lead{ grid-column:auto; }
+  .proof3{ grid-template-columns:1fr; }
   .proof3 .proof-lead b{ font-size:62px; }
   .proof3 .proof-lead b .u{ font-size:27px; }
   .proof3 .proof-lead span{ font-size:18px; }
   .proof3 li b{ font-size:38px; }
-  .proof3 li span{ font-size:15px; }
+  .proof3 li span{ font-size:17px; }
 }
 
 /* ---------- 無料体験の流れ ---------- */
@@ -1261,6 +1265,23 @@ body{ background:var(--paper-3); }
   .vc-age{ font-size:13.5px; padding:4px 12px; }
   .vc-tx{ font-size:17px; padding-left:19px; }
 }
+
+/* ---- 修正：無料体験の流れまわり ---- */
+/* 「何を／どれくらい／どう続けるか」を、上のバッジと同じ大きさに */
+.pw-line{ font-size:15px; line-height:1.75; }
+.pw-line span{ font-size:15px; }
+.pw-line b{ font-size:15px; }
+/* 「ここまで全て無料体験に含まれます」を STEP見出しと同じ大きさに */
+.plan-free{ font-size:18px; line-height:1.55; font-weight:700; }
+@media (min-width:768px){
+  .pw-line, .pw-line span, .pw-line b{ font-size:16.5px; }
+  .plan-free{ font-size:21px; }
+}
+
+/* ---- 修正：トレーナーの見出しを最上部に ---- */
+.why3-top{ margin-top:16px; }
+.hd-flat{ margin-top:18px; }
+.hd-flat .hd-sub:first-child{ margin-top:0; }
 </style>
 </head>
 
@@ -1332,7 +1353,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero2-body">
       <p class="fv-band">
         <span class="fv-band-sm"><span class="nw">神戸・六甲道／</span><span class="nw">40代・50代女性のための</span></span>
-        <span class="fv-band-lg"><span class="nw">プライベートジム</span></span>
+        <span class="fv-band-lg"><span class="nw">パーソナル</span><span class="nw">トレーニングジム</span></span>
       </p>
 
       <h1 class="hero2-title zA">
@@ -1350,7 +1371,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="cta-block hero2-cta">
         <a class="btn btn-line" id="cta-hero" data-cta-position="hero" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="hero"><span class="line-badge">LINE</span>LINEで無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
-        <p class="cta-note zA"><strong>30秒で予約完了。</strong>運動の経験は問いません。</p>
+        <p class="cta-note zA"><strong>30秒で予約完了。</strong></p>
       </div>
 
       <a class="fv-more" href="#worries"><span class="fv-more-tx">つづきを見る</span><span class="fv-more-ar" aria-hidden="true"></span></a>
@@ -1428,7 +1449,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <h3 class="flow-ttl zA"><span class="nw">無料体験の流れ</span><span class="flow-min"><span class="nw">（約60分）</span></span></h3>
-      <p class="flow-lead"><span class="nw">ご説明を含め、</span><span class="nw">90分ほどお時間に余裕をもって</span><span class="nw">お越しください。</span></p>
+      <p class="flow-lead"><span class="nw">ご説明を含め90分ほど、</span><br><span class="nw">お時間をいただくことが</span><span class="nw">ございます。</span></p>
 
       <ol class="flow">
         <li>
@@ -1437,7 +1458,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="fl-no"><span class="st">STEP</span><b>1</b><em><span class="nw">5〜10分</span></em></p>
             <h4><span class="nw">カウンセリング</span></h4>
           </div>
-          <p class="fl-tx"><span class="nw">用紙にご記入いただき、</span><span class="nw">お身体のお悩みやご要望を</span><span class="nw">お聞きします。</span><span class="nw">そのうえで、</span><span class="nw">NeeDSでどのようにお応えできるかを</span><span class="nw">お伝えします。</span></p>
+          <p class="fl-tx"><span class="nw">まず、</span><span class="nw">あなたのお身体のお悩みや</span><span class="nw">ご要望をお聞きします。</span><br><span class="nw">その上で、</span><span class="nw">NeeDSでどのようなサポートが</span><span class="nw">出来るかをお伝えします。</span></p>
         </li>
         <li>
           <img src="images/身体のチェック.jpg" alt="トレーナーが肩まわりの動きをチェックしている様子" width="800" height="500" style="object-position:40% 50%;" loading="lazy" decoding="async">
@@ -1445,7 +1466,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="fl-no"><span class="st">STEP</span><b>2</b><em><span class="nw">10〜15分</span></em></p>
             <h4><span class="nw">身体チェック</span></h4>
           </div>
-          <p class="fl-tx"><span class="nw">柔軟性チェック・体力チェックで、</span><span class="nw">今のお身体の状態を</span><span class="nw">確認します。</span></p>
+          <p class="fl-tx"><span class="nw">姿勢や柔軟性、筋力、</span><span class="nw">体の動かし方などを確認し、</span><span class="nw">今のお身体の状態を</span><span class="nw">確認します。</span></p>
         </li>
         <li>
           <img src="images/あなたに合ったトレーニング.jpg" alt="トレーナーの補助を受けながらトレーニングを体験している様子" width="800" height="500" style="object-position:50% 50%;" loading="lazy" decoding="async">
@@ -1453,7 +1474,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="fl-no"><span class="st">STEP</span><b>3</b><em><span class="nw">30〜40分</span></em></p>
             <h4><span class="nw">トレーニング体験</span></h4>
           </div>
-          <p class="fl-tx"><span class="nw">チェックの結果をもとに、</span><span class="nw">あなたに合ったプログラムを</span><span class="nw">体験していただきます。</span></p>
+          <p class="fl-tx"><span class="nw">身体チェックの結果をもとに、</span><span class="nw">あなたに合ったプログラムを</span><span class="nw">体験していただきます。</span></p>
         </li>
         <li>
           <img src="images/あなた専用プラン.jpg" alt="これからの進め方についてトレーナーが説明している様子" width="800" height="500" style="object-position:25% 50%;" loading="lazy" decoding="async">
@@ -1461,14 +1482,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="fl-no"><span class="st">STEP</span><b>4</b><em><span class="nw">10〜15分</span></em></p>
             <h4><span class="nw">ご説明</span></h4>
           </div>
-          <p class="fl-tx"><span class="nw">ご質問にお答えし、</span><span class="nw">お身体のお悩みを</span><span class="nw">改めてお聞きしたうえで、</span><span class="nw">料金システムをご案内します。</span><strong class="fl-hl"><span class="nw">無理な勧誘は一切しません。</span></strong></p>
+          <p class="fl-tx"><span class="nw">トレーニング体験の感想などを</span><span class="nw">お聞きした上で、</span><span class="nw">改めてお体の悩みや</span><span class="nw">NeeDSでサポートできることを</span><span class="nw">お伝えします。</span><br><span class="nw">改めて、</span><span class="nw">質問にもお答えします。</span><br><span class="nw">その後、</span><span class="nw">料金システムをご案内します。</span><strong class="fl-hl"><span class="nw">無理な勧誘は一切しません</span></strong></p>
         </li>
       </ol>
 
       <ul class="flow-info">
         <li><svg class="ico" aria-hidden="true"><use href="#i-check"></use></svg><span class="nw">手ぶらでOK</span></li>
         <li><svg class="ico" aria-hidden="true"><use href="#i-check"></use></svg><span class="nw">更衣室あり</span></li>
-        <li class="fi-shop"><svg class="ico" aria-hidden="true"><use href="#i-shop"></use></svg><span><span class="nw">実施店舗：</span><span class="nw">六甲風の郷店／</span><span class="nw">六甲道店</span></span></li>
       </ul>
 
       <p class="pw-line">
@@ -1478,7 +1498,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
 
       <p class="plan-free">
-        <span class="nw">ここまですべて、</span><span class="nw">初回の無料体験に含まれます。</span>
+        <span class="nw">ここまで全て</span><span class="nw">無料体験に含まれます</span>
       </p>
 
       <ul class="fstrip">
@@ -1532,15 +1552,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="band" id="trainer">
   <div class="wrap">
     <div class="panel rv">
-      <ul class="why3">
+      <div class="hd">
+        <p class="hd-eyebrow hd-deco">Trainer</p>
+        <h2 class="hd-title"><span class="nw">はじめての方こそ、</span><span class="accent"><b><span class="nw">安心して。</span></b></span></h2>
+      </div>
+
+      <ul class="why3 why3-top">
         <li><svg class="ico"><use href="#i-stethoscope"></use></svg><span><b>理学療法士</b>在籍</span></li>
         <li><svg class="ico"><use href="#i-room"></use></svg><span><b>完全個室</b>マンツーマン</span></li>
         <li><svg class="ico"><use href="#i-user-check"></use></svg><span><b>初心者</b>大歓迎</span></li>
       </ul>
 
-      <div class="hd">
-        <p class="hd-eyebrow hd-deco">Trainer</p>
-        <h2 class="hd-title"><span class="nw">はじめての方こそ、</span><span class="accent"><b><span class="nw">安心して。</span></b></span></h2>
+      <div class="hd hd-flat">
         <p class="hd-sub"><span class="nw">当施設には、</span></p>
         <ul class="qual2">
           <li><b><span class="nw">健康運動指導士</span></b></li>
@@ -1647,17 +1670,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li>
           <img src="images/voice-fy.jpg" alt="ジムでトレーニングをするF.Y様" width="1100" height="688" loading="lazy" decoding="async">
           <p class="vc-who"><b>F.Y様</b><span class="vc-age">40代女性</span></p>
-          <p class="vc-tx">筋肉量が少なすぎて腰痛になり、医師に怒られたのがきっかけでした。お試しで来てみたら、トレーナーさんの説明がわかりやすくて、その場で決めました。筋肉を意識できるようになると、腰痛や肩こりがなぜ起こるのかがわかり、自分で対処できるようになって不調が減りました。半年〜1年ほどで、最初はできなかった動きが簡単にできる自分に気付きました。変わっていく自分を見るのが楽しいです。</p>
+          <p class="vc-tx">筋肉量が少なすぎて腰痛になり、医師に怒られたのがきっかけでした。<br>お試しで来てみたら、トレーナーさんの説明がわかりやすくて、その場で決めました。<br>筋肉を意識できるようになると、腰痛や肩こりがなぜ起こるのかがわかり、自分で対処できるようになって不調が減りました。<br>半年〜1年ほどで、最初はできなかった動きが簡単にできる自分に気付きました。<br>変わっていく自分を見るのが楽しいです。</p>
         </li>
         <li>
           <img src="images/voice-ya.jpg" alt="マットの上で腹筋のトレーニングをするY.A様" width="998" height="624" loading="lazy" decoding="async">
           <p class="vc-who"><b>Y.A様</b><span class="vc-age">50代女性</span></p>
-          <p class="vc-tx">筋肉と体力が落ちてきたと感じていた頃、ガラス越しにトレーニングしている方を見て、来てみようと思いました。トレーニング中は自分のことだけに集中できるので、身体と心のリフレッシュになります。体力がつくと自分に自信がつき、仕事や家庭生活もスムーズにいくようになりました。週1回のトレーニングを半年ほど続けた頃に変化を感じました。偶々通りかかったNeeDSですが、今では無くてはならない場所です。一歩踏み出してみてください！</p>
+          <p class="vc-tx">筋肉と体力が落ちてきたと感じていた頃、ガラス越しにトレーニングしている方を見て、来てみようと思いました。<br>トレーニング中は自分のことだけに集中できるので、身体と心のリフレッシュになります。<br>体力がつくと自分に自信がつき、仕事や家庭生活もスムーズにいくようになりました。<br>週1回のトレーニングを半年ほど続けた頃に変化を感じました。<br>偶々通りかかったNeeDSですが、今では無くてはならない場所です。<br>一歩踏み出してみてください！</p>
         </li>
         <li>
           <img src="images/voice-yf.jpg" alt="マットの上で体幹のトレーニングをするY.F様" width="1100" height="687" loading="lazy" decoding="async">
           <p class="vc-who"><b>Y.F様</b><span class="vc-age">40代女性</span></p>
-          <p class="vc-tx">健康づくりのためにジムを探していたとき、知人の紹介でNeeDSを知りました。プライベートレッスンを受けられることと、体験のときの雰囲気がとても良かったことが決め手です。身体が軽くなり、体調も良くなりました。食生活も意識するようになり、気がつけば変わっていました。焦らなくても大丈夫です！</p>
+          <p class="vc-tx">健康づくりのためにジムを探していたとき、知人の紹介でNeeDSを知りました。<br>プライベートレッスンを受けられることと、体験のときの雰囲気がとても良かったことが決め手です。<br>身体が軽くなり、体調も良くなりました。<br>食生活も意識するようになり、気がつけば変わっていました。<br>焦らなくても大丈夫です！</p>
         </li>
       </ul>
 
