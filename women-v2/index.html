@@ -995,6 +995,293 @@ body{ background:var(--paper-3); }
   color:var(--text-mute); letter-spacing:-.01em;
 }
 @media (min-width:768px){ .slot-note{ font-size:12.5px; } }
+
+/* =========================================================
+   lp-renewal：スクロールして読ませるLPへ
+   ・既存ブロックには一切触れず、ここで上書きしています
+   ========================================================= */
+
+/* ---------- 読みやすさの底上げ（本文16〜17px／行間1.8） ---------- */
+:root{ --lh-body:1.8; }
+
+.hd-sub{ font-size:16px; line-height:var(--lh-body); }
+.hd-note{ font-size:13px; line-height:1.75; }
+.np-close{ font-size:16px; line-height:var(--lh-body); }
+.worry3 .q{ font-size:16px; line-height:var(--lh-body); }
+.fut4 .t{ font-size:16px; line-height:1.7; }
+.fut4 .ck{ width:16px; height:16px; margin-top:5px; }
+.slot-note{ font-size:13px; line-height:1.75; }
+.cta-note{ font-size:14px; line-height:1.7; }
+.faq-a{ font-size:16px; line-height:var(--lh-body); }
+.faq-q > span:not(.qm):not(.ic){ font-size:16px; line-height:1.65; }
+.qual2 li{ font-size:15px; line-height:1.6; }
+.staff-cmt{ font-size:15px; line-height:var(--lh-body); }
+.perk3 li{ font-size:14.5px; line-height:1.6; }
+.perk-lead{ font-size:12.5px; }
+.why3 li{ font-size:13px; line-height:1.55; }
+
+/* 店舗情報・フッター：住所や電話が9.5pxしかなかった箇所 */
+.shop-dl dt{ font-size:13px; }
+.shop-dl dd, .shop-dl dd a{ font-size:15px; line-height:1.8; }
+.fc-txt{ font-size:16px; line-height:1.8; }
+.footer-txt{ font-size:14px; line-height:1.9; }
+.footer-corp{ font-size:13px; line-height:1.85; }
+.copyright{ font-size:12px; }
+.shop-name small{ font-size:11px; letter-spacing:.08em; }
+.mapico{ font-size:12px; padding:2px 7px; }
+.staff-role{ font-size:12.5px; line-height:1.65; margin-top:6px; letter-spacing:-.03em; word-break:keep-all; }
+.staff-role .nw{ white-space:nowrap; }
+@media (min-width:430px){ .staff-role{ font-size:13.5px; } }
+.perk3 .n{ font-size:12px; }
+.hd-eyebrow{ font-size:12px; }
+.price-note{ font-size:13px; line-height:1.8; }
+.fstrip .lb{ font-size:12.5px; }
+
+/* プロ5枠：1列1行のままキャプションを底上げ。
+   5列を390px幅に収める都合で、ここだけは本文より小さい上限になります */
+.pro5{ gap:2px; }
+.pro5 figcaption{ font-size:11.5px; line-height:1.45; letter-spacing:-.04em; word-break:keep-all; }
+.pro5 figcaption small{ font-size:9.5px; line-height:1.4; margin-top:3px; letter-spacing:-.04em; word-break:keep-all; }
+.pro5 .nw{ white-space:nowrap; }
+@media (min-width:430px){ .pro5{ gap:4px; } .pro5 figcaption{ font-size:12.5px; } .pro5 figcaption small{ font-size:10.5px; } }
+
+@media (min-width:768px){
+  .hd-sub{ font-size:18px; }
+  .worry3 .q{ font-size:17px; }
+  .fut4 .t{ font-size:17px; }
+  .faq-a, .faq-q > span:not(.qm):not(.ic){ font-size:17px; }
+  .shop-dl dd, .shop-dl dd a{ font-size:16px; }
+  .fc-txt{ font-size:17px; }
+  .footer-txt{ font-size:15px; }
+  .footer-corp{ font-size:13.5px; }
+  .staff-role{ font-size:15px; }
+}
+
+/* ---------- ファーストビュー ---------- */
+.hero2-photo{ aspect-ratio:4/3; max-height:38svh; object-position:50% 42%; }
+
+/* 3点を帯で明示 */
+.fv-band{
+  display:flex; flex-direction:column; align-items:flex-start; gap:2px;
+  margin:0 0 10px; padding:9px 13px; border-radius:11px;
+  background:linear-gradient(135deg, var(--navy) 0%, var(--navy-ink) 100%);
+  color:#fff; box-shadow:0 4px 14px rgba(10,44,66,.18);
+}
+.fv-band-sm{ font-family:var(--ff-jp); font-size:13px; font-weight:500; line-height:1.5; letter-spacing:.01em; opacity:.92; }
+.fv-band-lg{ font-family:var(--ff-jp); font-size:21px; font-weight:700; line-height:1.3; letter-spacing:.02em; }
+@media (min-width:768px){
+  .fv-band{ padding:12px 18px; border-radius:13px; }
+  .fv-band-sm{ font-size:15px; }
+  .fv-band-lg{ font-size:27px; }
+}
+
+/* 「運動が苦手な方・初心者でも安心」＝写真の上のバッジ */
+.hero2-media{ position:relative; }
+.fv-ease{
+  position:absolute; left:10px; bottom:10px; z-index:2;
+  display:inline-flex; align-items:center; gap:6px;
+  padding:7px 13px 7px 10px; border-radius:999px;
+  background:rgba(255,255,255,.95); border:1.5px solid var(--cta);
+  font-family:var(--ff-jp); font-size:13.5px; font-weight:700; line-height:1.4;
+  color:var(--cta-dark); letter-spacing:-.02em;
+  box-shadow:0 3px 12px rgba(10,44,66,.18); backdrop-filter:blur(2px);
+}
+.fv-ease .ico{ width:17px; height:17px; stroke-width:2.6; color:var(--cta); flex:0 0 auto; }
+@media (min-width:768px){
+  .fv-ease{ left:16px; bottom:16px; font-size:16px; padding:9px 18px 9px 14px; }
+  .fv-ease .ico{ width:20px; height:20px; }
+}
+
+/* 小さい画面（iPhone SE / mini）：CTAを1画面に収めるための詰め */
+@media (max-width:400px){
+  .hero2-photo{ max-height:30svh; }
+  .fv-band{ padding:7px 12px; margin-bottom:8px; }
+  .fv-band-sm{ font-size:12px; }
+  .fv-band-lg{ font-size:19px; }
+  .hero2-title.zA{ margin-top:6px; font-size:24px; }
+  .hero2-sub.zA{ margin-top:8px; font-size:14px; }
+  .fv-ease{ font-size:12.5px; padding:6px 11px 6px 9px; left:8px; bottom:8px; }
+  .nobad{ margin-top:10px; }
+  .hero2-cta{ margin-top:10px; }
+  .cta-note{ font-size:13px; }
+  .fv-more{ margin-top:9px; }
+  .fv-more-tx{ font-size:11px; }
+}
+
+.hero2-sub.zA{ font-size:15px; line-height:1.7; }
+@media (min-width:768px){ .hero2-sub.zA{ font-size:17px; } }
+
+/* 続きがあると分かる下向き矢印 */
+.fv-more{
+  display:flex; flex-direction:column; align-items:center; gap:3px;
+  margin:14px auto 0; width:max-content; text-decoration:none;
+  color:var(--navy); animation:fvbob 1.9s ease-in-out infinite;
+}
+.fv-more-tx{ font-size:12px; font-weight:700; letter-spacing:.08em; }
+.fv-more-ar{
+  width:13px; height:13px; border-right:2.4px solid currentColor; border-bottom:2.4px solid currentColor;
+  transform:rotate(45deg); margin-top:-2px;
+}
+@keyframes fvbob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(5px); } }
+@media (prefers-reduced-motion:reduce){ .fv-more{ animation:none; } }
+
+/* ---------- こんなお悩みありませんか ---------- */
+.worry{ margin-top:16px; display:grid; gap:9px; max-width:620px; margin-left:auto; margin-right:auto; }
+.worry li{
+  display:flex; align-items:flex-start; gap:11px; padding:14px 15px;
+  background:var(--paper-2); border:1px solid var(--line); border-radius:11px;
+  font-size:16px; font-weight:500; line-height:1.7; color:var(--ink); letter-spacing:-.01em;
+}
+.worry .wk{
+  flex:0 0 auto; width:21px; height:21px; margin-top:2px; border-radius:5px;
+  border:2px solid var(--cta); position:relative; background:#fff;
+}
+.worry .wk::after{
+  content:""; position:absolute; left:5px; top:1px; width:7px; height:12px;
+  border-right:2.6px solid var(--cta); border-bottom:2.6px solid var(--cta); transform:rotate(42deg);
+}
+@media (min-width:768px){
+  .worry li{ font-size:18px; padding:16px 20px; }
+  .worry .wk{ width:23px; height:23px; }
+}
+
+/* ---------- プロ実績 → 初心者への橋渡し ---------- */
+.pro-bridge{
+  margin-top:16px; text-align:center;
+  font-size:16px; font-weight:700; line-height:1.85; color:var(--ink); letter-spacing:-.01em;
+}
+@media (min-width:768px){ .pro-bridge{ font-size:19px; margin-top:20px; } }
+
+/* ---------- 実績（3枠） ---------- */
+.proof3{ grid-template-columns:1fr; }
+.proof3 li:not(.proof-lead){
+  display:flex; align-items:baseline; justify-content:center; gap:11px;
+  padding:14px 10px;
+}
+.proof3 li:not(.proof-lead) > span{ margin-top:0; white-space:nowrap; }
+.proof3 li:not(.proof-lead) span .nw{ display:inline; }
+.proof3 .proof-lead b{ font-size:52px; line-height:1.05; }
+.proof3 .proof-lead b .u{ font-size:23px; }
+.proof3 .proof-lead span{ font-size:16px; font-weight:700; }
+.proof3 li b{ font-size:28px; }
+.proof3 li b .u{ font-size:15px; }
+.proof3 li span{ font-size:15px; line-height:1.6; white-space:nowrap; }
+@media (min-width:768px){
+  .proof3{ grid-template-columns:1fr; }
+  .proof3 .proof-lead b{ font-size:62px; }
+  .proof3 .proof-lead b .u{ font-size:27px; }
+  .proof3 .proof-lead span{ font-size:18px; }
+  .proof3 li b{ font-size:38px; }
+  .proof3 li span{ font-size:17px; }
+}
+
+/* ---------- 無料体験の流れ ---------- */
+.flow-ttl{
+  margin-top:22px; text-align:center; font-family:var(--ff-jp); font-weight:700;
+  font-size:22px; line-height:1.4; color:var(--ink); letter-spacing:-.01em;
+}
+.flow-ttl .flow-min{ display:inline-block; font-size:16px; font-weight:700; color:var(--cta-dark); }
+.flow-lead{ margin-top:8px; text-align:center; font-size:14px; line-height:1.75; color:var(--text-mute); }
+@media (min-width:768px){ .flow-ttl{ font-size:29px; } .flow-ttl .flow-min{ font-size:20px; } .flow-lead{ font-size:15.5px; } }
+
+.flow{ margin-top:16px; display:grid; gap:10px; counter-reset:none; }
+.flow li{
+  display:grid; grid-template-columns:76px 1fr; gap:6px 12px; align-items:center;
+  background:var(--paper-2); border:1px solid var(--line); border-radius:12px; padding:12px;
+  position:relative;
+}
+.flow .fl-tx{ grid-column:1 / -1; }
+.flow li + li::before{
+  content:""; position:absolute; left:44px; top:-8px; width:0; height:0;
+  border-left:7px solid transparent; border-right:7px solid transparent; border-top:7px solid var(--cta);
+}
+.flow img{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:9px; background:#e3ded6; display:block; }
+.fl-no{ display:flex; align-items:baseline; gap:6px; }
+.fl-no .st{ font-family:var(--ff-en); font-size:11px; font-weight:600; letter-spacing:.12em; color:var(--cta-dark); }
+.fl-no b{ font-family:var(--ff-en); font-size:26px; font-weight:700; line-height:1; color:var(--cta); }
+.fl-no em{
+  font-style:normal; margin-left:2px; padding:3px 9px; border-radius:999px;
+  background:#fff; border:1px solid var(--line); font-size:12px; font-weight:700; color:var(--text-mute);
+}
+.flow h4{ margin-top:3px; font-family:var(--ff-jp); font-size:18px; font-weight:700; line-height:1.4; color:var(--ink); }
+.flow .fl-tx{ margin-top:2px; font-size:15px; line-height:1.8; color:var(--text); letter-spacing:-.01em; }
+.fl-hl{ display:inline-block; margin-top:4px; color:var(--cta-dark); font-weight:700; }
+@media (min-width:768px){
+  .flow{ gap:12px; max-width:760px; margin-left:auto; margin-right:auto; }
+  .flow li{ grid-template-columns:110px 1fr; gap:8px 18px; padding:16px; }
+  .flow li + li::before{ left:60px; }
+  .flow h4{ font-size:21px; }
+  .flow .fl-tx{ font-size:16.5px; }
+  .fl-no b{ font-size:31px; }
+  .fl-no em{ font-size:13px; }
+}
+
+/* 手ぶらでOK／更衣室あり／実施店舗 */
+.flow-info{
+  margin-top:14px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;
+  max-width:620px; margin-left:auto; margin-right:auto;
+}
+.flow-info li{
+  display:flex; align-items:center; gap:7px; padding:10px 15px; border-radius:999px;
+  background:#fff5ec; border:1.5px solid var(--cta);
+  font-size:15px; font-weight:700; line-height:1.45; color:var(--cta-dark); letter-spacing:-.01em;
+}
+.flow-info .ico{ width:17px; height:17px; stroke-width:2.6; color:var(--cta); flex:0 0 auto; }
+.flow-info .fi-shop{ flex:1 0 100%; justify-content:center; }
+@media (min-width:768px){
+  .flow-info li{ font-size:16.5px; padding:11px 20px; }
+  .flow-info .fi-shop{ flex:0 1 auto; }
+}
+
+
+/* ---------- お客様の声 ---------- */
+.voice{ margin-top:18px; display:grid; gap:16px; max-width:680px; margin-left:auto; margin-right:auto; }
+.voice li{
+  background:var(--paper-2); border:1px solid var(--line); border-radius:13px;
+  padding:12px 12px 16px; position:relative;
+}
+.voice img{ width:100%; aspect-ratio:16/10; object-fit:cover; border-radius:9px; background:#e3ded6; display:block; }
+.vc-who{ margin-top:11px; display:flex; align-items:center; gap:9px; }
+.vc-who b{
+  font-family:var(--ff-mn); font-size:19px; font-weight:700; color:var(--ink); letter-spacing:.02em;
+}
+.vc-age{
+  padding:3px 10px; border-radius:999px; background:var(--navy); color:#fff;
+  font-size:12.5px; font-weight:700; line-height:1.5; letter-spacing:.01em;
+}
+.vc-tx{
+  margin-top:9px; padding-left:16px; position:relative;
+  font-size:16px; line-height:1.85; color:var(--text); letter-spacing:-.01em;
+}
+.vc-tx::before{
+  content:""; position:absolute; left:0; top:4px; bottom:4px; width:3px;
+  border-radius:2px; background:var(--cta); opacity:.55;
+}
+#voice .hd-note{ text-align:center; }
+@media (min-width:768px){
+  .voice{ gap:20px; }
+  .voice li{ padding:16px 16px 20px; }
+  .vc-who b{ font-size:22px; }
+  .vc-age{ font-size:13.5px; padding:4px 12px; }
+  .vc-tx{ font-size:17px; padding-left:19px; }
+}
+
+/* ---- 修正：無料体験の流れまわり ---- */
+/* 「何を／どれくらい／どう続けるか」を、上のバッジと同じ大きさに */
+.pw-line{ font-size:15px; line-height:1.75; }
+.pw-line span{ font-size:15px; }
+.pw-line b{ font-size:15px; }
+/* 「ここまで全て無料体験に含まれます」を STEP見出しと同じ大きさに */
+.plan-free{ font-size:18px; line-height:1.55; font-weight:700; }
+@media (min-width:768px){
+  .pw-line, .pw-line span, .pw-line b{ font-size:16.5px; }
+  .plan-free{ font-size:21px; }
+}
+
+/* ---- 修正：トレーナーの見出しを最上部に ---- */
+.why3-top{ margin-top:16px; }
+.hd-flat{ margin-top:18px; }
+.hd-flat .hd-sub:first-child{ margin-top:0; }
 </style>
 </head>
 
@@ -1057,18 +1344,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="hero2" id="hero">
   <div class="hero2-in">
     <div class="hero2-media">
-      <img class="hero2-photo" src="images/hero.jpg"
-           alt="トレーナーの補助を受けながらストレッチをする女性"
-           width="1600" height="900" fetchpriority="high" decoding="async">
-      <p class="hero2-badge"><span><span class="nw">プロが</span><br><span class="nw">あなたの身体を</span><br><span class="nw">サポート</span></span></p>
+      <img class="hero2-photo" src="images/fv-main.jpg"
+           alt="トレーナーの補助を受けながらトレーニングをする40代の女性"
+           width="1133" height="850" fetchpriority="high" decoding="async">
+      <p class="fv-ease"><svg class="ico" aria-hidden="true"><use href="#i-check"></use></svg><span><span class="nw">運動が苦手な方・</span><span class="nw">初心者でも安心</span></span></p>
     </div>
 
     <div class="hero2-body">
-      <p class="hero2-kicker"><span class="nw">神戸・六甲道／</span><span class="nw">40代からの身体づくり</span></p>
+      <p class="fv-band">
+        <span class="fv-band-sm"><span class="nw">神戸・六甲道／</span><span class="nw">40代・50代女性のための</span></span>
+        <span class="fv-band-lg"><span class="nw">パーソナル</span><span class="nw">トレーニングジム</span></span>
+      </p>
+
       <h1 class="hero2-title zA">
         <span class="nw">身体チェックも体験も、</span><br>
         <em class="hl-free"><span class="nw">全部無料。</span></em>
       </h1>
+
       <p class="hero2-sub zA"><span class="nw">運動経験ゼロでも大丈夫。</span><span class="nw">通う方の大半が初心者です。</span></p>
 
       <ul class="nobad">
@@ -1079,8 +1371,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="cta-block hero2-cta">
         <a class="btn btn-line" id="cta-hero" data-cta-position="hero" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="hero"><span class="line-badge">LINE</span>LINEで無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
-        <p class="cta-note zA"><strong>30秒で予約完了。</strong>運動の経験は問いません。</p>
+        <p class="cta-note zA"><strong>30秒で予約完了。</strong></p>
       </div>
+
+      <a class="fv-more" href="#worries"><span class="fv-more-tx">つづきを見る</span><span class="fv-more-ar" aria-hidden="true"></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2.5 こんなお悩みありませんか ============ -->
+<section class="band" id="worries">
+  <div class="wrap">
+    <div class="panel rv">
+      <div class="hd">
+        <p class="hd-eyebrow hd-deco">Check</p>
+        <h2 class="hd-title"><span class="nw">こんなお悩み、</span><span class="accent"><span class="nw">ありませんか？</span></span></h2>
+      </div>
+
+      <ul class="worry">
+        <li><span class="wk" aria-hidden="true"></span><span><span class="nw">最近、</span><span class="nw">筋肉や体力が</span><span class="nw">落ちてきたと感じる</span></span></li>
+        <li><span class="wk" aria-hidden="true"></span><span><span class="nw">腰痛や肩こりが</span><span class="nw">当たり前に</span><span class="nw">なっている</span></span></li>
+        <li><span class="wk" aria-hidden="true"></span><span><span class="nw">運動を始めたいけれど、</span><span class="nw">何から始めれば</span><span class="nw">いいかわからない</span></span></li>
+        <li><span class="wk" aria-hidden="true"></span><span><span class="nw">ジムは若い人ばかりで、</span><span class="nw">入りづらそう</span></span></li>
+        <li><span class="wk" aria-hidden="true"></span><span><span class="nw">自己流で始めても、</span><span class="nw">なかなか続かなかった</span></span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -1134,32 +1448,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </p>
       </div>
 
-      <div class="trow">
-        <article>
+      <h3 class="flow-ttl zA"><span class="nw">無料体験の流れ</span><span class="flow-min"><span class="nw">（約60分）</span></span></h3>
+      <p class="flow-lead"><span class="nw">ご説明を含め90分ほど、</span><br><span class="nw">お時間をいただくことが</span><span class="nw">ございます。</span></p>
+
+      <ol class="flow">
+        <li>
+          <img src="images/プロに相談.jpg" alt="トレーナーに身体のお悩みを相談しているお客様" width="800" height="500" style="object-position:50% 45%;" loading="lazy" decoding="async">
+          <div class="fl-in">
+            <p class="fl-no"><span class="st">STEP</span><b>1</b><em><span class="nw">5〜10分</span></em></p>
+            <h4><span class="nw">カウンセリング</span></h4>
+          </div>
+          <p class="fl-tx"><span class="nw">まず、</span><span class="nw">あなたのお身体のお悩みや</span><span class="nw">ご要望をお聞きします。</span><br><span class="nw">その上で、</span><span class="nw">NeeDSでどのようなサポートが</span><span class="nw">出来るかをお伝えします。</span></p>
+        </li>
+        <li>
           <img src="images/身体のチェック.jpg" alt="トレーナーが肩まわりの動きをチェックしている様子" width="800" height="500" style="object-position:40% 50%;" loading="lazy" decoding="async">
-          <div class="in">
-            <span class="no">01</span>
-            <h3><span class="nw">身体の状態を</span><span class="nw">チェック</span></h3>
-            <p><span class="nw">姿勢・動き・</span><span class="nw">身体の使い方を、</span><span class="nw">専門家が</span><span class="nw">チェックします。</span></p>
+          <div class="fl-in">
+            <p class="fl-no"><span class="st">STEP</span><b>2</b><em><span class="nw">10〜15分</span></em></p>
+            <h4><span class="nw">身体チェック</span></h4>
           </div>
-        </article>
-        <article>
+          <p class="fl-tx"><span class="nw">姿勢や柔軟性、筋力、</span><span class="nw">体の動かし方などを確認し、</span><span class="nw">今のお身体の状態を</span><span class="nw">確認します。</span></p>
+        </li>
+        <li>
           <img src="images/あなたに合ったトレーニング.jpg" alt="トレーナーの補助を受けながらトレーニングを体験している様子" width="800" height="500" style="object-position:50% 50%;" loading="lazy" decoding="async">
-          <div class="in">
-            <span class="no">02</span>
-            <h3><span class="nw">あなたに合った</span><span class="nw">トレーニングを体験</span></h3>
-            <p><span class="nw">その状態に合わせた</span><span class="nw">トレーニングを、</span><span class="nw">実際に</span><span class="nw">体験できます。</span></p>
+          <div class="fl-in">
+            <p class="fl-no"><span class="st">STEP</span><b>3</b><em><span class="nw">30〜40分</span></em></p>
+            <h4><span class="nw">トレーニング体験</span></h4>
           </div>
-        </article>
-        <article>
-          <img src="images/あなた専用プラン.jpg" alt="これからの身体づくりについてトレーナーと相談している様子" width="800" height="500" style="object-position:25% 50%;" loading="lazy" decoding="async">
-          <div class="in">
-            <span class="no">03</span>
-            <h3><span class="nw">あなた専用プランを</span><span class="nw">ご提案</span></h3>
-            <p><span class="nw">なりたい身体を</span><span class="nw">うかがい、</span><span class="nw">これからの進め方を</span><span class="nw">その場で</span><span class="nw">お伝えします。</span></p>
+          <p class="fl-tx"><span class="nw">身体チェックの結果をもとに、</span><span class="nw">あなたに合ったプログラムを</span><span class="nw">体験していただきます。</span></p>
+        </li>
+        <li>
+          <img src="images/あなた専用プラン.jpg" alt="これからの進め方についてトレーナーが説明している様子" width="800" height="500" style="object-position:25% 50%;" loading="lazy" decoding="async">
+          <div class="fl-in">
+            <p class="fl-no"><span class="st">STEP</span><b>4</b><em><span class="nw">10〜15分</span></em></p>
+            <h4><span class="nw">ご説明</span></h4>
           </div>
-        </article>
-      </div>
+          <p class="fl-tx"><span class="nw">トレーニング体験の感想などを</span><span class="nw">お聞きした上で、</span><span class="nw">改めてお体の悩みや</span><span class="nw">NeeDSでサポートできることを</span><span class="nw">お伝えします。</span><br><span class="nw">改めて、</span><span class="nw">質問にもお答えします。</span><br><span class="nw">その後、</span><span class="nw">料金システムをご案内します。</span><strong class="fl-hl"><span class="nw">無理な勧誘は一切しません</span></strong></p>
+        </li>
+      </ol>
+
+      <ul class="flow-info">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"></use></svg><span class="nw">手ぶらでOK</span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"></use></svg><span class="nw">更衣室あり</span></li>
+      </ul>
 
       <p class="pw-line">
         <span><b>何を</b>あなたに合う種目とメニュー</span>
@@ -1168,7 +1498,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
 
       <p class="plan-free">
-        <span class="nw">ここまですべて、</span><span class="nw">初回の無料体験に含まれます。</span>
+        <span class="nw">ここまで全て</span><span class="nw">無料体験に含まれます</span>
       </p>
 
       <ul class="fstrip">
@@ -1222,15 +1552,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="band" id="trainer">
   <div class="wrap">
     <div class="panel rv">
-      <ul class="why3">
+      <div class="hd">
+        <p class="hd-eyebrow hd-deco">Trainer</p>
+        <h2 class="hd-title"><span class="nw">はじめての方こそ、</span><span class="accent"><b><span class="nw">安心して。</span></b></span></h2>
+      </div>
+
+      <ul class="why3 why3-top">
         <li><svg class="ico"><use href="#i-stethoscope"></use></svg><span><b>理学療法士</b>在籍</span></li>
         <li><svg class="ico"><use href="#i-room"></use></svg><span><b>完全個室</b>マンツーマン</span></li>
         <li><svg class="ico"><use href="#i-user-check"></use></svg><span><b>初心者</b>大歓迎</span></li>
       </ul>
 
-      <div class="hd">
-        <p class="hd-eyebrow hd-deco">Trainer</p>
-        <h2 class="hd-title"><span class="nw">はじめての方こそ、</span><span class="accent"><b><span class="nw">安心して。</span></b></span></h2>
+      <div class="hd hd-flat">
         <p class="hd-sub"><span class="nw">当施設には、</span></p>
         <ul class="qual2">
           <li><b><span class="nw">健康運動指導士</span></b></li>
@@ -1290,6 +1623,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <figcaption>経営者<small><span class="nw">エステ</span><span class="nw">クリニック経営</span></small></figcaption></figure>
       </div>
 
+      <p class="pro-bridge"><span class="nw">プロを指導してきた確かな技術を、</span><span class="nw">運動が苦手な方にこそ、</span><span class="mk-orange"><span class="nw">ていねいに。</span></span></p>
+
       <ul class="rrow">
         <li><svg class="ico"><use href="#i-user-check"></use></svg><span><span class="nw">身体のプロが</span><span class="nw">1対1で対応</span></span></li>
         <li><svg class="ico"><use href="#i-search"></use></svg><span><span class="nw">身体の状態を</span><span class="nw">正しく評価</span></span></li>
@@ -1311,14 +1646,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2 class="hd-title"><span class="nw">15年、</span><span class="accent"><span class="nw">神戸で選ばれてきました。</span></span></h2>
       </div>
 
-      <ul class="proof">
-        <li><b>15<span class="u">年以上</span></b><span>指導実績</span></li>
-        <li><b>90<span class="u">％以上</span></b><span>リピート率</span></li>
-        <li><b>3<span class="u">年以上</span></b><span>平均継続年数</span></li>
-        <li><b>1<span class="u">対1</span></b><span>やさしいトレーナーが担当</span></li>
+      <ul class="proof proof3">
+        <li class="proof-lead"><b>15<span class="u">年以上</span></b><span>指導実績</span></li>
+        <li><b>3.4<span class="u">年</span></b><span><span class="nw">在籍会員の</span><span class="nw">平均継続年数</span></span></li>
+        <li><b>1<span class="u">対1</span></b><span><span class="nw">で優しい</span><span class="nw">トレーナーが担当</span></span></li>
       </ul>
-      <p class="hd-note"><span class="nw">※数値は当社実績です</span><br><span class="nw">※トレーニングによる効果は</span><span class="nw">個人差があります</span></p>
+      <p class="hd-note"><span class="nw">※数値はいずれも当社実績です。</span><span class="nw">継続年数は</span><span class="nw">2025年12月時点の</span><span class="nw">在籍会員のものです</span><br><span class="nw">※トレーニングによる効果は</span><span class="nw">個人差があります</span></p>
 
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4.5 お客様の声 ============ -->
+<section class="band" id="voice">
+  <div class="wrap">
+    <div class="panel rv">
+      <div class="hd">
+        <p class="hd-eyebrow hd-deco">Voice</p>
+        <h2 class="hd-title"><span class="accent"><span class="nw">お客様の声</span></span></h2>
+      </div>
+
+      <ul class="voice">
+        <li>
+          <img src="images/voice-fy.jpg" alt="ジムでトレーニングをするF.Y様" width="1100" height="688" loading="lazy" decoding="async">
+          <p class="vc-who"><b>F.Y様</b><span class="vc-age">40代女性</span></p>
+          <p class="vc-tx">筋肉量が少なすぎて腰痛になり、医師に怒られたのがきっかけでした。<br>お試しで来てみたら、トレーナーさんの説明がわかりやすくて、その場で決めました。<br>筋肉を意識できるようになると、腰痛や肩こりがなぜ起こるのかがわかり、自分で対処できるようになって不調が減りました。<br>半年〜1年ほどで、最初はできなかった動きが簡単にできる自分に気付きました。<br>変わっていく自分を見るのが楽しいです。</p>
+        </li>
+        <li>
+          <img src="images/voice-ya.jpg" alt="マットの上で腹筋のトレーニングをするY.A様" width="998" height="624" loading="lazy" decoding="async">
+          <p class="vc-who"><b>Y.A様</b><span class="vc-age">50代女性</span></p>
+          <p class="vc-tx">筋肉と体力が落ちてきたと感じていた頃、ガラス越しにトレーニングしている方を見て、来てみようと思いました。<br>トレーニング中は自分のことだけに集中できるので、身体と心のリフレッシュになります。<br>体力がつくと自分に自信がつき、仕事や家庭生活もスムーズにいくようになりました。<br>週1回のトレーニングを半年ほど続けた頃に変化を感じました。<br>偶々通りかかったNeeDSですが、今では無くてはならない場所です。<br>一歩踏み出してみてください！</p>
+        </li>
+        <li>
+          <img src="images/voice-yf.jpg" alt="マットの上で体幹のトレーニングをするY.F様" width="1100" height="687" loading="lazy" decoding="async">
+          <p class="vc-who"><b>Y.F様</b><span class="vc-age">40代女性</span></p>
+          <p class="vc-tx">健康づくりのためにジムを探していたとき、知人の紹介でNeeDSを知りました。<br>プライベートレッスンを受けられることと、体験のときの雰囲気がとても良かったことが決め手です。<br>身体が軽くなり、体調も良くなりました。<br>食生活も意識するようになり、気がつけば変わっていました。<br>焦らなくても大丈夫です！</p>
+        </li>
+      </ul>
+
+      <p class="hd-note"><span class="nw">※トレーニングによる効果は</span><span class="nw">個人差があります</span></p>
     </div>
   </div>
 </section>
