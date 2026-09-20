@@ -26,22 +26,43 @@ const MIME = {
 };
 
 const apiKey = process.env.UTAGE_API_KEY;
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// UTAGE側のレート制限（HTTP 429）に当たることがあるので、
+// 待ってからやり直す。呼び出しの間隔も少し空けておく。
+const RETRY_WAIT = [2000, 4000, 8000, 16000, 32000];
+const GAP = 700;
+
 const api = async (method, endpoint, body) => {
   if (!apiKey) {
     throw new Error('UTAGE_API_KEY が未設定です。新しい画像をアップロードするにはAPIキーが必要です。');
   }
-  const res = await fetch(`${cfg.api_base}${endpoint}`, {
-    method,
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    body: body ? JSON.stringify(body) : undefined,
-  });
-  const text = await res.text();
-  if (!res.ok) throw new Error(`${method} ${endpoint} → HTTP ${res.status}\n${text.slice(0, 500)}`);
-  return text ? JSON.parse(text) : {};
+  for (let attempt = 0; ; attempt++) {
+    const res = await fetch(`${cfg.api_base}${endpoint}`, {
+      method,
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: body ? JSON.stringify(body) : undefined,
+    });
+    const text = await res.text();
+    if (res.ok) {
+      await sleep(GAP);
+      return text ? JSON.parse(text) : {};
+    }
+    const retryable = res.status === 429 || res.status >= 500;
+    if (!retryable || attempt >= RETRY_WAIT.length) {
+      throw new Error(`${method} ${endpoint} → HTTP ${res.status}\n${text.slice(0, 500)}`);
+    }
+    const header = Number(res.headers.get('retry-after'));
+    const wait = Number.isFinite(header) && header > 0
+      ? header * 1000
+      : RETRY_WAIT[attempt];
+    console.log(`  ${res.status} のため ${Math.round(wait / 1000)}秒待って再試行します（${attempt + 1}/${RETRY_WAIT.length}）`);
+    await sleep(wait);
+  }
 };
 
 // ---------- 原本で実際に使われている画像を洗い出す ----------
@@ -113,10 +134,18 @@ for (const rel of referenced) {
   for (const [k, v] of Object.entries(presigned_post.fields)) form.append(k, v);
   form.append('file', new Blob([buf], { type: mime }), remoteName);
 
-  const up = await fetch(presigned_post.url, { method: 'POST', body: form });
-  if (!up.ok) {
-    console.error(`アップロード失敗 ${rel} → HTTP ${up.status}\n${(await up.text()).slice(0, 500)}`);
-    process.exit(1);
+  let up;
+  for (let attempt = 0; ; attempt++) {
+    up = await fetch(presigned_post.url, { method: 'POST', body: form });
+    if (up.ok) break;
+    const retryable = up.status === 429 || up.status >= 500;
+    if (!retryable || attempt >= RETRY_WAIT.length) {
+      console.error(`アップロード失敗 ${rel} → HTTP ${up.status}\n${(await up.text()).slice(0, 500)}`);
+      process.exit(1);
+    }
+    const wait = RETRY_WAIT[attempt];
+    console.log(`  ${rel}: ${up.status} のため ${Math.round(wait / 1000)}秒待って再試行します`);
+    await sleep(wait);
   }
 
   const done = await api('POST', '/media/complete', { media_id });
