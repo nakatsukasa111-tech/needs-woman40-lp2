@@ -1,5 +1,11 @@
 {
   "_comment": "原本の images/ → UTAGEメディアの公開URL。utage/sync-images.mjs が自動で更新します。手で書き換える必要はありません。",
+  "images/fv-main.jpg": {
+    "hash": "a5b3a37dc1",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/hvAdmT4YoJE7.jpg",
+    "media_id": "hvAdmT4YoJE7",
+    "remote_name": "w40-a5b3a37dc1.jpg"
+  },
   "images/hero.jpg": {
     "hash": "6fe7e3c04a",
     "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/8q0nyyZcQCgX.jpg",
@@ -7,10 +13,10 @@
     "remote_name": "w40-6fe7e3c04a.jpg"
   },
   "images/logo.png": {
-    "hash": "b7b4d221ed",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/v0TzmfuJJvhr.png",
-    "media_id": "v0TzmfuJJvhr",
-    "remote_name": "v0TzmfuJJvhr.png"
+    "hash": "73e450f74f",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/vWH7eLUeIDuM.png",
+    "media_id": "vWH7eLUeIDuM",
+    "remote_name": "w40-73e450f74f.png"
   },
   "images/p04.jpg": {
     "hash": "a51be807aa",
@@ -30,118 +36,136 @@
     "media_id": "7XAqwtdEkqdm",
     "remote_name": "7XAqwtdEkqdm.jpg"
   },
+  "images/voice-fy.jpg": {
+    "hash": "da55f3d5b4",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/xLXbUPuLPvHt.jpg",
+    "media_id": "xLXbUPuLPvHt",
+    "remote_name": "w40-da55f3d5b4.jpg"
+  },
+  "images/voice-ya.jpg": {
+    "hash": "373acf1a17",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/1ivm8lPjcXuB.jpg",
+    "media_id": "1ivm8lPjcXuB",
+    "remote_name": "w40-373acf1a17.jpg"
+  },
+  "images/voice-yf.jpg": {
+    "hash": "890495adf5",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/p5eDJkuSSIPM.jpg",
+    "media_id": "p5eDJkuSSIPM",
+    "remote_name": "w40-890495adf5.jpg"
+  },
   "images/あなたに合ったトレーニング.jpg": {
-    "hash": "ff28663d7f",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/sFxHGcZunQ1P.jpg",
-    "media_id": "sFxHGcZunQ1P",
-    "remote_name": "w40-ff28663d7f.jpg"
+    "hash": "2acb9f9d2b",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/odPJTyRfWdbF.jpg",
+    "media_id": "odPJTyRfWdbF",
+    "remote_name": "w40-2acb9f9d2b.jpg"
   },
   "images/あなた専用プラン.jpg": {
-    "hash": "2b0d353de5",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/zA1MXsjWrXB0.jpg",
-    "media_id": "zA1MXsjWrXB0",
-    "remote_name": "w40-2b0d353de5.jpg"
+    "hash": "e4ba57f2cd",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/6Kxq1NEk89KU.jpg",
+    "media_id": "6Kxq1NEk89KU",
+    "remote_name": "w40-e4ba57f2cd.jpg"
   },
   "images/ドクター.jpg": {
-    "hash": "a7517e499f",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/QCJpVks4S4Fr.jpg",
-    "media_id": "QCJpVks4S4Fr",
-    "remote_name": "QCJpVks4S4Fr.jpg"
+    "hash": "7da87df7be",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/wnACWutECsjk.jpg",
+    "media_id": "wnACWutECsjk",
+    "remote_name": "w40-7da87df7be.jpg"
   },
   "images/プロに相談.jpg": {
-    "hash": "2b0d353de5",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/zA1MXsjWrXB0.jpg",
-    "media_id": "zA1MXsjWrXB0",
-    "remote_name": "w40-2b0d353de5.jpg"
+    "hash": "e4ba57f2cd",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/6Kxq1NEk89KU.jpg",
+    "media_id": "6Kxq1NEk89KU",
+    "remote_name": "w40-e4ba57f2cd.jpg"
   },
   "images/ベストボディ日本一.jpg": {
-    "hash": "591122368d",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/21NT7vFk4BdM.jpg",
-    "media_id": "21NT7vFk4BdM",
-    "remote_name": "21NT7vFk4BdM.jpg"
+    "hash": "860e8f68ee",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/5qb0qpbT5VCd.jpg",
+    "media_id": "5qb0qpbT5VCd",
+    "remote_name": "w40-860e8f68ee.jpg"
   },
   "images/モデル.jpg": {
-    "hash": "514149b1cc",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/YPJhBI3c9pU9.jpg",
-    "media_id": "YPJhBI3c9pU9",
-    "remote_name": "YPJhBI3c9pU9.jpg"
+    "hash": "a4416e78d7",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/OdFWoRru6IAc.jpg",
+    "media_id": "OdFWoRru6IAc",
+    "remote_name": "w40-a4416e78d7.jpg"
   },
   "images/塩崎トレーナー.jpg": {
-    "hash": "4ccffd2974",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/edWN8wXHpLxB.jpg",
-    "media_id": "edWN8wXHpLxB",
-    "remote_name": "w40-4ccffd2974.jpg"
+    "hash": "cefb05a5e5",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/fIbfAb6tPERs.jpg",
+    "media_id": "fIbfAb6tPERs",
+    "remote_name": "w40-cefb05a5e5.jpg"
   },
   "images/塩崎トレーナー丸.jpg": {
-    "hash": "3d932a53fb",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/jk4aYnISSdzl.jpg",
-    "media_id": "jk4aYnISSdzl",
-    "remote_name": "jk4aYnISSdzl.jpg"
+    "hash": "73a6f801e9",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/X3UzhJjSJYQT.jpg",
+    "media_id": "X3UzhJjSJYQT",
+    "remote_name": "w40-73a6f801e9.jpg"
   },
   "images/女子プロゴルファー.jpg": {
-    "hash": "6775cd7a55",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/LbZ4AaCdDM9L.jpg",
-    "media_id": "LbZ4AaCdDM9L",
-    "remote_name": "LbZ4AaCdDM9L.jpg"
+    "hash": "e5b36dcb0a",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/VmWKkkfW4Dt1.jpg",
+    "media_id": "VmWKkkfW4Dt1",
+    "remote_name": "w40-e5b36dcb0a.jpg"
   },
   "images/成清トレーナー.jpg": {
-    "hash": "c36a6098b0",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/PzOWkxXIZfnn.jpg",
-    "media_id": "PzOWkxXIZfnn",
-    "remote_name": "w40-c36a6098b0.jpg"
+    "hash": "526a1d8333",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/mm8cyaUTiM8Z.jpg",
+    "media_id": "mm8cyaUTiM8Z",
+    "remote_name": "w40-526a1d8333.jpg"
   },
   "images/成清トレーナー丸.jpg": {
-    "hash": "7bb267a006",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/Am1sTnnxpP1u.jpg",
-    "media_id": "Am1sTnnxpP1u",
-    "remote_name": "Am1sTnnxpP1u.jpg"
+    "hash": "f636c23d3b",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/37UuepJDfjNI.jpg",
+    "media_id": "37UuepJDfjNI",
+    "remote_name": "w40-f636c23d3b.jpg"
   },
   "images/未来1.jpg": {
-    "hash": "06c39704e2",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/yF0lFw97YJba.jpg",
-    "media_id": "yF0lFw97YJba",
-    "remote_name": "yF0lFw97YJba.jpg"
+    "hash": "a7491b119e",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/4V42kgmediRc.jpg",
+    "media_id": "4V42kgmediRc",
+    "remote_name": "w40-a7491b119e.jpg"
   },
   "images/未来2.jpg": {
-    "hash": "c5bb5d2060",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/rLc4Kyaw9vm9.jpg",
-    "media_id": "rLc4Kyaw9vm9",
-    "remote_name": "rLc4Kyaw9vm9.jpg"
+    "hash": "7f8f18b4c9",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/n6JUCQNWzsfo.jpg",
+    "media_id": "n6JUCQNWzsfo",
+    "remote_name": "w40-7f8f18b4c9.jpg"
   },
   "images/未来3.jpg": {
-    "hash": "2c8b177fa6",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/5QcY1gvWAu2V.jpg",
-    "media_id": "5QcY1gvWAu2V",
-    "remote_name": "5QcY1gvWAu2V.jpg"
+    "hash": "72e3b13cd0",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/IvVjaCOZjr6Z.jpg",
+    "media_id": "IvVjaCOZjr6Z",
+    "remote_name": "w40-72e3b13cd0.jpg"
   },
   "images/未来4.jpg": {
-    "hash": "52a5092f3c",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/aZKDQ6bgbNpm.jpg",
-    "media_id": "aZKDQ6bgbNpm",
-    "remote_name": "aZKDQ6bgbNpm.jpg"
+    "hash": "2859e6cc15",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/TAtfWlXA2hUE.jpg",
+    "media_id": "TAtfWlXA2hUE",
+    "remote_name": "w40-2859e6cc15.jpg"
   },
   "images/松浦トレーナー.jpg": {
-    "hash": "8c2310696b",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/nb44BNRfhIUW.jpg",
-    "media_id": "nb44BNRfhIUW",
-    "remote_name": "nb44BNRfhIUW.jpg"
+    "hash": "afd388e522",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/kQARg2q1YaTl.jpg",
+    "media_id": "kQARg2q1YaTl",
+    "remote_name": "w40-afd388e522.jpg"
   },
   "images/経営者.jpg": {
-    "hash": "aff964b597",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/RJdwKMirsQ9b.jpg",
-    "media_id": "RJdwKMirsQ9b",
-    "remote_name": "RJdwKMirsQ9b.jpg"
+    "hash": "01bc826a52",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/lKFmvfE2Cy2S.jpg",
+    "media_id": "lKFmvfE2Cy2S",
+    "remote_name": "w40-01bc826a52.jpg"
   },
   "images/身体のチェック.jpg": {
-    "hash": "1f82a6b780",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/KmEWWbbUKpXl.jpg",
-    "media_id": "KmEWWbbUKpXl",
-    "remote_name": "w40-1f82a6b780.jpg"
+    "hash": "49909af6fe",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/7FChclzlGilB.jpg",
+    "media_id": "7FChclzlGilB",
+    "remote_name": "w40-49909af6fe.jpg"
   },
   "images/通いやすい環境.jpg": {
-    "hash": "53b53e80bd",
-    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/iVrpHgEGY33J.jpg",
-    "media_id": "iVrpHgEGY33J",
-    "remote_name": "w40-53b53e80bd.jpg"
+    "hash": "5ba3dce907",
+    "url": "https://utagesystem.s3.ap-northeast-1.wasabisys.com/pkPJ7EBCKiMj/iiz1NkmWSHbs.jpg",
+    "media_id": "iiz1NkmWSHbs",
+    "remote_name": "w40-5ba3dce907.jpg"
   }
 }
