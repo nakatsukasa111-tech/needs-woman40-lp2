@@ -1293,12 +1293,17 @@ body{ background:var(--paper-3); }
 .hero2-photo{ max-height:44svh; }
 @media (max-width:400px){ .hero2-photo{ max-height:42svh; } }
 
+/* ヘッダーの「JR六甲道駅・阪急六甲 徒歩5分」を読みやすく */
+.brand-access{ font-size:13.5px; line-height:1.45; }
+@media (max-width:379px){ .brand-access{ font-size:12.5px; } }
+@media (min-width:768px){ .brand-access{ font-size:15px; } }
+
 /* 小さな1行（枠・背景なし） */
 .fv-kicker{
-  margin:0; font-family:var(--ff-jp); font-size:13px; font-weight:500;
-  line-height:1.6; letter-spacing:.02em; color:var(--text-mute);
+  margin:0; font-family:var(--ff-jp); font-size:14px; font-weight:500;
+  line-height:1.6; letter-spacing:.02em; color:var(--text);
 }
-@media (min-width:768px){ .fv-kicker{ font-size:15px; } }
+@media (min-width:768px){ .fv-kicker{ font-size:15.5px; } }
 
 /* 見出し */
 .hero2-title.zA{ margin-top:7px; font-size:26px; line-height:1.45; letter-spacing:-.01em; }
@@ -1309,6 +1314,11 @@ body{ background:var(--paper-3); }
 .hero2-cta{ margin-top:14px; }
 @media (max-width:400px){ .hero2-cta{ margin-top:12px; } }
 .hero2-cta .cta-note{ margin-top:8px; text-align:center; }
+
+/* ファーストビューと次のセクションの間に少し余白 */
+.hero2{ padding-bottom:22px; }
+@media (min-width:768px){ .hero2{ padding-bottom:32px; } }
+@media (min-width:900px){ .hero2{ padding-bottom:0; } }
 
 /* チェック付きの一言（枠線なし・ボタンに見せない） */
 .fv-pts{ margin-top:14px; display:grid; gap:7px; }
@@ -1397,13 +1407,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="fv-kicker"><span class="nw">神戸・六甲道｜</span><span class="nw">40〜60代女性の</span><span class="nw">パーソナルジム</span></p>
 
       <h1 class="hero2-title zA">
-        <span class="nw">40代からの体は、</span><br>
+        <span class="nw">40代からの体づくりは、</span><br>
         <span class="nw">ひとりで頑張らなくていい。</span>
       </h1>
 
       <div class="cta-block hero2-cta">
         <a class="btn btn-line" id="cta-hero" data-cta-position="hero" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="hero"><span class="line-badge">LINE</span>LINEで無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
-        <p class="cta-note zA"><span class="nw">日時を選ぶだけ。</span><span class="nw">体験後の無理な勧誘は</span><span class="nw">行いません。</span></p>
+        <p class="cta-note zA"><span class="nw">体験後の無理な勧誘は</span><span class="nw">行いません。</span></p>
       </div>
 
       <ul class="fv-pts">
