@@ -1285,6 +1285,47 @@ body{ background:var(--paper-3); }
 .why3-top{ margin-top:16px; }
 .hd-flat{ margin-top:18px; }
 .hd-flat .hd-sub:first-child{ margin-top:0; }
+
+/* =========================================================
+   ファーストビューの簡素化（写真・見出し・予約ボタンを最優先）
+   ========================================================= */
+/* 写真の上のバッジは廃止。写真は少し大きく使う */
+.hero2-photo{ max-height:44svh; }
+@media (max-width:400px){ .hero2-photo{ max-height:42svh; } }
+
+/* 小さな1行（枠・背景なし） */
+.fv-kicker{
+  margin:0; font-family:var(--ff-jp); font-size:13px; font-weight:500;
+  line-height:1.6; letter-spacing:.02em; color:var(--text-mute);
+}
+@media (min-width:768px){ .fv-kicker{ font-size:15px; } }
+
+/* 見出し */
+.hero2-title.zA{ margin-top:7px; font-size:26px; line-height:1.45; letter-spacing:-.01em; }
+@media (max-width:400px){ .hero2-title.zA{ margin-top:6px; font-size:25px; } }
+@media (min-width:768px){ .hero2-title.zA{ font-size:31px; } }
+
+/* 予約ボタンまわり */
+.hero2-cta{ margin-top:14px; }
+@media (max-width:400px){ .hero2-cta{ margin-top:12px; } }
+.hero2-cta .cta-note{ margin-top:8px; text-align:center; }
+
+/* チェック付きの一言（枠線なし・ボタンに見せない） */
+.fv-pts{ margin-top:14px; display:grid; gap:7px; }
+.fv-pts li{
+  display:flex; align-items:flex-start; gap:8px;
+  font-family:var(--ff-jp); font-size:14.5px; font-weight:500;
+  line-height:1.6; color:var(--ink); letter-spacing:-.01em;
+}
+.fv-pts .ico{
+  width:17px; height:17px; margin-top:3px; flex:0 0 auto;
+  stroke-width:2.6; color:var(--navy);
+}
+@media (min-width:768px){
+  .fv-pts{ margin-top:18px; gap:9px; }
+  .fv-pts li{ font-size:16px; }
+  .fv-pts .ico{ width:19px; height:19px; margin-top:4px; }
+}
 </style>
 </head>
 
@@ -1350,34 +1391,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <img class="hero2-photo" src="images/fv-main.jpg"
            alt="トレーナーの補助を受けながらトレーニングをする40代の女性"
            width="1133" height="850" fetchpriority="high" decoding="async">
-      <p class="fv-ease"><svg class="ico" aria-hidden="true"><use href="#i-check"></use></svg><span><span class="nw">運動が苦手な方・</span><span class="nw">初心者でも安心</span></span></p>
     </div>
 
     <div class="hero2-body">
-      <p class="fv-band">
-        <span class="fv-band-sm"><span class="nw">神戸・六甲道／</span><span class="nw">40代・50代女性のための</span></span>
-        <span class="fv-band-lg"><span class="nw">パーソナル</span><span class="nw">トレーニングジム</span></span>
-      </p>
+      <p class="fv-kicker"><span class="nw">神戸・六甲道｜</span><span class="nw">40〜60代女性の</span><span class="nw">パーソナルジム</span></p>
 
       <h1 class="hero2-title zA">
-        <span class="nw">身体チェックも体験も、</span><br>
-        <em class="hl-free"><span class="nw">全部無料。</span></em>
+        <span class="nw">40代からの体は、</span><br>
+        <span class="nw">ひとりで頑張らなくていい。</span>
       </h1>
-
-      <p class="hero2-sub zA"><span class="nw">運動経験ゼロでも大丈夫。</span><span class="nw">通う方の大半が初心者です。</span></p>
-
-      <ul class="nobad">
-        <li><svg class="ico" aria-hidden="true"><use href="#i-nope"></use></svg><span class="nw">勧誘なし</span></li>
-        <li><svg class="ico" aria-hidden="true"><use href="#i-nope"></use></svg><span class="nw">追加料金なし</span></li>
-        <li><svg class="ico" aria-hidden="true"><use href="#i-nope"></use></svg><span class="nw">入会金無料</span></li>
-      </ul>
 
       <div class="cta-block hero2-cta">
         <a class="btn btn-line" id="cta-hero" data-cta-position="hero" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="hero"><span class="line-badge">LINE</span>LINEで無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
-        <p class="cta-note zA"><strong>30秒で予約完了。</strong></p>
+        <p class="cta-note zA"><span class="nw">日時を選ぶだけ。</span><span class="nw">体験後の無理な勧誘は</span><span class="nw">行いません。</span></p>
       </div>
 
-      <a class="fv-more" href="#worries"><span class="fv-more-tx">つづきを見る</span><span class="fv-more-ar" aria-hidden="true"></span></a>
+      <ul class="fv-pts">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"></use></svg><span><span class="nw">通う方の6割が</span><span class="nw">運動初心者</span></span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"></use></svg><span><span class="nw">平均3年以上</span><span class="nw">続いています</span></span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"></use></svg><span><span class="nw">このページからの</span><span class="nw">お申し込みで</span><span class="nw">入会金無料</span></span></li>
+      </ul>
     </div>
   </div>
 </section>
