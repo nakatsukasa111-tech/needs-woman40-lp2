@@ -1293,6 +1293,21 @@ body{ background:var(--paper-3); }
 .hero2-photo{ max-height:44svh; }
 @media (max-width:400px){ .hero2-photo{ max-height:42svh; } }
 
+/* 追従CTAバー：押しやすいように大きくし、画面の下端から少し浮かせる */
+.sticky-cta{
+  padding:10px var(--pad) calc(12px + env(safe-area-inset-bottom));
+  box-shadow:0 -6px 20px rgba(10,44,66,.10);
+}
+.sticky-cta .mini-note{ font-size:12px; line-height:1.4; margin-bottom:6px; letter-spacing:.04em; }
+.sticky-cta .btn-line{
+  padding:15px 14px; font-size:16.5px; line-height:1.4; border-radius:12px;
+}
+@media (max-width:379px){ .sticky-cta .btn-line{ font-size:15.5px; padding:14px 12px; } }
+@media (min-width:768px){
+  .sticky-cta .mini-note{ font-size:13px; }
+  .sticky-cta .btn-line{ font-size:18px; padding:17px 16px; }
+}
+
 /* ヘッダーの「JR六甲道駅・阪急六甲 徒歩5分」を読みやすく */
 .brand-access{ font-size:13.5px; line-height:1.45; }
 @media (max-width:379px){ .brand-access{ font-size:12.5px; } }
@@ -1413,7 +1428,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </h1>
 
       <div class="cta-block hero2-cta">
-        <a class="btn btn-line" id="cta-hero" data-cta-position="hero" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="hero"><span class="line-badge">LINE</span>LINEで無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
+        <a class="btn btn-line" id="cta-hero" data-cta-position="hero" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="hero"><span class="line-badge">LINE</span>まずは無料体験を受けてみる<span class="arw" aria-hidden="true">→</span></a>
         <p class="cta-note zA"><span class="nw">体験後の無理な勧誘は</span><span class="nw">行いません。</span></p>
       </div>
 
@@ -1566,7 +1581,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <li><span class="n">3</span><span><span class="nw">入会金無料</span></span></li>
             </ul>
           </div>
-          <a class="btn btn-line" id="cta-trial" data-cta-position="trial" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="trial"><span class="line-badge">LINE</span>無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
+          <a class="btn btn-line" id="cta-trial" data-cta-position="trial" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="trial"><span class="line-badge">LINE</span>無料体験を受けてみる<span class="arw" aria-hidden="true">→</span></a>
           <p class="cta-note zA"><strong>30秒で予約完了。</strong></p>
         </div>
       </div>
@@ -1589,7 +1604,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="np-close zA"><span class="nw">体験で受け取ったプランは、</span><span class="nw">そのままお持ち帰りいただけます。</span></p>
 
       <div class="cta-block cta-slim">
-        <a class="btn btn-line" id="cta-no-pressure" data-cta-position="no-pressure" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="no-pressure"><span class="line-badge">LINE</span>無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
+        <a class="btn btn-line" id="cta-no-pressure" data-cta-position="no-pressure" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="no-pressure"><span class="line-badge">LINE</span>無料体験を受けてみる<span class="arw" aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
@@ -1805,7 +1820,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="cta-block cta-slim">
-        <a class="btn btn-line" id="cta-price" data-cta-position="price" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="price"><span class="line-badge">LINE</span>無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
+        <a class="btn btn-line" id="cta-price" data-cta-position="price" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="price"><span class="line-badge">LINE</span>無料体験を受けてみる<span class="arw" aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
@@ -1891,7 +1906,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <li><span class="n">3</span><span><span class="nw">入会金無料</span></span></li>
                 </ul>
               </div>
-              <a class="btn btn-line" id="cta-final" data-cta-position="final" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="final"><span class="line-badge">LINE</span>無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
+              <a class="btn btn-line" id="cta-final" data-cta-position="final" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="final"><span class="line-badge">LINE</span>無料体験を受けてみる<span class="arw" aria-hidden="true">→</span></a>
               <p class="cta-note"><strong>LINEから30秒でご予約いただけます。</strong></p>
               <!-- 残り枠数を出す場合は下の {{残り枠数}} を数字に差し替えてください（例：本日 残り2枠）。
                    実在しない締切・残数は記載しないこと。 -->
@@ -1944,7 +1959,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="rv rv-d1">
         <p class="cta-note" style="margin-bottom:12px;margin-top:0;"><strong>初回の無料体験、受付中です。</strong></p>
-        <a class="btn btn-line" id="cta-footer" data-cta-position="footer" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="footer"><span class="line-badge">LINE</span>無料体験を予約する<span class="arw" aria-hidden="true">→</span></a>
+        <a class="btn btn-line" id="cta-footer" data-cta-position="footer" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="footer"><span class="line-badge">LINE</span>無料体験を受けてみる<span class="arw" aria-hidden="true">→</span></a>
       </div>
     </div>
 
@@ -1961,7 +1976,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============ STICKY CTA (mobile) ============ -->
 <div class="sticky-cta" id="stickyCta">
   <p class="mini-note">＼体験も身体チェックも無料／</p>
-  <a class="btn btn-line" id="cta-sticky" data-cta-position="sticky" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="sticky"><span class="line-badge">LINE</span>LINEで予約する<span class="arw" aria-hidden="true">→</span></a>
+  <a class="btn btn-line" id="cta-sticky" data-cta-position="sticky" href="https://lin.ee/QP1l4lMK" target="_blank" rel="noopener" data-event="cta_click" data-cta="sticky"><span class="line-badge">LINE</span>まずは無料体験を受けてみる<span class="arw" aria-hidden="true">→</span></a>
 </div>
 
 <script>
